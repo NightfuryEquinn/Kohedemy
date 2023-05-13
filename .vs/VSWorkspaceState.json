@@ -4,8 +4,11 @@
     "\\reactapp",
     "\\reactapp\\public",
     "\\reactapp\\src",
-    "\\webapi"
+    "\\webapi",
+    "\\webapi\\bin",
+    "\\webapi\\Controllers",
+    "\\webapi\\obj",
+    "\\webapi\\Properties"
   ],
-  "SelectedNode": "\\reactapp\\src\\App.js",
   "PreviewInSolutionExplorer": false
 }
