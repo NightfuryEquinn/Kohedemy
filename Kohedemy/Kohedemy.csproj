@@ -106,7 +106,6 @@
     <Content Include="css\main.css" />
     <Content Include="Global.asax" />
     <Content Include="javascripts\main.js" />
-    <Content Include="pages\Home.html" />
     <Content Include="javascripts\.gitkeep" />
     <Content Include="css\.gitkeep" />
     <Content Include="pages\.gitkeep" />
