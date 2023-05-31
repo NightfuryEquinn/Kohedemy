@@ -1,4 +1,11 @@
-﻿* {
+﻿:root {
+  --ebony: "#2D2D2B";
+  --sandstone: "#B8926B";
+  --linen: "#EAE5DF";
+  --cloudy: "#B0B0B0";
+}
+
+* {
   margin: 0;
   padding: 0;
 }
