@@ -27,114 +27,114 @@
     <!--Title-->
     <title>Kohedemy - Contact Us</title>
   </head>
-<body>
-  <form id="form1" runat="server">
-    <!--Navigation Bar-->
-    <nav>
-      <img id="nav-logo" src="../Assets/icons/kohedemy_logo.png" />
+  <body>
+    <form id="form1" runat="server">
+      <!--Navigation Bar-->
+      <nav>
+        <img id="nav-logo" src="../Assets/icons/kohedemy_logo.png" />
 
-      <div class="nav-container">
-        <a>Home</a>
-        <a>About Us</a>
-        <a>Course</a>
-        <a>Contact Us</a>
-        <a>Log In</a>
+        <div class="nav-container">
+          <a>Home</a>
+          <a>About Us</a>
+          <a>Course</a>
+          <a>Contact Us</a>
+          <a>Log In</a>
+        </div>
+      </nav>
+
+      <!--Hero Banner-->
+      <div class="hero-banner-container">
+        <img class="hero-banner" src="../Assets/images/latte.jpg" />
+
+        <h2 class="banner-quote">HAVE SOME QUESTIONS? FEEL FREE TO DROP US A MESSAGE</h2>
       </div>
-    </nav>
-
-    <!--Hero Banner-->
-    <div class="hero-banner-container">
-      <img class="hero-banner" src="../Assets/images/latte.jpg" />
-
-      <h2 class="banner-quote">HAVE SOME QUESTIONS? FEEL FREE TO DROP US A MESSAGE</h2>
-    </div>
     
-    <!--Divider-->
-    <div class="divider">
-      <h3>CONTACT US</h3>
+      <!--Divider-->
+      <div class="divider">
+        <h3>CONTACT US</h3>
 
-      <p>We will respond as soon as possible</p>
-    </div>
-
-    <!--Contact Container-->
-    <div class="contact-container">
-      <div class="single-contact">
-        <div class="contact-icon">
-          <img class="icon" src="../Assets/icons/phone-call.png" />
-        </div>
-
-        <p>05-2437596</p>
+        <p>We will respond as soon as possible</p>
       </div>
 
-      <div class="single-contact">
-        <div class="contact-icon">
-          <img class="icon" src="../Assets/icons/mail.png" />
-        </div>
-
-        <p>enquiry@kohedemy.com</p>
-      </div>
-
-      <div class="single-contact">
-        <div class="contact-icon">
-          <img class="icon" src="../Assets/icons/location.png" />
-        </div>
-
-        <p>Block C, Lot 5A, Level 7, Jalan Bangsar South, 52100 Kuala Lumpur, Malaysia.</p>
-      </div>
-
-      <div class="single-contact">
-        <div class="contact-icon">
-          <img class="icon" src="../Assets/icons/linkedin.png" />
-        </div>
-
-        <p>Kohedemy Inc.</p>
-      </div>
-
-      <div class="single-contact">
-        <div class="contact-icon">
-          <img class="icon" src="../Assets/icons/facebook.png" />
-        </div>
-
-        <p>Kohedemy</p>
-      </div>
-
-      <div class="single-contact">
-        <div class="contact-icon">
-          <img class="icon" src="../Assets/icons/twitter.png" />
-        </div>
-
-        <p>kohedemy_2021</p>
-      </div>
-
-      <div class="single-contact">
-        <div class="contact-icon">
-          <img class="icon" src="../Assets/icons/instagram.png" />
-        </div>
-
-        <p>kohedemy_2021</p>
-      </div>
-    </div>
-
-    <!--Footer-->
-      <footer>
-        <div class="footer-container">
-          <div class="footer-nav">
-            <a>Home</a>
-            <a>About Us</a>
-            <a>Course</a>
-            <a>Assessment</a>
+      <!--Contact Container-->
+      <div class="contact-container">
+        <div class="single-contact">
+          <div class="contact-icon">
+            <img class="icon" src="../Assets/icons/phone-call.png" />
           </div>
 
-          <div class="footer-contact">
-            <h2>CONTACT US</h2>
-            <p>Office Number: 05-2437596</p>
-            <p>Company Email: enquiry@kohedemy.com</p>
-            <p>Address: Block C, Lot 5A, Level 7, Jalan Bangsar South, 52100 Kuala Lumpur, Malaysia.</p>
-          </div>
+          <p>05-2437596</p>
         </div>
 
-        <h5>COPYRIGHT 2023 @ KOHEDEMY</h5>
-      </footer>
-  </form>
-</body>
+        <div class="single-contact">
+          <div class="contact-icon">
+            <img class="icon" src="../Assets/icons/mail.png" />
+          </div>
+
+          <p>enquiry@kohedemy.com</p>
+        </div>
+
+        <div class="single-contact">
+          <div class="contact-icon">
+            <img class="icon" src="../Assets/icons/location.png" />
+          </div>
+
+          <p>Block C, Lot 5A, Level 7, Jalan Bangsar South, 52100 Kuala Lumpur, Malaysia.</p>
+        </div>
+
+        <div class="single-contact">
+          <div class="contact-icon">
+            <img class="icon" src="../Assets/icons/linkedin.png" />
+          </div>
+
+          <p>Kohedemy Inc.</p>
+        </div>
+
+        <div class="single-contact">
+          <div class="contact-icon">
+            <img class="icon" src="../Assets/icons/facebook.png" />
+          </div>
+
+          <p>Kohedemy</p>
+        </div>
+
+        <div class="single-contact">
+          <div class="contact-icon">
+            <img class="icon" src="../Assets/icons/twitter.png" />
+          </div>
+
+          <p>kohedemy_2021</p>
+        </div>
+
+        <div class="single-contact">
+          <div class="contact-icon">
+            <img class="icon" src="../Assets/icons/instagram.png" />
+          </div>
+
+          <p>kohedemy_2021</p>
+        </div>
+      </div>
+
+      <!--Footer-->
+        <footer>
+          <div class="footer-container">
+            <div class="footer-nav">
+              <a>Home</a>
+              <a>About Us</a>
+              <a>Course</a>
+              <a>Assessment</a>
+            </div>
+
+            <div class="footer-contact">
+              <h2>CONTACT US</h2>
+              <p>Office Number: 05-2437596</p>
+              <p>Company Email: enquiry@kohedemy.com</p>
+              <p>Address: Block C, Lot 5A, Level 7, Jalan Bangsar South, 52100 Kuala Lumpur, Malaysia.</p>
+            </div>
+          </div>
+
+          <h5>COPYRIGHT 2023 @ KOHEDEMY</h5>
+        </footer>
+    </form>
+  </body>
 </html>

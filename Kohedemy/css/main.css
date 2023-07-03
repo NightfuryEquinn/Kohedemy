@@ -1,4 +1,5 @@
-﻿:root {
+﻿@import url('main.css');
+:root {
   --ebony: #2D2D2B;
   --sandstone: #B8926B;
   --linen: #EAE5DF;
@@ -51,7 +52,6 @@ body {
 }
 
 nav {
-  margin: 1rem;
   background-color: transparent;
   color: var(--linen);
   font-size: 2rem;
@@ -296,6 +296,76 @@ nav a {
   height: 50px;
   width: 50px;
   object-fit: cover;
+}
+
+.container-with-bg {
+  padding: 6rem 0;
+  height: auto;
+  width: 100%;
+  background-image: url("../Assets/images/selective.jpg");
+  background-size: cover;
+  background-blend-mode: color-burn
+}
+
+.login-form-container {
+  margin: 0 6rem;
+  padding: 3rem 0;
+  background-color: #B0B0B099;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  align-content: center;
+}
+
+.login-form-container h3 {
+  width: 300px;
+  color: var(--linen);
+  font-size: 4rem;
+  letter-spacing: 0.25rem;
+  display: flex;
+  align-self: center;
+  text-align: center;
+}
+
+.login-form, .login-wrap {
+  margin: 0 3rem;
+  font-size: 1.375rem;
+  color: var(--linen);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+.login-form {
+  gap: 2.5rem;
+}
+
+.login-button {
+  margin: 0 6rem;
+  padding: 0.25rem 1.5rem;
+  font-size: 1.25rem;
+  width: 30%;
+  color: var(--linen);
+  background-color: var(--sandstone);
+  border: none;
+}
+
+.textbox {
+  padding: 0.5rem;
+  font-family: 'Source Sans 3', sans-serif;
+  border: none;
+  font-size: 1.25rem;
+  color: var(--ebony);
+  background-color: var(--cloudy);
+  transition: 0.25s ease;
+}
+
+.textbox:focus {
+  border: none;
+  color: var(--sandstone);
+  background-color: var(--ebony);
 }
 
 footer {
