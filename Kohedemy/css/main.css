@@ -368,6 +368,49 @@ nav a {
   background-color: var(--ebony);
 }
 
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar {
+  margin-bottom: 3rem;
+  padding: 0.5rem 0.75rem;
+  width: 20%;
+  font-family: "Just Another Hand", cursive;
+  letter-spacing: 0.25rem;
+  border: none;
+  font-size: 1.75rem;
+  text-align: center;
+  color: var(--linen);
+  background-color: var(--sandstone);
+  transition: 0.25s ease;
+}
+
+.search-bar:focus {
+  width: 40%;
+  border: none;
+  outline: none;
+  color: var(--ebony);
+  background-color: var(--cloudy);
+}
+
+.flex-card-container {
+  margin: 0 6rem 3rem 6rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 3.5rem;
+  align-content: flex-start;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-card-container p {
+  font-size: 1rem;
+}
+
 footer {
   padding: 3rem 4rem;
   color: var(--ebony);
