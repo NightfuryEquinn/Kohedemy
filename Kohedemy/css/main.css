@@ -196,6 +196,79 @@ nav a {
   border: none;
 }
 
+.image-content-container {
+  margin: 0 6rem 3rem 6rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.image-container {
+  height: 400px;
+  width: 550px;
+}
+
+.left-image, .right-image {
+  height: 400px;
+  width: 550px;
+  object-fit: cover;
+}
+
+.content-container {
+  padding: 3rem;
+  color: var(--ebony);
+  background-color: var(--cloudy);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.content-container h2 {
+  font-size: 2.5rem;
+  letter-spacing: 0.25rem;
+}
+
+.content-container p {
+  text-align: justify;
+  font-size: 1.25rem;
+}
+
+.test-card-container {
+  margin: 0 6rem 3rem 6rem;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.test-card {
+  height: 400px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.test-image-container {
+  height: 250px;
+  width: 250px;
+}
+
+.test-image {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+}
+
+.test-card-content {
+  padding: 1.25rem;
+  height: 100%;
+  color: var(--ebony);
+  background-color: var(--cloudy);
+  font-size: 1.375rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
 footer {
   padding: 3rem 4rem;
   color: var(--ebony);
