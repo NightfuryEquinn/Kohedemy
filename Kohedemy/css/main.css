@@ -269,6 +269,35 @@ nav a {
   align-items: center;
 }
 
+.contact-container {
+  margin: 0 6rem 3rem 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.single-contact {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+.single-contact p {
+  font-size: 1.5rem;
+  color: var(--linen);
+}
+
+.contact-icon {
+  height: 50px;
+  width: 50px;
+}
+
+.icon {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+}
+
 footer {
   padding: 3rem 4rem;
   color: var(--ebony);
