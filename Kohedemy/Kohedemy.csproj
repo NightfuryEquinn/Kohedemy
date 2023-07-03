@@ -119,6 +119,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Css\main.css" />
     <Content Include="Global.asax" />
     <Content Include="Javascript\main.js" />
     <Content Include="Pages\Home.aspx" />
@@ -221,7 +222,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Css\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

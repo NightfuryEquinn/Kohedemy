@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Css",
+    "\\Pages"
   ],
-  "SelectedNode": "\\_Pages",
+  "SelectedNode": "\\Pages",
   "PreviewInSolutionExplorer": false
 }
