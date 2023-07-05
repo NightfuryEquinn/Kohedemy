@@ -168,7 +168,7 @@ nav a:hover {
 .card-button {
   padding: 0 1.5rem;
   height: 37.5px;
-  width: 40%;
+  width: 50%;
   color: var(--linen);
   background-color: var(--sandstone);
   border: none;
@@ -484,6 +484,107 @@ nav a:hover {
   height: 25px;
   width: 25px;
   object-fit: cover;
+}
+
+.side-by-side-container {
+  margin: 0 6rem 3rem 0;
+  display: flex;
+  flex-direction: row;
+  gap: 10rem;
+  align-content: center;
+}
+
+.inner-side-by-side {
+  display: flex;
+  flex-direction: column;
+}
+
+.side-by-side-content {
+  margin-left: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.profile-container, .function-container {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  align-items: center;
+}
+
+.profile-container p, .function-container p {
+  font-size: 1.25rem;
+  color: var(--linen);
+}
+
+.profile-icon, .function-icon {
+  height: 50px;
+  width: 50px;
+}
+
+.function-button {
+  width: 200px;
+  padding: 0.25rem;
+  background-color: var(--sandstone);
+  border: none;
+  outline: none;
+}
+
+.function-button p {
+  color: var(--linen);
+  font-size: 1.25rem;
+}
+
+.function-button:hover {
+  background-color: var(--cloudy);
+}
+
+.function-button:hover p {
+  color: var(--ebony);
+}
+
+p.complete-error-message {
+  font-size: 0.75rem;
+  color: red;
+}
+
+.complete-icon, .admin-icon {
+  height: 37.5px;
+  width: 37.5px;
+  object-fit: cover;
+}
+
+.admin-function-container {
+  margin: 0 6rem 3rem 6rem;
+  display: flex;
+  flex-direction: row;
+  gap: 10rem;
+}
+
+.single-admin-container {
+  display: flex;
+  flex-direction: row;
+  gap: 4.5rem;
+}
+
+.data-container {
+  margin: 0 6rem 3rem 6rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3.75rem;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.data-graph-container {
+  height: 500px;
+  width: 600px;
+  background-color: #B0B0B099;
 }
 
 footer {
