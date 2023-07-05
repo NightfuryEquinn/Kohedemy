@@ -60,10 +60,18 @@ nav {
   align-content: center;
   justify-content: space-between;
   align-items: center;
+  
 }
 
 nav a {
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
   letter-spacing: 0.25rem;
+  transition: 0.25s ease;
+}
+
+nav a:hover {
+  border-bottom: 2px solid var(--linen);
 }
 
 #nav-logo {
@@ -97,7 +105,8 @@ nav a {
   width: 700px;
   color: var(--linen);
   position: absolute;
-  font-size: 3rem;
+  font-size: 4rem;
+  letter-spacing: 0.5rem;
   text-align: center;
   text-transform: uppercase;
   transform: translate(-50%, -50%);
@@ -157,7 +166,8 @@ nav a {
 }
 
 .card-button {
-  padding: 0.25rem 1.5rem;
+  padding: 0 1.5rem;
+  height: 37.5px;
   width: 40%;
   color: var(--linen);
   background-color: var(--sandstone);
@@ -411,6 +421,71 @@ nav a {
   font-size: 1rem;
 }
 
+.fixed-add-button {
+  bottom: 1.25rem;
+  right: 1.25rem;
+  height: 75px;
+  width: 75px;
+  position: fixed;
+  border: none;
+  outline: none;
+  background-color: var(--cloudy);
+  transform: scale(0.75);
+}
+
+.fixed-add-button:hover {
+  background-color: var(--linen);
+}
+
+.fixed-icon-container {
+  height: 50px;
+  width: 50px;
+  margin: auto;
+}
+
+.fixed-icon {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+}
+
+.edit-delete-container {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.inner-edit-delete {
+  width: 90px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.inner-button {
+  height: 37.5px;
+  width: 37.5px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--ebony);
+  border: none;
+  outline: none;
+}
+
+.inner-button:hover {
+  background-color: var(--linen);
+}
+
+.inner-image {
+  height: 25px;
+  width: 25px;
+  object-fit: cover;
+}
+
 footer {
   padding: 3rem 4rem;
   color: var(--ebony);
@@ -438,6 +513,16 @@ footer h5 {
   font-size: 1.75rem;
   letter-spacing: 0.125rem;
   text-transform: uppercase;
+}
+
+.footer-nav a {
+  padding-left: 20px;
+  border-left: 5px solid transparent;
+  transition: 0.25s ease;
+}
+
+.footer-nav a:hover {
+  border-left: 5px solid var(--ebony);
 }
 
 .footer-contact {

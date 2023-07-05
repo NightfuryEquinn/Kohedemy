@@ -51,7 +51,7 @@
 
     <!--Search Bar-->
     <div class="search-bar-container">
-      <asp:TextBox CssClass="search-bar" ID="SearchBar" runat="server"></asp:TextBox>
+      <asp:TextBox CssClass="search-bar" ID="SearchBar" placeholder="Search..." runat="server"></asp:TextBox>
     </div>
 
     <!--Divider-->
