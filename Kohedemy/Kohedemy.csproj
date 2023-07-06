@@ -126,6 +126,7 @@
     <Content Include="Pages\AdminCourseSelection.aspx" />
     <Content Include="Pages\AdminDashboard.aspx" />
     <Content Include="Pages\ContactUs.aspx" />
+    <Content Include="Pages\Course.aspx" />
     <Content Include="Pages\CourseAssessment.aspx" />
     <Content Include="Pages\CourseSelection.aspx" />
     <Content Include="Pages\Home.aspx" />
@@ -227,6 +228,13 @@
     </Compile>
     <Compile Include="Pages\ContactUs.aspx.designer.cs">
       <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Course.aspx.cs">
+      <DependentUpon>Course.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Course.aspx.designer.cs">
+      <DependentUpon>Course.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\CourseAssessment.aspx.cs">
       <DependentUpon>CourseAssessment.aspx</DependentUpon>

@@ -587,6 +587,58 @@ p.complete-error-message {
   background-color: #B0B0B099;
 }
 
+.mcq-container {
+  margin: 0 6rem 3rem 6rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.single-mcq {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.question-divider {
+  width: fit-content;
+  color: var(--linen);
+  font-size: 1.75rem;
+  padding-bottom: 5px;
+  border-bottom: 5px solid var(--sandstone);
+}
+
+.question-container {
+  padding: 1.5rem;
+  color: var(--ebony);
+  background-color: var(--cloudy);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.question-container p {
+  font-size: 1.125rem;
+  font-weight: bold;
+  text-align: justify;
+}
+
+.question-selection {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 1rem;
+}
+
+.radio-button {
+  width: 95%;
+  color: var(--ebony);
+  font-size: 1rem;
+  font-family: 'Source Sans 3', sans-serif;
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  text-align: justify;
+}
+
 footer {
   padding: 3rem 4rem;
   color: var(--ebony);

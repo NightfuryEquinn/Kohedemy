@@ -49,6 +49,24 @@
         <h2 class="banner-quote">FOCUS IS THE KEY TO A DIVINE COFFEE</h2>
       </div>
 
+      <!--MCQ Template-->
+      <div class="mcq-container">
+        <div class="single-mcq">
+          <h6 class="question-divider">QUESTION  1</h6>
+
+          <div class="question-container">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+          
+            <div class="question-selection">
+              <asp:RadioButton GroupName="question-1" CssClass="radio-button" ID="RadioButton1" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate" runat="server" />
+              <asp:RadioButton GroupName="question-1" CssClass="radio-button" ID="RadioButton2" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate" runat="server" />
+              <asp:RadioButton GroupName="question-1" CssClass="radio-button" ID="RadioButton3" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate" runat="server" />
+              <asp:RadioButton GroupName="question-1" CssClass="radio-button" ID="RadioButton4" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate" runat="server" />
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!--Footer-->
       <footer>
         <div class="footer-container">
