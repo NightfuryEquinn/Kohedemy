@@ -34,11 +34,11 @@
         <img id="nav-logo" src="../Assets/icons/kohedemy_logo.png" />
 
         <div class="nav-container">
-          <a>Home</a>
-          <a>About Us</a>
-          <a>Course</a>
-          <a>Contact Us</a>
-          <a>Log In</a>
+          <a href="Home.aspx">Home</a>
+          <a href="AboutUs.aspx">About Us</a>
+          <a href="CourseSelection.aspx">Course</a>
+          <a href="ContactUs.aspx">Contact Us</a>
+          <a href="UserProfile.aspx">Profile</a>
         </div>
       </nav>
 
@@ -56,14 +56,39 @@
         <p>Time to learn the first step</p>
       </div>
 
+      <!--Excerpt Content-->
+      <div class="single-excerpt">
+        <img class="excerpt-image" src="../Assets/images/vertical.jpg" />
+
+        <div class="excerpt-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br /><br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+
+      <!--Divider-->
+      <div class="divider">
+        <h3>EXCERPT 2</h3>
+
+        <p>Time to learn the second step</p>
+      </div>
+
+      <!--Excerpt Content-->
+      <div class="single-excerpt">
+        <img class="excerpt-image" src="../Assets/images/tasty.jpg" />
+
+        <div class="excerpt-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br /><br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+
       <!--Footer-->
       <footer>
         <div class="footer-container">
           <div class="footer-nav">
-            <a>Home</a>
-            <a>About Us</a>
-            <a>Course</a>
-            <a>Assessment</a>
+            <a href="Home.aspx">Home</a>
+            <a href="AboutUs.aspx">About Us</a>
+            <a href="CourseSelection.aspx">Course</a>
+            <a href="PersonalCourse.aspx">Assessment</a>
           </div>
 
           <div class="footer-contact">

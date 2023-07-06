@@ -54,6 +54,27 @@
       <asp:TextBox CssClass="search-bar" ID="SearchBar" placeholder="Search..." runat="server"></asp:TextBox>
     </div>
 
+    <!--Modal Popup-->
+    <div class="modal">
+      <div class="modal-wrap">
+        <img class="modal-image" src="../Assets/images/tasty.jpg" />
+
+        <div class="modal-container">
+          <img class="modal-icon" src="../Assets/icons/close.png" />
+
+          <h3 class="modal-title">Beginner's Guide to First Coffee</h3>
+
+          <p class="modal-difficulty">Difficulty: Beginner</p>
+
+          <p class="modal-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      
+          <button class="enroll-button">
+            <p>Enroll</p>
+          </button>
+        </div>
+      </div>
+    </div>
+
     <!--Divider-->
     <div class="divider">
       <h3>COFFEE</h3>
@@ -65,19 +86,19 @@
     <div class="flex-card-container">
       <div class="cards">
         <div class="card-image-container">
-            <img class="card-image" src="../Assets/images/vertical.jpg" />
+          <img class="card-image" src="../Assets/images/vertical.jpg" />
         </div>
 
         <h4>Beginner’s Guide to First Coffee</h4>
           
-        <button class="card-button">
+        <button onclick="return false" class="card-button">
           <p>Free</p>
         </button>
       </div>
 
       <div class="cards">
         <div class="card-image-container">
-            <img class="card-image" src="../Assets/images/vertical.jpg" />
+          <img class="card-image" src="../Assets/images/vertical.jpg" />
         </div>
 
         <h4>The Best Way to Brew Espresso</h4>
@@ -89,7 +110,7 @@
 
       <div class="cards">
         <div class="card-image-container">
-            <img class="card-image" src="../Assets/images/vertical.jpg" />
+          <img class="card-image" src="../Assets/images/vertical.jpg" />
         </div>
 
         <h4>Essence of A Cup of Latte</h4>
@@ -101,7 +122,7 @@
 
       <div class="cards">
         <div class="card-image-container">
-            <img class="card-image" src="../Assets/images/vertical.jpg" />
+          <img class="card-image" src="../Assets/images/vertical.jpg" />
         </div>
 
         <h4>Single Shot? Double Shot!</h4>
@@ -123,7 +144,7 @@
     <div class="flex-card-container">
       <div class="cards">
         <div class="card-image-container">
-            <img class="card-image" src="../Assets/images/pouring.jpg" />
+          <img class="card-image" src="../Assets/images/pouring.jpg" />
         </div>
 
         <h4>Beginner’s Guide to Milk</h4>

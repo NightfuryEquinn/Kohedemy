@@ -38,6 +38,11 @@ a:hover, button:hover {
   cursor: pointer;
 }
 
+a:link, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
 button {
   transition: 0.25s ease;
 }
@@ -83,6 +88,95 @@ nav a:hover {
   display: flex;
   flex-direction: row;
   gap: 4rem;
+}
+
+.modal {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--linen);
+  background-color: #2D2D2BAA;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.25s ease;
+}
+
+.modal-wrap {
+  width: 1000px;
+  padding: 2.5rem;
+  background-color: var(--ebony);
+  display: flex; 
+  flex-direction: row;
+  gap: 2rem;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.modal-image {
+  height: 450px;
+  width: 300px;
+  object-fit: cover;
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.modal-icon {
+  height: 37.5px;
+  width: 37.5px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  display: flex;
+  align-self: flex-end;
+}
+
+.modal-icon:hover {
+  cursor: pointer;
+}
+
+.modal-title {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+.modal-difficulty {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.modal-description {
+  font-size: 1.125rem;
+  text-align: justify;
+  margin-bottom: 0.75rem;
+}
+
+.enroll-button {
+  width: 35%;
+  padding: 0 1.5rem;
+  height: 37.5px;
+  color: var(--linen);
+  background-color: var(--sandstone);
+  border: none;
+}
+
+.enroll-button p {
+  font-size: 1.25rem;
+}
+
+.enroll-button:hover {
+  color: var(--ebony);
+  background-color: var(--cloudy);
 }
 
 .hero-banner-container {
@@ -637,6 +731,27 @@ p.complete-error-message {
   flex-direction: row;
   gap: 0.75rem;
   text-align: justify;
+}
+
+.single-excerpt {
+  margin: 0 6rem 3rem 6rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.excerpt-image {
+  height: 375px;
+  width: 300px;
+  object-fit: cover;
+}
+
+.excerpt-content {
+  padding: 1.25rem;
+  font-size: 1rem;
+  color: var(--ebony);
+  background-color: var(--cloudy);
+  text-align: justify;
+  overflow-y: scroll;
 }
 
 footer {
