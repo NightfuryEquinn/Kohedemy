@@ -61,6 +61,33 @@
         <asp:TextBox CssClass="search-bar" ID="SearchBar" placeholder="Search..." runat="server"></asp:TextBox>
       </div>
 
+      <!--Modal Popup-->
+      <div class="modal">
+        <div class="modal-wrap">
+          <img class="modal-image" src="../Assets/images/tasty.jpg" />
+
+          <div class="modal-container">
+            <img class="modal-icon" src="../Assets/icons/close.png" />
+
+            <h3 class="modal-title">Beginner's Guide to First Coffee</h3>
+
+            <p class="modal-difficulty">Difficulty: Beginner</p>
+
+            <p class="modal-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      
+            <div class="modal-button-container">
+              <button class="modal-button">
+                <p>Edit Course</p>
+              </button>
+
+              <button class="modal-button">
+                <p>Edit Assessment</p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!--Divider-->
       <div class="divider">
         <h3>COFFEE</h3>
@@ -78,7 +105,7 @@
           <h4>Beginner’s Guide to First Coffee</h4>
           
           <div class="edit-delete-container">
-            <button class="card-button">
+            <button onclick="return false" class="card-button">
               <p>Free</p>
             </button>
 

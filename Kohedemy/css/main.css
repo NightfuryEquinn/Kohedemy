@@ -100,22 +100,30 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   color: var(--linen);
-  background-color: #2D2D2BAA;
+  background-color: #B0B0B088;
   z-index: 10;
   opacity: 0;
   pointer-events: none;
   transition: 0.25s ease;
 }
 
-.modal-wrap {
-  width: 1000px;
+.modal-wrap, .edit-modal-wrap {
   padding: 2.5rem;
   background-color: var(--ebony);
-  display: flex; 
-  flex-direction: row;
+  display: flex;
   gap: 2rem;
   align-content: center;
   justify-content: space-between;
+}
+
+.modal-wrap {
+  width: 1000px;
+  flex-direction: row;
+}
+
+.edit-modal-wrap {
+  width: 500px;
+  flex-direction: column;
 }
 
 .modal-image {
@@ -161,7 +169,13 @@ nav a:hover {
   margin-bottom: 0.75rem;
 }
 
-.enroll-button {
+.modal-button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+}
+
+.enroll-button, .modal-button {
   width: 35%;
   padding: 0 1.5rem;
   height: 37.5px;
@@ -170,13 +184,56 @@ nav a:hover {
   border: none;
 }
 
-.enroll-button p {
+.enroll-button p, .modal-button p {
   font-size: 1.25rem;
 }
 
-.enroll-button:hover {
+.enroll-button:hover, .modal-button:hover {
   color: var(--ebony);
   background-color: var(--cloudy);
+}
+
+.editing-container {
+  padding: 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.single-editing {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.single-editing label {
+  font-size: 1.5rem;
+  font-family: 'Source Sans 3', sans-serif;
+  color: var(--linen);
+}
+
+.cancel-save-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem
+}
+
+.cancel-save-button {
+  width: 50%;
+  padding: 0 1.5rem;
+  height: 37.5px;
+  color: var(--linen);
+  background-color: var(--sandstone);
+  border: none;
+}
+
+.cancel-save-button p {
+  font-size: 1.25rem;
 }
 
 .hero-banner-container {
@@ -460,6 +517,7 @@ nav a:hover {
   padding: 0.5rem;
   font-family: 'Source Sans 3', sans-serif;
   border: none;
+  border-bottom: 2px solid transparent;
   font-size: 1.25rem;
   color: var(--ebony);
   background-color: var(--cloudy);
@@ -468,6 +526,8 @@ nav a:hover {
 
 .textbox:focus {
   border: none;
+  border-bottom: 2px solid var(--linen);
+  outline: none;
   color: var(--sandstone);
   background-color: var(--ebony);
 }

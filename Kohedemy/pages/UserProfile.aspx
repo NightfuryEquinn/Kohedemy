@@ -42,6 +42,43 @@
         </div>
       </nav>
 
+      <!--Edit Modal-->
+      <div class="modal">
+        <div class="edit-modal-wrap">
+          <div class="editing-container">
+            <div class="single-editing">
+              <label>Email Address:</label>
+              <asp:TextBox CssClass="textbox" ID="editEmail" runat="server"></asp:TextBox>
+            </div>
+
+            <div class="single-editing">
+              <label>Username:</label>
+              <asp:TextBox CssClass="textbox" ID="editUsername" runat="server"></asp:TextBox>
+            </div>
+
+            <div class="single-editing">
+              <label>Password:</label>
+              <asp:TextBox CssClass="textbox" ID="editPassword" runat="server"></asp:TextBox>
+            </div>
+
+            <div class="single-editing">
+              <label>Confirm Password:</label>
+              <asp:TextBox CssClass="textbox" ID="editConfirm" runat="server"></asp:TextBox>
+            </div>
+
+            <div class="cancel-save-container">
+              <button class="cancel-save-button">
+                <p>Cancel</p>
+              </button>
+
+              <button class="cancel-save-button">
+                <p>Save</p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!--Hero Banner-->
       <div class="hero-banner-container">
         <img class="hero-banner" src="../Assets/images/five.jpg" />
@@ -94,7 +131,7 @@
             <div class="function-container">
               <img class="function-icon" src="../Assets/icons/edit.png" />
 
-              <button class="function-button">
+              <button onclick="return false" id="edit-button" class="function-button">
                 <p>Edit</p>
               </button>
             </div>
