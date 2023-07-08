@@ -273,6 +273,10 @@ nav a:hover {
   color: var(--linen)
 }
 
+.single-wrapper .divider {
+  margin: 0
+}
+
 .divider h3 {
   font-size: 2rem;
 }
@@ -812,6 +816,124 @@ p.complete-error-message {
   background-color: var(--cloudy);
   text-align: justify;
   overflow-y: scroll;
+}
+
+.management-container,
+.assessment-container {
+  margin: 0 6rem 3rem 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-content: center;
+  justify-content: center;
+}
+
+.single-management {
+  display: grid;
+  gap: 3rem;
+  grid-template: auto / 1fr 1fr 1fr;
+}
+
+.single-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-content: flex-start;
+  justify-content: space-between;
+}
+
+.management-textbox {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+  color: var(--ebony);
+  background-color: var(--cloudy);
+  border-bottom: 2px solid transparent;
+  border: none;
+  outline: none;
+  transition: 0.25s ease;
+}
+
+.management-textarea {
+  height: 150px;
+  resize: none;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  padding: 0.25rem 0.75rem;
+  color: var(--ebony);
+  background-color: var(--cloudy);
+  border-bottom: 2px solid transparent;
+  border: none;
+  outline: none;
+  transition: 0.25s ease;
+}
+
+.management-file-upload {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  padding: 0.25rem 0.75rem;
+  color: var(--ebony);
+  background-color: var(--cloudy);
+  border: none;
+  outline: none;
+}
+
+.management-textbox:focus,
+.management-textarea:focus {
+  border: none;
+  outline: none;
+  color: var(--sandstone);
+  background-color: var(--ebony);
+  border-bottom: 2px solid var(--linen);
+}
+
+.single-management-hr {
+  height: 5px;
+  width: 50%;
+  margin: 0 auto;
+  grid-column: 1 / span 3;
+  grid-row: auto / span 1;
+  background-color: var(--sandstone);
+  border: none;
+  outline: none;
+}
+
+.management-full-span {
+  grid-column: 1 / span 3;
+  grid-row: auto / span 1;
+}
+
+.management-first-col {
+  grid-column: 1 / span 1;
+  grid-row: auto / span 1;
+}
+
+.management-second-col {
+  grid-column: 2 / span 1;
+  grid-row: auto / span 1;
+}
+
+.management-thrid-col {
+  grid-column: 3 / span 1;
+  grid-row: auto / span 1;
+}
+
+.management-container .cancel-save-container,
+.assessment-container .cancel-save-container {
+  margin-top: 1.5rem;
+  width: 50%;
+}
+
+.management-container .cancel-save-container .cancel-save-button:hover,
+.assessment-container .cancel-save-container .cancel-save-button:hover{
+  color: var(--ebony);
+  background-color: var(--cloudy);
+}
+
+.single-question {
+  display: grid;
+  gap: 3rem;
+  grid-template: auto / 1fr 1fr;
 }
 
 footer {

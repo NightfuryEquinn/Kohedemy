@@ -129,6 +129,8 @@
     <Content Include="Pages\Course.aspx" />
     <Content Include="Pages\CourseAssessment.aspx" />
     <Content Include="Pages\CourseSelection.aspx" />
+    <Content Include="Pages\CreateAssessment.aspx" />
+    <Content Include="Pages\CreateCourse.aspx" />
     <Content Include="Pages\Home.aspx" />
     <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\PersonalCourse.aspx" />
@@ -249,6 +251,20 @@
     </Compile>
     <Compile Include="Pages\CourseSelection.aspx.designer.cs">
       <DependentUpon>CourseSelection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CreateAssessment.aspx.cs">
+      <DependentUpon>CreateAssessment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CreateAssessment.aspx.designer.cs">
+      <DependentUpon>CreateAssessment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CreateCourse.aspx.cs">
+      <DependentUpon>CreateCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CreateCourse.aspx.designer.cs">
+      <DependentUpon>CreateCourse.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
