@@ -34,16 +34,16 @@
         <img id="nav-logo" src="../Assets/icons/kohedemy_logo.png" />
 
         <div class="nav-container">
-          <a>Home</a>
-          <a>About Us</a>
-          <a>Course</a>
-          <a>Contact Us</a>
-          <a>Log In</a>
+          <a href="Home.aspx">Home</a>
+          <a href="AboutUs.aspx">About Us</a>
+          <a href="CourseSelection.aspx">Course</a>
+          <a href="ContactUs.aspx">Contact Us</a>
+          <a href="AdminDashboard.aspx">Dashboard</a>
         </div>
       </nav>
 
       <!--Fixed Add Course Button-->
-      <button class="fixed-add-button">
+      <button onclick="document.location.href='./CreateCourse.aspx'; return false;" class="fixed-add-button">
         <div class="fixed-icon-container">
           <img class="fixed-icon" src="../Assets/icons/add.png" />
         </div>
@@ -105,15 +105,15 @@
           <h4>Beginner’s Guide to First Coffee</h4>
           
           <div class="edit-delete-container">
-            <button onclick="return false" class="card-button">
+            <button class="card-button">
               <p>Free</p>
             </button>
 
             <div class="inner-edit-delete">
-              <button class="inner-button">
+              <button onclick="return false" class="inner-button">
                 <img class="inner-image" src="../Assets/icons/edit.png" />
               </button>
-              <button class="inner-button">
+              <button onclick="return false" class="inner-button">
                 <img class="inner-image" src="../Assets/icons/delete.png" />
               </button>
             </div>

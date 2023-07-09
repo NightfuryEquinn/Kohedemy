@@ -4,7 +4,7 @@ const editModalWrap = document.getElementsByClassName("edit-modal-wrap")[0]
 const closeBtn = document.getElementsByClassName("modal-icon")[0]
 
 /** 
- * For Course Selection, including Admin 
+ * For Course Selection
  **/
 const trigger = document.getElementsByClassName("card-button")
 
@@ -31,6 +31,10 @@ if (trigger && closeBtn) {
     modal.style.pointerEvents = "none"
   })
 }
+
+/**
+ * For Admin Course Management
+ */
 
 /**
  * For Editing User Profile
