@@ -38,7 +38,7 @@
           <a>About Us</a>
           <a>Course</a>
           <a>Contact Us</a>
-          <a>Log In</a>
+          <a>Register</a>
         </div>
       </nav>
 

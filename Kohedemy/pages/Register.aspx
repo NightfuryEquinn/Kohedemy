@@ -66,9 +66,7 @@
             </div>
           </div>
 
-          <button class="login-button">
-            <p>Register</p>
-          </button>
+          <asp:Button CssClass="login-button" ID="RegisterButton" runat="server" Text="Register" OnClick="RegisterButton_Click" />
         </div>
       </div>
 

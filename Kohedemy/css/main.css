@@ -509,12 +509,18 @@ nav a:hover {
 
 .login-button {
   margin: 0 6rem;
-  padding: 0.25rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   font-size: 1.25rem;
   width: 30%;
   color: var(--linen);
   background-color: var(--sandstone);
   border: none;
+  transition: 0.25s ease;
+}
+
+.login-button:hover {
+  color: var(--sandstone);
+  background-color: var(--ebony);
 }
 
 .textbox {
