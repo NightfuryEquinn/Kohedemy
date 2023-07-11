@@ -43,14 +43,14 @@ namespace Kohedemy.Pages
 
           cmd1.ExecuteNonQuery();
 
-          Response.Write("<script>alert('Your account is created. Please login.');</script>");
+          Response.Write("<script>alert('Your account is created. Please login.')</script>");
         }
 
         con.Close();
       }
       catch (Exception ex)
       {
-        Response.Write("<script>alert('Failed to register your account. Please try again." + ex + ");</script>");
+        Response.Write("<script>alert('Failed to register your account. Please try again." + ex + ")</script>");
       }
     }
   }

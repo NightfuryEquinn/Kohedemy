@@ -34,11 +34,11 @@
         <img id="nav-logo" src="../Assets/icons/kohedemy_logo.png" />
 
         <div class="nav-container">
-          <a>Home</a>
-          <a>About Us</a>
-          <a>Course</a>
-          <a>Contact Us</a>
-          <a>Register</a>
+          <a href="Home.aspx">Home</a>
+          <a href="AboutUs.aspx">About Us</a>
+          <a href="CourseSelection.aspx">Course</a>
+          <a href="ContactUs.aspx">Contact Us</a>
+          <a href="Register.aspx">Sign Up</a>
         </div>
       </nav>
 
@@ -58,9 +58,7 @@
             </div>
           </div>
 
-          <button class="login-button">
-            <p>Login</p>
-          </button>
+          <asp:Button CssClass="login-button" ID="LoginButton" runat="server" Text="Login" OnClick="LoginButton_Click" />
         </div>
       </div>
 
@@ -68,10 +66,10 @@
       <footer>
         <div class="footer-container">
           <div class="footer-nav">
-            <a>Home</a>
-            <a>About Us</a>
-            <a>Course</a>
-            <a>Assessment</a>
+            <a href="Home.aspx">Home</a>
+            <a href="AboutUs.aspx">About Us</a>
+            <a href="CourseSelection.aspx">Course</a>
+            <a href="PersonalCourse.aspx">Assessment</a>
           </div>
 
           <div class="footer-contact">
