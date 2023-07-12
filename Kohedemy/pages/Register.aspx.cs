@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Diagnostics;
 
 namespace Kohedemy.Pages
 {
@@ -13,7 +9,7 @@ namespace Kohedemy.Pages
   {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+      Debug.WriteLine("Register");
     }
 
     protected void RegisterButton_Click(object sender, EventArgs e)

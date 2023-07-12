@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Diagnostics;
 
 namespace Kohedemy.Pages
 {
@@ -11,9 +7,13 @@ namespace Kohedemy.Pages
   {
     protected void Page_Load(object sender, EventArgs e)
     {
-      if (Session["Username"] != null)
+      Debug.WriteLine("UserProfile");
+
+      if (Session["Username"] as String != null)
       {
-        Response.Write("<script>alert('Welcome, " + Session["Username"].ToString() + "')</script>");
+        Response.Write(
+          "<script>alert('Welcome, " + Session["Username"].ToString() + "')</script>"
+        );
       }
       else
       {
