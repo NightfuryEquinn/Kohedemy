@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Diagnostics;
 
 namespace Kohedemy.Pages
@@ -12,8 +14,23 @@ namespace Kohedemy.Pages
       if (Session["Username"] as String != null)
       {
         Response.Write(
-          "<script>alert('Welcome, " + Session["Username"].ToString() + "')</script>"
+          "<script>alert('Welcome, " + Session["Username"] + "')</script>"
         );
+
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RegisterString"].ConnectionString);
+        con.Open();
+
+        SqlCommand cmdCheck = new SqlCommand("SELECT * FROM [User] WHERE Username = '" + Session["Username"] + "'", con);
+
+        SqlDataReader sdr = cmdCheck.ExecuteReader();
+
+        while (sdr.Read())
+        {
+          ProfileName.Text = sdr["Username"].ToString().Trim();
+          ProfileEmail.Text = sdr["EmailAddress"].ToString().Trim();
+        }
+
+        Debug.WriteLine("Pass");
       }
       else
       {

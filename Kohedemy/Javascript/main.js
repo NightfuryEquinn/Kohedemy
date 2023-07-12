@@ -40,6 +40,7 @@ if (trigger && closeBtn) {
  * For Editing User Profile
  */
 const editTrigger = document.getElementById("edit-button")
+const cancelButton = document.getElementById("cancel-button")
 
 if (editTrigger) {
   editTrigger.addEventListener("click", () => {
@@ -55,5 +56,10 @@ if (editTrigger) {
   editModalWrap.addEventListener("click", (e) => {
     e.preventDefault();
     e.stopPropagation();
+  })
+
+  cancelButton.addEventListener("click", () => {
+    modal.style.opacity = 0
+    modal.style.pointerEvents = "none"
   })
 }

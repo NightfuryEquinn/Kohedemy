@@ -67,7 +67,7 @@
             </div>
 
             <div class="cancel-save-container">
-              <button class="cancel-save-button">
+              <button id="cancel-button" class="cancel-save-button">
                 <p>Cancel</p>
               </button>
 
@@ -101,13 +101,13 @@
             <div class="profile-container">
               <img class="profile-icon" src="../Assets/icons/id-card.png" />
 
-              <p>John Doe</p>
+              <p><asp:Label ID="ProfileName" runat="server" Text=""></asp:Label></p>
             </div>
 
             <div class="profile-container">
               <img class="profile-icon" src="../Assets/icons/mail.png" />
 
-              <p>johndoe@example.com</p>
+              <p><asp:Label ID="ProfileEmail" runat="server" Text=""></asp:Label></p>
             </div>
 
             <div class="profile-container">
@@ -139,7 +139,7 @@
             <div class="function-container">
               <img class="function-icon" src="../Assets/icons/online-learning.png" />
 
-              <button class="function-button">
+              <button onclick="document.location.href = './PersonalCourse.aspx'; return false" class="function-button">
                 <p>Your Courses</p>
               </button>
             </div>
