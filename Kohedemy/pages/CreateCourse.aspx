@@ -103,7 +103,7 @@
               <h3>EXCERPT SUBHEADING 1</h3>
             </div>
 
-            <asp:TextBox CssClass="management-textbox" ID="ExcerptSubHeading1" runat="server"></asp:TextBox>
+            <asp:TextBox CssClass="management-textbox" ID="ExcerptSubheading1" runat="server"></asp:TextBox>
           </div>
 
           <div class="single-wrapper management-thrid-col">
