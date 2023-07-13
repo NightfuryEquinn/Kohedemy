@@ -34,11 +34,15 @@
         <img id="nav-logo" src="../Assets/icons/kohedemy_logo.png" />
 
         <div class="nav-container">
-          <a>Home</a>
-          <a>About Us</a>
-          <a>Course</a>
-          <a>Contact Us</a>
-          <a>Log In</a>
+          <a href="Home.aspx">Home</a>
+          <a href="AboutUs.aspx">About Us</a>
+          <a href="CourseSelection.aspx">Course</a>
+          <a href="ContactUs.aspx">Contact Us</a>
+          <% if (Session["Username"] as String != null) { %>
+            <a href='UserProfile.aspx'>Profile</a>
+          <% } else { %>
+            <a href='Login.aspx'>Login</a>
+          <% } %>
         </div>
       </nav>
 
@@ -87,7 +91,7 @@
             <img class="icon" src="../Assets/icons/linkedin.png" />
           </div>
 
-          <p>Kohedemy Inc.</p>
+          <a href="https://www.linkedin.com/">Kohedemy Inc.</a>
         </div>
 
         <div class="single-contact">
@@ -95,7 +99,7 @@
             <img class="icon" src="../Assets/icons/facebook.png" />
           </div>
 
-          <p>Kohedemy</p>
+          <a href="https://www.facebook.com/">Kohedemy</a>
         </div>
 
         <div class="single-contact">
@@ -103,7 +107,7 @@
             <img class="icon" src="../Assets/icons/twitter.png" />
           </div>
 
-          <p>kohedemy_2021</p>
+          <a href="https://twitter.com/">kohedemy_2021</a>
         </div>
 
         <div class="single-contact">
@@ -111,7 +115,7 @@
             <img class="icon" src="../Assets/icons/instagram.png" />
           </div>
 
-          <p>kohedemy_2021</p>
+          <a href="https://www.instagram.com/">kohedemy_2021</a>
         </div>
       </div>
 
@@ -119,10 +123,10 @@
         <footer>
           <div class="footer-container">
             <div class="footer-nav">
-              <a>Home</a>
-              <a>About Us</a>
-              <a>Course</a>
-              <a>Assessment</a>
+              <a href="Home.aspx">Home</a>
+              <a href="AboutUs.aspx">About Us</a>
+              <a href="CourseSelection.aspx">Course</a>
+              <a href="PersonalCourse.aspx">Assessment</a>
             </div>
 
             <div class="footer-contact">

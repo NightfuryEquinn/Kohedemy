@@ -42,8 +42,14 @@ namespace Kohedemy.Pages
 
           Session["Username"] = username;
 
-          Response.Redirect("UserProfile.aspx");
-          Debug.WriteLine("Pass");
+          if (Session["Username"] as string != "Kohemin")
+          {
+            Response.Redirect("UserProfile.aspx");
+          }
+          else
+          {
+            Response.Redirect("AdminDashboard.aspx");
+          }
         }
         else
         {

@@ -38,7 +38,11 @@
           <a href="AboutUs.aspx">About Us</a>
           <a href="CourseSelection.aspx">Course</a>
           <a href="ContactUs.aspx">Contact Us</a>
-          <a href="Login.aspx">Log In</a>
+          <% if (Session["Username"] as String != null) { %>
+            <a href='UserProfile.aspx'>Profile</a>
+          <% } else { %>
+            <a href='Login.aspx'>Login</a>
+          <% } %>
         </div>
       </nav>
 

@@ -38,7 +38,7 @@
           <a href="AboutUs.aspx">About Us</a>
           <a href="CourseSelection.aspx">Course</a>
           <a href="ContactUs.aspx">Contact Us</a>
-          <a href="UserProfile.aspx">Profile</a>
+          <a href="AdminDashboard.aspx">Dashboard</a>
         </div>
       </nav>
 
@@ -66,9 +66,9 @@
             </div>
 
             <asp:DropDownList CssClass="management-textbox" ID="CourseDifficulty" runat="server">
-              <asp:ListItem>Beginner</asp:ListItem>
-              <asp:ListItem>Intermediate</asp:ListItem>
-              <asp:ListItem>Advanced</asp:ListItem>
+              <asp:ListItem Value="Beginner">Beginner</asp:ListItem>
+              <asp:ListItem Value="Intermediate">Intermediate</asp:ListItem>
+              <asp:ListItem Value="Advanced">Advanced</asp:ListItem>
             </asp:DropDownList>
           </div>
 
@@ -230,9 +230,7 @@
             <p>Cancel</p>
           </button>
 
-          <button class="cancel-save-button">
-            <p>Save</p>
-          </button>
+          <asp:Button CssClass="cancel-save-button" ID="CourseSaveButton" runat="server" Text="Save" OnClick="CourseSaveButton_Click" />
         </div>
       </div>
 

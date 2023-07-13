@@ -177,7 +177,7 @@ namespace Kohedemy.Pages
     protected global::System.Web.UI.WebControls.TextBox Excerpt4;
 
     /// <summary>
-    /// ExcerptSubheading 4 control.
+    /// ExcerptSubheading4 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
@@ -202,5 +202,14 @@ namespace Kohedemy.Pages
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox ExcerptContent4;
+
+    /// <summary>
+    /// CourseSaveButton control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Button CourseSaveButton;
   }
 }

@@ -454,12 +454,15 @@ nav a:hover {
 .single-contact {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 3rem;
 }
 
-.single-contact p {
+.single-contact p, .single-contact a {
   font-size: 1.5rem;
+  font-family: 'Source Sans 3', sans-serif;
   color: var(--linen);
+  letter-spacing: initial;
 }
 
 .contact-icon {

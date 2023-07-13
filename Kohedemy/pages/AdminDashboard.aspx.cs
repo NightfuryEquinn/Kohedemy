@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,7 +12,16 @@ namespace Kohedemy.Pages
   {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+      if (Session["Username"] as string == "Kohemin")
+      {
+        Debug.WriteLine("AdminDashboard");
+      }
+      else
+      {
+        Response.Write(
+          "<script>alert('You are forbidden to access this page.'); document.location.href='./Home.aspx'</script>"
+        );
+      }
     }
   }
 }
