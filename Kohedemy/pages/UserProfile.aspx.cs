@@ -11,32 +11,35 @@ namespace Kohedemy.Pages
     {
       Debug.WriteLine("UserProfile");
 
-      if (Session["Username"] as String != null)
+      try
       {
-        Response.Write(
-          "<script>alert('Welcome, " + Session["Username"] + "')</script>"
-        );
-
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RegisterString"].ConnectionString);
-        con.Open();
-
-        SqlCommand cmdCheck = new SqlCommand("SELECT * FROM [User] WHERE Username = '" + Session["Username"] + "'", con);
-
-        SqlDataReader sdr = cmdCheck.ExecuteReader();
-
-        while (sdr.Read())
+        if (Session["Username"] as String != null)
         {
-          ProfileName.Text = sdr["Username"].ToString().Trim();
-          ProfileEmail.Text = sdr["EmailAddress"].ToString().Trim();
-        }
+          SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RegisterString"].ConnectionString);
+          con.Open();
 
-        Debug.WriteLine("Pass");
+          SqlCommand cmdCheck = new SqlCommand("SELECT * FROM [User] WHERE Username = '" + Session["Username"] + "'", con);
+
+          SqlDataReader sdr = cmdCheck.ExecuteReader();
+
+          while (sdr.Read())
+          {
+            ProfileName.Text = sdr["Username"].ToString().Trim();
+            ProfileEmail.Text = sdr["EmailAddress"].ToString().Trim();
+          }
+
+          Debug.WriteLine("Pass");
+        }
+        else
+        {
+          Response.Write(
+            "<script>alert('Unable to access your profile. Please log in again.'); document.location.href='./Login.aspx'</script>"
+          );
+        }
       }
-      else
+      catch (Exception ex)
       {
-        Response.Write(
-          "<script>alert('Unable to access your profile. Please log in again.'); document.location.href='./Login.aspx'</script>"
-        );
+        Debug.WriteLine(ex.Message);
       }
     }
 
@@ -46,6 +49,32 @@ namespace Kohedemy.Pages
       Request.Cookies.Clear();
 
       Response.Redirect("Login.aspx");
+    }
+
+    protected void SaveButton_Click(object sender, EventArgs e)
+    {
+      Debug.WriteLine("Save");
+
+      try
+      {
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RegisterString"].ConnectionString);
+        con.Open();
+
+        SqlCommand cmdSave = new SqlCommand("UPDATE [User] SET Username ='" + editUsername.Text + "', EmailAddress = '" + editEmail.Text + "', Password = '" + editPassword.Text + "' WHERE Username = '" + Session["Username"] + "'" , con);
+        cmdSave.ExecuteNonQuery();
+
+        con.Close();
+
+        Session["Username"] = editUsername.Text;
+
+        Response.Write(
+          "<script>alert('Your personal detail has been updated successfully.'); document.location.href='./UserProfile.aspx'</script>"
+        );
+      }
+      catch (Exception ex)
+      {
+        Debug.WriteLine(ex.Message);
+      }
     }
   }
 }

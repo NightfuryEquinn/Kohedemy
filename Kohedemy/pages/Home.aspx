@@ -34,11 +34,15 @@
         <img id="nav-logo" src="../Assets/icons/kohedemy_logo.png" />
 
         <div class="nav-container">
-          <a>Home</a>
-          <a>About Us</a>
-          <a>Course</a>
-          <a>Contact Us</a>
-          <a>Log In</a>
+          <a href="Home.aspx">Home</a>
+          <a href="AboutUs.aspx">About Us</a>
+          <a href="CourseSelection.aspx">Course</a>
+          <a href="ContactUs.aspx">Contact Us</a>
+          <% if (Session["Username"] as String != null) { %>
+            <a href='UserProfile.aspx'>Profile</a>
+          <% } else { %>
+            <a href='Login.aspx'>Login</a>
+          <% } %>
         </div>
       </nav>
 
@@ -65,7 +69,7 @@
 
           <h4>Beginner’s Guide to First Coffee</h4>
           
-          <button class="card-button">
+          <button onclick="document.location.href = './CourseSelection.aspx'; return false" class="card-button">
             <p>Get Started</p>
           </button>
         </div>
@@ -77,7 +81,7 @@
 
           <h4>Beginner’s Guide to Milk</h4>
           
-          <button class="card-button">
+          <button onclick="document.location.href = './CourseSelection.aspx'; return false" class="card-button">
             <p>Get Started</p>
           </button>
         </div>
@@ -89,7 +93,7 @@
 
           <h4>The Chosen Coffee Bean</h4>
           
-          <button class="card-button">
+          <button onclick="document.location.href = './CourseSelection.aspx'; return false" class="card-button">
             <p>Get Started</p>
           </button>
         </div>
@@ -103,7 +107,7 @@
           <div class="in-wrapper">
             <h2 class="banner-quote">SOME BARISTA GET TOGETHER WISH TO SPREAD THE LOVE FOR COFFEE</h2>
           
-            <button class="banner-button">
+            <button onclick="document.location.href = './AboutUs.aspx'; return false" class="banner-button">
               <p>Learn More About Us</p>
             </button>
           </div>
@@ -126,7 +130,7 @@
 
           <h4>First Coffee Assessment</h4>
           
-          <button class="card-button">
+          <button onclick="document.location.href = './PersonalCourse.aspx'; return false" class="card-button">
             <p>Get Started</p>
           </button>
         </div>
@@ -138,7 +142,7 @@
 
           <h4>Milk Assessment for Beginner</h4>
           
-          <button class="card-button">
+          <button onclick="document.location.href = './PersonalCourse.aspx'; return false" class="card-button">
             <p>Get Started</p>
           </button>
         </div>
@@ -150,7 +154,7 @@
 
           <h4>Knowledge for Coffee Bean</h4>
           
-          <button class="card-button">
+          <button onclick="document.location.href = './PersonalCourse.aspx'; return false" class="card-button">
             <p>Get Started</p>
           </button>
         </div>
@@ -160,10 +164,10 @@
       <footer>
         <div class="footer-container">
           <div class="footer-nav">
-            <a>Home</a>
-            <a>About Us</a>
-            <a>Course</a>
-            <a>Assessment</a>
+            <a href="Home.aspx">Home</a>
+            <a href="AboutUs.aspx">About Us</a>
+            <a href="CourseSelection.aspx">Course</a>
+            <a href="PersonalCourse.aspx">Assessment</a>
           </div>
 
           <div class="footer-contact">

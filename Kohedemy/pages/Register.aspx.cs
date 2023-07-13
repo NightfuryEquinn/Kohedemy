@@ -46,7 +46,7 @@ namespace Kohedemy.Pages
       }
       catch (Exception ex)
       {
-        Response.Write("<script>alert('Failed to register your account. Please try again." + ex + ")</script>");
+        Debug.WriteLine(ex.Message);
       }
     }
   }

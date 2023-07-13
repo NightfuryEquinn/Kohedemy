@@ -14,7 +14,7 @@
     <link rel = "stylesheet" href = "../Css/main.css" />
 
     <!--Link to Javascript-->
-    <script src="../Javascript/main.js" async></script>
+    <script src="../Javascript/main.js" defer></script>
 
     <!--Link to Google Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -58,12 +58,12 @@
 
             <div class="single-editing">
               <label>Password:</label>
-              <asp:TextBox CssClass="textbox" ID="editPassword" runat="server"></asp:TextBox>
+              <asp:TextBox TextMode="Password" CssClass="textbox" ID="editPassword" runat="server"></asp:TextBox>
             </div>
 
             <div class="single-editing">
               <label>Confirm Password:</label>
-              <asp:TextBox CssClass="textbox" ID="editConfirm" runat="server"></asp:TextBox>
+              <asp:TextBox TextMode="Password" CssClass="textbox" ID="editConfirm" runat="server"></asp:TextBox>
             </div>
 
             <div class="cancel-save-container">
@@ -71,9 +71,7 @@
                 <p>Cancel</p>
               </button>
 
-              <button class="cancel-save-button">
-                <p>Save</p>
-              </button>
+              <asp:Button CssClass="cancel-save-button" ID="SaveButton" runat="server" Text="Save" OnClick="SaveButton_Click" />
             </div>
           </div>
         </div>

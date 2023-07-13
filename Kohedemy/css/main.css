@@ -30,11 +30,11 @@ h1, h2, h3, h4, h5, h6, a {
   letter-spacing: 0.25rem;
 }
 
-p {
+p, input {
   font-family: 'Source Sans 3', sans-serif;
 }
 
-a:hover, button:hover {
+a:hover, button:hover, input[type="submit"]:hover {
   cursor: pointer;
 }
 
@@ -48,6 +48,16 @@ button {
 }
 
 button:hover {
+  color: var(--sandstone);
+  background-color: var(--ebony);
+}
+
+input[type="submit"] {
+  transition: 0.25s ease;
+  font-size: 1.25rem;
+}
+
+input[type="submit"]:hover {
   color: var(--sandstone);
   background-color: var(--ebony);
 }

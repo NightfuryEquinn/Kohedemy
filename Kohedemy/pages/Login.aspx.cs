@@ -55,7 +55,7 @@ namespace Kohedemy.Pages
 
         con.Close();
       }
-      catch (SqlException ex)
+      catch (Exception ex)
       {
         Debug.WriteLine(ex.Message);
       }

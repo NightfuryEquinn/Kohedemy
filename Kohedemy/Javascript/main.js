@@ -22,7 +22,6 @@ if (trigger && closeBtn) {
   })
 
   modalWrap.addEventListener("click", (e) => {
-    e.preventDefault();
     e.stopPropagation();
   })
 
@@ -54,7 +53,6 @@ if (editTrigger) {
   })
 
   editModalWrap.addEventListener("click", (e) => {
-    e.preventDefault();
     e.stopPropagation();
   })
 
