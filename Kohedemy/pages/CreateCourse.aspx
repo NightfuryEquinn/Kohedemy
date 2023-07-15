@@ -14,7 +14,7 @@
     <link rel = "stylesheet" href = "../Css/main.css" />
 
     <!--Link to Javascript-->
-    <script src="../Javascript/main.js" async></script>
+    <script src="../Javascript/main.js" defer></script>
 
     <!--Link to Google Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -69,6 +69,7 @@
               <asp:ListItem Value="Beginner">Beginner</asp:ListItem>
               <asp:ListItem Value="Intermediate">Intermediate</asp:ListItem>
               <asp:ListItem Value="Advanced">Advanced</asp:ListItem>
+              <asp:ListItem Value="Masterclass">Advanced</asp:ListItem>
             </asp:DropDownList>
           </div>
 

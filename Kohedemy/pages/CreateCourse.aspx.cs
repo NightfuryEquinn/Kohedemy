@@ -13,6 +13,8 @@ namespace Kohedemy.Pages
       if (Session["Username"] as string == "Kohemin")
       {
         Debug.WriteLine("Admin");
+
+
       }
       else
       {

@@ -14,7 +14,7 @@
     <link rel = "stylesheet" href = "../Css/main.css" />
 
     <!--Link to Javascript-->
-    <script src="../Javascript/main.js" async></script>
+    <script src="../Javascript/main.js" defer></script>
 
     <!--Link to Google Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

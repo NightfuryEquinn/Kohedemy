@@ -14,7 +14,7 @@
     <link rel = "stylesheet" href = "../Css/main.css" />
 
     <!--Link to Javascript-->
-    <script src="../Javascript/main.js" async></script>
+    <script src="../Javascript/main.js" defer></script>
 
     <!--Link to Google Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -34,11 +34,15 @@
       <img id="nav-logo" src="../Assets/icons/kohedemy_logo.png" />
 
       <div class="nav-container">
-        <a>Home</a>
-        <a>About Us</a>
-        <a>Course</a>
-        <a>Contact Us</a>
-        <a>Log In</a>
+        <a href="Home.aspx">Home</a>
+        <a href="AboutUs.aspx">About Us</a>
+        <a href="CourseSelection.aspx">Course</a>
+        <a href="ContactUs.aspx">Contact Us</a>
+        <% if (Session["Username"] as String != null) { %>
+          <a href='UserProfile.aspx'>Profile</a>
+        <% } else { %>
+          <a href='Login.aspx'>Login</a>
+        <% } %>
       </div>
     </nav>
 
@@ -62,9 +66,9 @@
         <div class="modal-container">
           <img class="modal-icon" src="../Assets/icons/close.png" />
 
-          <h3 class="modal-title">Beginner's Guide to First Coffee</h3>
+          <h3 class="modal-title">Lorem ipsum dolor sit amet</h3>
 
-          <p class="modal-difficulty">Difficulty: Beginner</p>
+          <p class="modal-difficulty">Lorem ipsum dolor sit amet</p>
 
           <p class="modal-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       
@@ -77,67 +81,35 @@
 
     <!--Divider-->
     <div class="divider">
-      <h3>COFFEE</h3>
+      <h3>BEGINNER</h3>
 
-      <p>Learn the types of coffee</p>
+      <p>Learn the basics of coffee</p>
     </div>
 
     <!--Flex Cards-->
     <div class="flex-card-container">
-      <div class="cards">
-        <div class="card-image-container">
-          <img class="card-image" src="../Assets/images/vertical.jpg" />
-        </div>
+      <asp:Repeater ID="BeginnerRepeater" runat="server">
+        <ItemTemplate>
+          <div class="cards" data-id="<%#Eval("CourseId") %>" data-description="<%# Eval("CourseDescription") %>" data-difficulty="<%# Eval("CourseDifficulty") %>">
+            <div class="card-image-container">
+              <img class="card-image" src="data:image/jpeg;base64,<%# Convert.ToBase64String((byte[])Eval("CourseImage")) %>" />
+            </div>
 
-        <h4>Beginner’s Guide to First Coffee</h4>
+            <h4><%# Eval("CourseTitle") %></h4>
           
-        <button onclick="return false" class="card-button">
-          <p>Free</p>
-        </button>
-      </div>
-
-      <div class="cards">
-        <div class="card-image-container">
-          <img class="card-image" src="../Assets/images/vertical.jpg" />
-        </div>
-
-        <h4>The Best Way to Brew Espresso</h4>
-          
-        <button class="card-button">
-          <p>RM 130</p>
-        </button>
-      </div>
-
-      <div class="cards">
-        <div class="card-image-container">
-          <img class="card-image" src="../Assets/images/vertical.jpg" />
-        </div>
-
-        <h4>Essence of A Cup of Latte</h4>
-          
-        <button class="card-button">
-          <p>RM 150</p>
-        </button>
-      </div>
-
-      <div class="cards">
-        <div class="card-image-container">
-          <img class="card-image" src="../Assets/images/vertical.jpg" />
-        </div>
-
-        <h4>Single Shot? Double Shot!</h4>
-          
-        <button class="card-button">
-          <p>RM 110</p>
-        </button>
-      </div>
+            <button onclick="return false" class="card-button">
+              <p>Enroll</p>
+            </button>
+          </div>
+        </ItemTemplate>
+      </asp:Repeater>
     </div>
 
     <!--Divider-->
     <div class="divider">
-      <h3>MILK</h3>
+      <h3>INTERMEDIATE</h3>
 
-      <p>Learn the types of milk</p>
+      <p>Learn more about coffee</p>
     </div>
 
     <!--Flex Cards-->
@@ -149,7 +121,7 @@
 
         <h4>Beginner’s Guide to Milk</h4>
           
-        <button class="card-button">
+        <button onclick="return false" class="card-button">
           <p>Free</p>
         </button>
       </div>
@@ -181,9 +153,9 @@
 
     <!--Divider-->
     <div class="divider">
-      <h3>COFFEE BEANS</h3>
+      <h3>Advanced</h3>
 
-      <p>Learn the types of coffee beans</p>
+      <p>Start to be a pro in coffee</p>
     </div>
 
     <!--Flex Cards-->
@@ -227,9 +199,9 @@
 
     <!--Divider-->
     <div class="divider">
-      <h3>BREWING METHODS</h3>
+      <h3>MASTERCLASS</h3>
 
-      <p>Learn how to brew your coffee the right way, with style</p>
+      <p>Learn how to brew your coffee the master way, with style</p>
     </div>
 
     <!--Flex Cards-->
@@ -287,10 +259,10 @@
     <footer>
       <div class="footer-container">
         <div class="footer-nav">
-          <a>Home</a>
-          <a>About Us</a>
-          <a>Course</a>
-          <a>Assessment</a>
+          <a href="Home.aspx">Home</a>
+          <a href="AboutUs.aspx">About Us</a>
+          <a href="CourseSelection.aspx">Course</a>
+          <a href="PersonalCourse.aspx">Assessment</a>
         </div>
 
         <div class="footer-contact">

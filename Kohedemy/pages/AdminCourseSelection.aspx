@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminCourseSelection.aspx.cs" Inherits="Kohedemy.Pages.AdminCourseSelection" %>
+﻿<%@ Page EnableEventValidation="false" Language="C#" AutoEventWireup="true" CodeBehind="AdminCourseSelection.aspx.cs" Inherits="Kohedemy.Pages.AdminCourseSelection" %>
 
 <!DOCTYPE html>
 
@@ -14,7 +14,7 @@
     <link rel = "stylesheet" href = "../Css/main.css" />
 
     <!--Link to Javascript-->
-    <script src="../Javascript/main.js" async></script>
+    <script src="../Javascript/main.js" defer></script>
 
     <!--Link to Google Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -69,9 +69,9 @@
           <div class="modal-container">
             <img class="modal-icon" src="../Assets/icons/close.png" />
 
-            <h3 class="modal-title">Beginner's Guide to First Coffee</h3>
+            <h3 class="modal-title">Lorem ipsum dolor sit amet</h3>
 
-            <p class="modal-difficulty">Difficulty: Beginner</p>
+            <p class="modal-difficulty">Lorem ipsum dolor sit amet</p>
 
             <p class="modal-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       
@@ -90,104 +90,35 @@
 
       <!--Divider-->
       <div class="divider">
-        <h3>COFFEE</h3>
+        <h3>BEGINNER</h3>
 
-        <p>Learn the types of coffee</p>
+        <p>Learn the basics of coffee</p>
       </div>
 
       <!--Flex Cards-->
       <div class="flex-card-container">
-        <div class="cards">
-          <div class="card-image-container">
-              <img class="card-image" src="../Assets/images/vertical.jpg" />
-          </div>
+        <asp:Repeater ID="BeginnerRepeater" runat="server">
+          <ItemTemplate>
+            <div class="cards" data-id="<%#Eval("CourseId") %>" data-description="<%# Eval("CourseDescription") %>" data-difficulty="<%# Eval("CourseDifficulty") %>">
+              <div class="card-image-container">
+                <img class="card-image" src="data:image/jpeg;base64,<%# Convert.ToBase64String((byte[])Eval("CourseImage")) %>" />
+              </div>
 
-          <h4>Beginner’s Guide to First Coffee</h4>
+              <h4><%# Eval("CourseTitle") %></h4>
           
-          <div class="edit-delete-container">
-            <button class="card-button">
-              <p>Free</p>
-            </button>
+              <div class="edit-delete-container">
+                <button class="card-button">
+                  <p>Enroll</p>
+                </button>
 
-            <div class="inner-edit-delete">
-              <button onclick="return false" class="inner-button">
-                <img class="inner-image" src="../Assets/icons/edit.png" />
-              </button>
-              <button onclick="return false" class="inner-button">
-                <img class="inner-image" src="../Assets/icons/delete.png" />
-              </button>
+                <div class="inner-edit-delete">
+                  <asp:ImageButton CommandArgument='<%# Eval("CourseId") %>' ImageUrl="../Assets/icons/edit.png" CssClass="inner-button" ID="EditButton" runat="server" OnClick="EditButton_Click" />
+                  <asp:ImageButton ImageUrl="../Assets/icons/delete.png" CssClass="inner-button" ID="DeleteButton" runat="server" />
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-
-        <div class="cards">
-          <div class="card-image-container">
-              <img class="card-image" src="../Assets/images/vertical.jpg" />
-          </div>
-
-          <h4>The Best Way to Brew Espresso</h4>
-          
-          <div class="edit-delete-container">
-            <button class="card-button">
-              <p>RM 130</p>
-            </button>
-
-            <div class="inner-edit-delete">
-              <button class="inner-button">
-                <img class="inner-image" src="../Assets/icons/edit.png" />
-              </button>
-              <button class="inner-button">
-                <img class="inner-image" src="../Assets/icons/delete.png" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="cards">
-          <div class="card-image-container">
-              <img class="card-image" src="../Assets/images/vertical.jpg" />
-          </div>
-
-          <h4>Essence of A Cup of Latte</h4>
-          
-          <div class="edit-delete-container">
-            <button class="card-button">
-              <p>RM 150</p>
-            </button>
-
-            <div class="inner-edit-delete">
-              <button class="inner-button">
-                <img class="inner-image" src="../Assets/icons/edit.png" />
-              </button>
-              <button class="inner-button">
-                <img class="inner-image" src="../Assets/icons/delete.png" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="cards">
-          <div class="card-image-container">
-              <img class="card-image" src="../Assets/images/vertical.jpg" />
-          </div>
-
-          <h4>Single Shot? Double Shot!</h4>
-          
-          <div class="edit-delete-container">
-            <button class="card-button">
-              <p>RM 110</p>
-            </button>
-
-            <div class="inner-edit-delete">
-              <button class="inner-button">
-                <img class="inner-image" src="../Assets/icons/edit.png" />
-              </button>
-              <button class="inner-button">
-                <img class="inner-image" src="../Assets/icons/delete.png" />
-              </button>
-            </div>
-          </div>
-        </div>
+          </ItemTemplate>
+        </asp:Repeater>
       </div>
 
       <!--Divider-->
