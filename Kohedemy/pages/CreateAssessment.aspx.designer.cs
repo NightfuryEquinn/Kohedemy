@@ -69,6 +69,15 @@ namespace Kohedemy.Pages
     protected global::System.Web.UI.WebControls.TextBox Question1D;
 
     /// <summary>
+    /// Question1Answer control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.TextBox Question1Answer;
+
+    /// <summary>
     /// Question2 control.
     /// </summary>
     /// <remarks>
@@ -112,6 +121,15 @@ namespace Kohedemy.Pages
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox Question2D;
+
+    /// <summary>
+    /// Question2Answer control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.TextBox Question2Answer;
 
     /// <summary>
     /// Question3 control.
@@ -159,6 +177,15 @@ namespace Kohedemy.Pages
     protected global::System.Web.UI.WebControls.TextBox Question3D;
 
     /// <summary>
+    /// Question3Answer control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.TextBox Question3Answer;
+
+    /// <summary>
     /// Question4 control.
     /// </summary>
     /// <remarks>
@@ -202,6 +229,15 @@ namespace Kohedemy.Pages
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox Question4D;
+
+    /// <summary>
+    /// Question4Answer control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.TextBox Question4Answer;
 
     /// <summary>
     /// Question5 control.
@@ -249,6 +285,15 @@ namespace Kohedemy.Pages
     protected global::System.Web.UI.WebControls.TextBox Question5D;
 
     /// <summary>
+    /// Question5Answer control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.TextBox Question5Answer;
+
+    /// <summary>
     /// Question6 control.
     /// </summary>
     /// <remarks>
@@ -292,6 +337,15 @@ namespace Kohedemy.Pages
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox Question6D;
+
+    /// <summary>
+    /// Question6Answer control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.TextBox Question6Answer;
 
     /// <summary>
     /// Question7 control.
@@ -348,6 +402,15 @@ namespace Kohedemy.Pages
     protected global::System.Web.UI.WebControls.TextBox Question8;
 
     /// <summary>
+    /// Question7Answer control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.TextBox Question7Answer;
+
+    /// <summary>
     /// Question8A control.
     /// </summary>
     /// <remarks>
@@ -382,6 +445,15 @@ namespace Kohedemy.Pages
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox Question8D;
+
+    /// <summary>
+    /// Question8Answer control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.TextBox Question8Answer;
 
     /// <summary>
     /// Question9 control.
@@ -429,6 +501,15 @@ namespace Kohedemy.Pages
     protected global::System.Web.UI.WebControls.TextBox Question9D;
 
     /// <summary>
+    /// Question9Answer control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.TextBox Question9Answer;
+
+    /// <summary>
     /// Question10 control.
     /// </summary>
     /// <remarks>
@@ -472,5 +553,23 @@ namespace Kohedemy.Pages
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox Question10D;
+
+    /// <summary>
+    /// Question10Answer control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.TextBox Question10Answer;
+
+    /// <summary>
+    /// AssessmentSaveButton control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Button AssessmentSaveButton;
   }
 }

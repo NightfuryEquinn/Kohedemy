@@ -24,6 +24,13 @@ const changeModalContent = (i) => {
   modalDescription.textContent = triggerCourseDescription
   modalDifficulty.textContent = triggerCourseDifficulty
   modalImage.setAttribute('src', triggerCourseImage)
+
+  const triggerCourseId = cardTrigger[i].getAttribute("data-id")
+  const enrollButton = document.getElementsByClassName("enroll-button")[0]
+
+  enrollButton.addEventListener("click", () => {
+    document.location.href = "./Course.aspx?CourseId=" + triggerCourseId
+  })
 }
 
 if (trigger && closeBtn) {

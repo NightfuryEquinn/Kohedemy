@@ -92,6 +92,14 @@
             <asp:TextBox CssClass="management-textbox" ID="Question1D" runat="server"></asp:TextBox>
           </div>
 
+          <div class="single-wrapper management-first-col">
+            <div class="divider">
+              <h3>ANSWER</h3>
+            </div>
+
+            <asp:TextBox CssClass="management-textbox" ID="Question1Answer" runat="server"></asp:TextBox>
+          </div>
+
           <hr class='single-management-hr' />
 
           <div class="single-wrapper management-full-span">
@@ -134,6 +142,16 @@
             <asp:TextBox CssClass="management-textbox" ID="Question2D" runat="server"></asp:TextBox>
           </div>
 
+          <div class="single-wrapper management-first-col">
+            <div class="divider">
+              <h3>ANSWER</h3>
+            </div>
+
+            <asp:TextBox CssClass="management-textbox" ID="Question2Answer" runat="server"></asp:TextBox>
+          </div>
+
+          <hr class='single-management-hr' />
+
           <div class="single-wrapper management-full-span">
             <div class="divider">
               <h3>QUESTION 3</h3>
@@ -173,6 +191,16 @@
 
             <asp:TextBox CssClass="management-textbox" ID="Question3D" runat="server"></asp:TextBox>
           </div>
+
+          <div class="single-wrapper management-first-col">
+            <div class="divider">
+              <h3>ANSWER</h3>
+            </div>
+
+            <asp:TextBox CssClass="management-textbox" ID="Question3Answer" runat="server"></asp:TextBox>
+          </div>
+
+          <hr class='single-management-hr' />
 
           <div class="single-wrapper management-full-span">
             <div class="divider">
@@ -214,6 +242,16 @@
             <asp:TextBox CssClass="management-textbox" ID="Question4D" runat="server"></asp:TextBox>
           </div>
 
+          <div class="single-wrapper management-first-col">
+            <div class="divider">
+              <h3>ANSWER</h3>
+            </div>
+
+            <asp:TextBox CssClass="management-textbox" ID="Question4Answer" runat="server"></asp:TextBox>
+          </div>
+
+          <hr class='single-management-hr' />
+
           <div class="single-wrapper management-full-span">
             <div class="divider">
               <h3>QUESTION 5</h3>
@@ -254,6 +292,16 @@
             <asp:TextBox CssClass="management-textbox" ID="Question5D" runat="server"></asp:TextBox>
           </div>
 
+          <div class="single-wrapper management-first-col">
+            <div class="divider">
+              <h3>ANSWER</h3>
+            </div>
+
+            <asp:TextBox CssClass="management-textbox" ID="Question5Answer" runat="server"></asp:TextBox>
+          </div>
+
+          <hr class='single-management-hr' />
+
           <div class="single-wrapper management-full-span">
             <div class="divider">
               <h3>QUESTION 6</h3>
@@ -293,6 +341,16 @@
 
             <asp:TextBox CssClass="management-textbox" ID="Question6D" runat="server"></asp:TextBox>
           </div>
+
+          <div class="single-wrapper management-first-col">
+            <div class="divider">
+              <h3>ANSWER</h3>
+            </div>
+
+            <asp:TextBox CssClass="management-textbox" ID="Question6Answer" runat="server"></asp:TextBox>
+          </div>
+
+          <hr class='single-management-hr' />
 
           <div class="single-wrapper management-full-span">
             <div class="divider">
@@ -344,6 +402,16 @@
 
           <div class="single-wrapper management-first-col">
             <div class="divider">
+              <h3>ANSWER</h3>
+            </div>
+
+            <asp:TextBox CssClass="management-textbox" ID="Question7Answer" runat="server"></asp:TextBox>
+          </div>
+
+          <hr class='single-management-hr' />
+
+          <div class="single-wrapper management-first-col">
+            <div class="divider">
               <h3>CHOICE A</h3>
             </div>
 
@@ -373,6 +441,16 @@
 
             <asp:TextBox CssClass="management-textbox" ID="Question8D" runat="server"></asp:TextBox>
           </div>
+
+          <div class="single-wrapper management-first-col">
+            <div class="divider">
+              <h3>ANSWER</h3>
+            </div>
+
+            <asp:TextBox CssClass="management-textbox" ID="Question8Answer" runat="server"></asp:TextBox>
+          </div>
+
+          <hr class='single-management-hr' />
 
           <div class="single-wrapper management-full-span">
             <div class="divider">
@@ -414,6 +492,16 @@
             <asp:TextBox CssClass="management-textbox" ID="Question9D" runat="server"></asp:TextBox>
           </div>
 
+          <div class="single-wrapper management-first-col">
+            <div class="divider">
+              <h3>ANSWER</h3>
+            </div>
+
+            <asp:TextBox CssClass="management-textbox" ID="Question9Answer" runat="server"></asp:TextBox>
+          </div>
+
+          <hr class='single-management-hr' />
+
           <div class="single-wrapper management-full-span">
             <div class="divider">
               <h3>QUESTION 10</h3>
@@ -453,6 +541,14 @@
 
             <asp:TextBox CssClass="management-textbox" ID="Question10D" runat="server"></asp:TextBox>
           </div>
+
+          <div class="single-wrapper management-first-col">
+            <div class="divider">
+              <h3>ANSWER</h3>
+            </div>
+
+            <asp:TextBox CssClass="management-textbox" ID="Question10Answer" runat="server"></asp:TextBox>
+          </div>
         </div>
 
         <div class="cancel-save-container">
@@ -460,9 +556,7 @@
             <p>Cancel</p>
           </button>
 
-          <button class="cancel-save-button">
-            <p>Save</p>
-          </button>
+          <asp:Button CssClass="cancel-save-button" ID="AssessmentSaveButton" runat="server" Text="Save" OnClick="AssessmentSaveButton_Click" />
         </div>
       </div>
 
