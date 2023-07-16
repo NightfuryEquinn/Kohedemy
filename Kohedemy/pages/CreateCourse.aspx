@@ -69,7 +69,7 @@
               <asp:ListItem Value="Beginner">Beginner</asp:ListItem>
               <asp:ListItem Value="Intermediate">Intermediate</asp:ListItem>
               <asp:ListItem Value="Advanced">Advanced</asp:ListItem>
-              <asp:ListItem Value="Masterclass">Advanced</asp:ListItem>
+              <asp:ListItem Value="Masterclass">Masterclass</asp:ListItem>
             </asp:DropDownList>
           </div>
 

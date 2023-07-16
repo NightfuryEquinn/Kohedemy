@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Text;
 using System.Web.UI.WebControls;
 
 namespace Kohedemy.Pages
@@ -73,7 +74,41 @@ namespace Kohedemy.Pages
       ImageButton editButton = (ImageButton)sender;
       string courseId = editButton.CommandArgument;
 
-      Response.Redirect("CreateCourse.aspx?CourseId=" + courseId);
+      try
+      {
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RegisterString"].ConnectionString);
+        con.Open();
+
+        String excerptQuery = @"
+                              SELECT e.ExcerptID, ct.ContentID, c.CourseID FROM [Excerpt] AS e
+                              INNER JOIN [Content] AS ct ON e.ContentID = ct.ContentID
+                              INNER JOIN [Course] AS c ON ct.CourseID = c.CourseID
+                              WHERE c.CourseID = @CourseID
+                              ";
+        SqlCommand excerptCmd = new SqlCommand(excerptQuery, con);
+        excerptCmd.Parameters.AddWithValue("@CourseID", courseId);
+
+        SqlDataReader reader = excerptCmd.ExecuteReader();
+
+        StringBuilder sb = new StringBuilder("CreateCourse.aspx?CourseId=" + courseId);
+        int count = 1;
+
+        while (reader.Read())
+        {
+          int excerptId = (int)reader["ExcerptID"];
+          sb.Append("&ExcerptId" + count + "=" + excerptId);
+          count++;
+        }
+
+        Response.Redirect(sb.ToString());
+
+        con.Close();
+      }
+      catch (Exception ex)
+      {
+        Debug.WriteLine(ex.Message);
+      }
+
     }
   }
 }
