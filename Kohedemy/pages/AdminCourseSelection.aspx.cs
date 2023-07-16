@@ -246,5 +246,53 @@ namespace Kohedemy.Pages
         Debug.WriteLine(ex.Message);
       }
     }
+
+    protected void DeleteButton_Click(object sender, System.Web.UI.ImageClickEventArgs e)
+    {
+      ImageButton deleteButton = (ImageButton)sender;
+      string courseId = deleteButton.CommandArgument;
+
+      try
+      {
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RegisterString"].ConnectionString);
+        con.Open();
+
+        string deleteQuery = @"
+                             DELETE e FROM [Excerpt] AS e
+                             JOIN [Content] AS ct ON ct.ContentID = e.ContentID
+                             JOIN [Course] AS c ON c.CourseID = ct.CourseID
+                             WHERE c.CourseID = @CourseID
+
+                             DELETE q FROM [Question] AS q
+                             JOIN [Assessment] AS a ON a.AssessmentID = q.AssessmentID
+                             JOIN [Course] AS c ON c.CourseID = a.CourseID
+                             WHERE c.CourseID = @CourseID
+
+                             DELETE ct FROM [Content] AS ct
+                             JOIN [Course] AS c ON c.CourseID = ct.CourseID
+                             WHERE c.CourseID = @CourseID
+
+                             DELETE a FROM [Assessment] AS a
+                             JOIN [Course] AS c ON c.CourseID = a.CourseID
+                             WHERE c.CourseID = @CourseID
+ 
+                             DELETE FROM [Course] WHERE CourseID = @CourseID
+                             ";
+        SqlCommand cmdDelete = new SqlCommand(deleteQuery, con);
+        cmdDelete.Parameters.AddWithValue("@CourseID", courseId);
+
+        cmdDelete.ExecuteNonQuery();
+
+        Response.Write(
+          "<script>alert('All content and assessment related has been deleted permenantly.'); document.location.href='./AdminCourseSelection.aspx'</script>"
+        );
+
+        con.Close();
+      }
+      catch(Exception ex)
+      {
+        Debug.WriteLine(ex.Message);
+      }
+    }
   }
 }

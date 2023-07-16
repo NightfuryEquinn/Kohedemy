@@ -34,11 +34,15 @@
         <img id="nav-logo" src="../Assets/icons/kohedemy_logo.png" />
 
         <div class="nav-container">
-          <a>Home</a>
-          <a>About Us</a>
-          <a>Course</a>
-          <a>Contact Us</a>
-          <a>Log In</a>
+          <a href="Home.aspx">Home</a>
+          <a href="AboutUs.aspx">About Us</a> 
+          <a href='CourseSelection.aspx'>Course</a>
+          <a href="ContactUs.aspx">Contact Us</a>
+          <% if (Session["Username"] as string != null) { %>
+            <a href='UserProfile.aspx'>Profile</a>
+          <% } else { %>
+            <a href='Login.aspx'>Login</a>
+          <% } %>
         </div>
       </nav>
 
@@ -153,10 +157,10 @@
       <footer>
         <div class="footer-container">
           <div class="footer-nav">
-            <a>Home</a>
-            <a>About Us</a>
-            <a>Course</a>
-            <a>Assessment</a>
+            <a href="Home.aspx">Home</a>
+            <a href="AboutUs.aspx">About Us</a>
+            <a href='CourseSelection.aspx'>Course</a>
+            <a href="PersonalCourse.aspx">Assessment</a>
           </div>
 
           <div class="footer-contact">

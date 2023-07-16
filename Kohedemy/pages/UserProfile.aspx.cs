@@ -13,22 +13,27 @@ namespace Kohedemy.Pages
 
       try
       {
-        if (Session["Username"] as String != null)
+        if (Session["Username"] as string != null)
         {
-          SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RegisterString"].ConnectionString);
-          con.Open();
-
-          SqlCommand cmdCheck = new SqlCommand("SELECT * FROM [User] WHERE Username = '" + Session["Username"] + "'", con);
-
-          SqlDataReader sdr = cmdCheck.ExecuteReader();
-
-          while (sdr.Read())
+          if (Session["Username"] as string != "Kohemin")
           {
-            ProfileName.Text = sdr["Username"].ToString().Trim();
-            ProfileEmail.Text = sdr["EmailAddress"].ToString().Trim();
-          }
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RegisterString"].ConnectionString);
+            con.Open();
 
-          Debug.WriteLine("Pass");
+            SqlCommand cmdCheck = new SqlCommand("SELECT * FROM [User] WHERE Username = '" + Session["Username"] + "'", con);
+
+            SqlDataReader sdr = cmdCheck.ExecuteReader();
+
+            while (sdr.Read())
+            {
+              ProfileName.Text = sdr["Username"].ToString().Trim();
+              ProfileEmail.Text = sdr["EmailAddress"].ToString().Trim();
+            }
+          }
+          else
+          {
+            Response.Redirect("AdminDashboard.aspx");
+          }
         }
         else
         {
@@ -53,8 +58,6 @@ namespace Kohedemy.Pages
 
     protected void SaveButton_Click(object sender, EventArgs e)
     {
-      Debug.WriteLine("Save");
-
       try
       {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RegisterString"].ConnectionString);

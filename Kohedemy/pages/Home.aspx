@@ -36,10 +36,18 @@
         <div class="nav-container">
           <a href="Home.aspx">Home</a>
           <a href="AboutUs.aspx">About Us</a>
-          <a href="CourseSelection.aspx">Course</a>
+          <% if (Session["Username"] as string != "Kohemin") { %>
+            <a href='CourseSelection.aspx'>Course</a>
+          <% } else { %>
+            <a href='AdminCourseSelection.aspx'>Course</a>
+          <% } %>
           <a href="ContactUs.aspx">Contact Us</a>
-          <% if (Session["Username"] as String != null) { %>
-            <a href='UserProfile.aspx'>Profile</a>
+          <% if (Session["Username"] as string != null) { %>
+            <% if (Session["Username"] as string != "Kohemin") { %>
+              <a href='UserProfile.aspx'>Profile</a>
+            <% } else { %>
+              <a href='AdminDashboard.aspx'>Dashboard</a>
+            <% } %>
           <% } else { %>
             <a href='Login.aspx'>Login</a>
           <% } %>
@@ -69,9 +77,21 @@
 
           <h4>Beginner’s Guide to First Coffee</h4>
           
-          <button onclick="document.location.href = './CourseSelection.aspx'; return false" class="card-button">
-            <p>Get Started</p>
-          </button>
+          <% if (Session["Username"] as string != null) { %>
+            <% if (Session["Username"] as string != "Kohemin") { %>
+              <button onclick="document.location.href = './CourseSelection.aspx'; return false" class="card-button">
+                <p>Enroll</p>
+              </button>
+            <% } else { %>
+              <button onclick="document.location.href = './AdminCourseSelection.aspx'; return false" class="card-button">
+                <p>Preview</p>
+              </button>
+            <% } %>
+          <% } else { %>
+            <button onclick="document.location.href = './Login.aspx'; return false" class="card-button">
+              <p>Enroll/p>
+            </button>
+          <% } %>
         </div>
 
         <div class="cards">
@@ -81,9 +101,21 @@
 
           <h4>Beginner’s Guide to Milk</h4>
           
-          <button onclick="document.location.href = './CourseSelection.aspx'; return false" class="card-button">
-            <p>Get Started</p>
-          </button>
+          <% if (Session["Username"] as string != null) { %>
+            <% if (Session["Username"] as string != "Kohemin") { %>
+              <button onclick="document.location.href = './CourseSelection.aspx'; return false" class="card-button">
+                <p>Enroll</p>
+              </button>
+            <% } else { %>
+              <button onclick="document.location.href = './AdminCourseSelection.aspx'; return false" class="card-button">
+                <p>Preview</p>
+              </button>
+            <% } %>
+          <% } else { %>
+            <button onclick="document.location.href = './Login.aspx'; return false" class="card-button">
+              <p>Enroll/p>
+            </button>
+          <% } %>
         </div>
 
         <div class="cards">
@@ -93,9 +125,21 @@
 
           <h4>The Chosen Coffee Bean</h4>
           
-          <button onclick="document.location.href = './CourseSelection.aspx'; return false" class="card-button">
-            <p>Get Started</p>
-          </button>
+          <% if (Session["Username"] as string != null) { %>
+            <% if (Session["Username"] as string != "Kohemin") { %>
+              <button onclick="document.location.href = './CourseSelection.aspx'; return false" class="card-button">
+                <p>Enroll</p>
+              </button>
+            <% } else { %>
+              <button onclick="document.location.href = './AdminCourseSelection.aspx'; return false" class="card-button">
+                <p>Preview</p>
+              </button>
+            <% } %>
+          <% } else { %>
+            <button onclick="document.location.href = './Login.aspx'; return false" class="card-button">
+              <p>Enroll/p>
+            </button>
+          <% } %>
         </div>
       </div>
 
@@ -130,9 +174,21 @@
 
           <h4>First Coffee Assessment</h4>
           
-          <button onclick="document.location.href = './PersonalCourse.aspx'; return false" class="card-button">
-            <p>Get Started</p>
-          </button>
+          <% if (Session["Username"] as string != null) { %>
+            <% if (Session["Username"] as string != "Kohemin") { %>
+              <button onclick="document.location.href = './PersonalCourse.aspx'; return false" class="card-button">
+                <p>Take Exam</p>
+              </button>
+            <% } else { %>
+              <button onclick="document.location.href = './AdminCourseSelection.aspx'; return false" class="card-button">
+                <p>Preview</p>
+              </button>
+            <% } %>
+          <% } else { %>
+            <button onclick="document.location.href = './Login.aspx'; return false" class="card-button">
+              <p>Take Exam/p>
+            </button>
+          <% } %>
         </div>
 
         <div class="cards">
@@ -142,9 +198,21 @@
 
           <h4>Milk Assessment for Beginner</h4>
           
-          <button onclick="document.location.href = './PersonalCourse.aspx'; return false" class="card-button">
-            <p>Get Started</p>
-          </button>
+          <% if (Session["Username"] as string != null) { %>
+            <% if (Session["Username"] as string != "Kohemin") { %>
+              <button onclick="document.location.href = './PersonalCourse.aspx'; return false" class="card-button">
+                <p>Take Exam</p>
+              </button>
+            <% } else { %>
+              <button onclick="document.location.href = './AdminCourseSelection.aspx'; return false" class="card-button">
+                <p>Preview</p>
+              </button>
+            <% } %>
+          <% } else { %>
+            <button onclick="document.location.href = './Login.aspx'; return false" class="card-button">
+              <p>Take Exam/p>
+            </button>
+          <% } %>
         </div>
 
         <div class="cards">
@@ -154,9 +222,21 @@
 
           <h4>Knowledge for Coffee Bean</h4>
           
-          <button onclick="document.location.href = './PersonalCourse.aspx'; return false" class="card-button">
-            <p>Get Started</p>
-          </button>
+          <% if (Session["Username"] as string != null) { %>
+            <% if (Session["Username"] as string != "Kohemin") { %>
+              <button onclick="document.location.href = './PersonalCourse.aspx'; return false" class="card-button">
+                <p>Take Exam</p>
+              </button>
+            <% } else { %>
+              <button onclick="document.location.href = './AdminCourseSelection.aspx'; return false" class="card-button">
+                <p>Preview</p>
+              </button>
+            <% } %>
+          <% } else { %>
+            <button onclick="document.location.href = './Login.aspx'; return false" class="card-button">
+              <p>Take Exam/p>
+            </button>
+          <% } %>
         </div>
       </div>
 
@@ -166,8 +246,16 @@
           <div class="footer-nav">
             <a href="Home.aspx">Home</a>
             <a href="AboutUs.aspx">About Us</a>
-            <a href="CourseSelection.aspx">Course</a>
-            <a href="PersonalCourse.aspx">Assessment</a>
+            <% if (Session["Username"] as string != "Kohemin") { %>
+              <a href='CourseSelection.aspx'>Course</a>
+            <% } else { %>
+              <a href='AdminCourseSelection.aspx'>Course</a>
+            <% } %>
+            <% if (Session["Username"] as string != "Kohemin") { %>
+              <a href="PersonalCourse.aspx">Assessment</a>
+            <% } else { %>
+              <a href='AdminDashboard.aspx'>Report</a>
+            <% } %>
           </div>
 
           <div class="footer-contact">

@@ -69,7 +69,7 @@
             <a href="Home.aspx">Home</a>
             <a href="AboutUs.aspx">About Us</a>
             <a href="CourseSelection.aspx">Course</a>
-            <a href="PersonalCourse.aspx">Assessment</a>
+            <a href="ContactUs.aspx">Contact Us</a>
           </div>
 
           <div class="footer-contact">

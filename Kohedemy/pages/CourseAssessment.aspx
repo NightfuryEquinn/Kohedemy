@@ -34,11 +34,23 @@
         <img id="nav-logo" src="../Assets/icons/kohedemy_logo.png" />
 
         <div class="nav-container">
-          <a>Home</a>
-          <a>About Us</a>
-          <a>Course</a>
-          <a>Contact Us</a>
-          <a>Log In</a>
+          <a href="Home.aspx">Home</a>
+          <a href="AboutUs.aspx">About Us</a>
+          <% if (Session["Username"] as string != "Kohemin") { %>
+            <a href='CourseSelection.aspx'>Course</a>
+          <% } else { %>
+            <a href='AdminCourseSelection.aspx'>Course</a>
+          <% } %>
+          <a href="ContactUs.aspx">Contact Us</a>
+          <% if (Session["Username"] as string != null) { %>
+            <% if (Session["Username"] as string != "Kohemin") { %>
+              <a href='UserProfile.aspx'>Profile</a>
+            <% } else { %>
+              <a href='AdminDashboard.aspx'>Dashboard</a>
+            <% } %>
+          <% } else { %>
+            <a href='Login.aspx'>Login</a>
+          <% } %>
         </div>
       </nav>
 
@@ -71,10 +83,18 @@
       <footer>
         <div class="footer-container">
           <div class="footer-nav">
-            <a>Home</a>
-            <a>About Us</a>
-            <a>Course</a>
-            <a>Assessment</a>
+            <a href="Home.aspx">Home</a>
+            <a href="AboutUs.aspx">About Us</a>
+            <% if (Session["Username"] as string != "Kohemin") { %>
+              <a href='CourseSelection.aspx'>Course</a>
+            <% } else { %>
+              <a href='AdminCourseSelection.aspx'>Course</a>
+            <% } %>
+            <% if (Session["Username"] as string != "Kohemin") { %>
+              <a href="PersonalCourse.aspx">Assessment</a>
+            <% } else { %>
+              <a href='AdminDashboard.aspx'>Report</a>
+            <% } %>
           </div>
 
           <div class="footer-contact">

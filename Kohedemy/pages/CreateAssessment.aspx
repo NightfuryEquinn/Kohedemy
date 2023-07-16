@@ -36,9 +36,9 @@
         <div class="nav-container">
           <a href="Home.aspx">Home</a>
           <a href="AboutUs.aspx">About Us</a>
-          <a href="CourseSelection.aspx">Course</a>
+          <a href="AdminCourseSelection.aspx">Course</a>
           <a href="ContactUs.aspx">Contact Us</a>
-          <a href="UserProfile.aspx">Profile</a>
+          <a href="AdminDashboard.aspx">Dashboard</a>
         </div>
       </nav>
 
@@ -566,8 +566,8 @@
           <div class="footer-nav">
             <a href="Home.aspx">Home</a>
             <a href="AboutUs.aspx">About Us</a>
-            <a href="CourseSelection.aspx">Course</a>
-            <a href="PersonalCourse.aspx">Assessment</a>
+            <a href="AdminCourseSelection.aspx">Course</a>
+            <a href="AdminDashboard.aspx">Report</a>
           </div>
 
           <div class="footer-contact">

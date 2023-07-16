@@ -36,7 +36,7 @@
         <div class="nav-container">
           <a href="Home.aspx">Home</a>
           <a href="AboutUs.aspx">About Us</a>
-          <a href="CourseSelection.aspx">Course</a>
+          <a href="AdminCourseSelection.aspx">Course</a>
           <a href="ContactUs.aspx">Contact Us</a>
           <a href="AdminDashboard.aspx">Dashboard</a>
         </div>
@@ -110,7 +110,7 @@
                 <div class="inner-edit-delete">
                   <asp:ImageButton CommandArgument='<%# Eval("CourseId") %>' ImageUrl="../Assets/icons/edit.png" CssClass="inner-button" ID="EditButton" runat="server" OnClick="EditButton_Click" />
                   <asp:ImageButton CommandArgument='<%# Eval("CourseId") %>' ImageUrl="../Assets/icons/check-list.png" CssClass="inner-button" ID="AssessmentButton" runat="server" OnClick="AssessmentButton_Click" />
-                  <asp:ImageButton ImageUrl="../Assets/icons/delete.png" CssClass="inner-button" ID="DeleteButton" runat="server" />
+                  <asp:ImageButton CommandArgument='<%# Eval("CourseId") %>' ImageUrl="../Assets/icons/delete.png" CssClass="inner-button" ID="DeleteButton" runat="server" OnClick="DeleteButton_Click" />
                 </div>
               </div>
             </div>
@@ -224,10 +224,10 @@
       <footer>
         <div class="footer-container">
           <div class="footer-nav">
-            <a>Home</a>
-            <a>About Us</a>
-            <a>Course</a>
-            <a>Assessment</a>
+            <a href="Home.aspx">Home</a>
+            <a href="AboutUs.aspx">About Us</a>
+            <a href='AdminCourseSelection.aspx'>Course</a>
+            <a href='AdminDashboard.aspx'>Report</a>
           </div>
 
           <div class="footer-contact">
