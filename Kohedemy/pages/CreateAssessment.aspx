@@ -392,14 +392,6 @@
             <asp:TextBox CssClass="management-textbox" ID="Question7D" runat="server"></asp:TextBox>
           </div>
 
-          <div class="single-wrapper management-full-span">
-            <div class="divider">
-              <h3>QUESTION 8</h3>
-            </div>
-
-            <asp:TextBox TextMode="MultiLine" CssClass="management-textarea" ID="Question8" runat="server"></asp:TextBox>
-          </div>
-
           <div class="single-wrapper management-first-col">
             <div class="divider">
               <h3>ANSWER</h3>
@@ -409,6 +401,14 @@
           </div>
 
           <hr class='single-management-hr' />
+
+          <div class="single-wrapper management-full-span">
+            <div class="divider">
+              <h3>QUESTION 8</h3>
+            </div>
+
+            <asp:TextBox TextMode="MultiLine" CssClass="management-textarea" ID="Question8" runat="server"></asp:TextBox>
+          </div>
 
           <div class="single-wrapper management-first-col">
             <div class="divider">

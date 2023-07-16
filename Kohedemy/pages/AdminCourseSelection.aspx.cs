@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Text;
+using System.Threading;
 using System.Web.UI.WebControls;
 
 namespace Kohedemy.Pages
@@ -195,9 +196,55 @@ namespace Kohedemy.Pages
       ImageButton assessmentButton = (ImageButton)sender;
       string courseId = assessmentButton.CommandArgument;
 
-      StringBuilder sb = new StringBuilder("CreateAssessment.aspx?CourseId=" + courseId);
-      
-      Response.Redirect(sb.ToString());
+      try
+      {
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RegisterString"].ConnectionString);
+        con.Open();
+
+        string checkQuestion = "SELECT COUNT(*) FROM [Assessment] WHERE CourseID = @CourseID";
+        SqlCommand cmdCheck = new SqlCommand(checkQuestion, con);
+        cmdCheck.Parameters.AddWithValue("@CourseID", courseId);
+
+        int check = Convert.ToInt32(cmdCheck.ExecuteScalar());
+
+        if (check != 1)
+        {
+          StringBuilder sb = new StringBuilder("CreateAssessment.aspx?CourseId=" + courseId);
+
+          Response.Redirect(sb.ToString());
+        }
+        else
+        {
+          string getQuestion = @"
+                               SELECT q.QuestionID, a.AssessmentID, c.CourseID FROM [Question] AS q
+                               INNER JOIN [Assessment] AS a ON q.AssessmentID = a.AssessmentID
+                               INNER JOIN [Course] AS c ON c.CourseID = a.CourseID
+                               WHERE c.CourseID = @CourseID
+                               ";
+          SqlCommand getQuestionCmd = new SqlCommand(getQuestion, con);
+          getQuestionCmd.Parameters.AddWithValue("@CourseID", courseId);
+
+          SqlDataReader reader = getQuestionCmd.ExecuteReader();
+
+          StringBuilder sb = new StringBuilder("CreateAssessment.aspx?CourseId=" + courseId);
+          int count = 1;
+
+          while (reader.Read())
+          {
+            int questionId = (int)reader["QuestionID"];
+            sb.Append("&QId" + count + "=" + questionId);
+            count++;
+          }
+
+          Response.Redirect(sb.ToString());
+        }
+
+        con.Close();
+      }
+      catch (Exception ex)
+      {
+        Debug.WriteLine(ex.Message);
+      }
     }
   }
 }
