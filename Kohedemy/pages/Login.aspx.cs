@@ -9,7 +9,7 @@ namespace Kohedemy.Pages
   {
     protected void Page_Load(object sender, EventArgs e)
     {
-      Debug.WriteLine("Login");
+
     }
 
     protected void LoginButton_Click(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace Kohedemy.Pages
 
           SqlDataReader sdr = cmdCheck.ExecuteReader();
 
-          String username = "";
+          string username = "";
 
           while (sdr.Read())
           {
@@ -56,7 +56,6 @@ namespace Kohedemy.Pages
           Response.Write(
             "<script>alert('Invalid credentials. Please try again.'); document.location.href='./Login.aspx'</script>"
           );
-          Debug.WriteLine("Not Pass");
         }
 
         con.Close();

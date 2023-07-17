@@ -68,7 +68,7 @@
 
       <!--Modal Popup-->
       <div class="modal">
-        <div class="modal-wrap">
+        <div class="modal-wrap" data-id="">
           <img class="modal-image" src="../Assets/images/tasty.jpg" />
 
           <div class="modal-container">
@@ -80,9 +80,7 @@
 
             <p class="modal-description"></p>
       
-            <button onclick="return false" class="enroll-button">
-              <p>Enroll</p>
-            </button>
+            <asp:Button CssClass="enroll-button" ID="EnrollButton" runat="server" Text="Enroll" OnClick="EnrollButton_Click" />
           </div>
         </div>
       </div>

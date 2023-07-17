@@ -9,6 +9,11 @@ const closeBtn = document.getElementsByClassName("modal-icon")[0]
 const cardTrigger = document.getElementsByClassName("cards")
 const trigger = document.getElementsByClassName("card-button")
 
+const handleButtonClick = (courseID) => {
+  var newURL = window.location.protocol + "//" + window.location.host + window.location.pathname + '?CourseId=' + courseID;
+  window.history.pushState({ path: newURL }, '', newURL);
+}
+
 const changeModalContent = (i) => {
   const triggerCourseTitle = cardTrigger[i].getElementsByTagName("h4")[0]
   const triggerCourseDescription = cardTrigger[i].getAttribute("data-description")
@@ -26,11 +31,9 @@ const changeModalContent = (i) => {
   modalImage.setAttribute('src', triggerCourseImage)
 
   const triggerCourseId = cardTrigger[i].getAttribute("data-id")
-  const enrollButton = document.getElementsByClassName("enroll-button")[0]
+  modalWrap.setAttribute("data-id", triggerCourseId)
 
-  enrollButton.addEventListener("click", () => {
-    document.location.href = "./Course.aspx?CourseId=" + triggerCourseId
-  })
+  handleButtonClick(triggerCourseId)
 }
 
 if (trigger && closeBtn) {

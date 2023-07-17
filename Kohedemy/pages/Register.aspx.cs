@@ -19,7 +19,7 @@ namespace Kohedemy.Pages
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RegisterString"].ConnectionString);
         con.Open();
 
-        String query = "SELECT count(*) from [User] where EmailAddress = @Email";
+        string query = "SELECT count(*) from [User] where EmailAddress = @Email";
         SqlCommand cmd = new SqlCommand(query, con);
         cmd.Parameters.AddWithValue("@Email", EmailBox.Text);
 

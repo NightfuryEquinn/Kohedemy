@@ -3,11 +3,6 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Kohedemy.Pages
 {
@@ -134,6 +129,82 @@ namespace Kohedemy.Pages
 
         MasterclassRepeater.DataSource = masterclassCourses;
         MasterclassRepeater.DataBind();
+      }
+      catch (Exception ex)
+      {
+        Debug.WriteLine(ex.Message);
+      }
+    }
+
+    protected void EnrollButton_Click(object sender, EventArgs e)
+    {
+      try
+      {
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RegisterString"].ConnectionString);
+        con.Open();
+
+        if (Session["Username"] != null)
+        {
+          string theUsername = Session["Username"].ToString();
+          // Get CourseID
+
+          string checkCourse = @"
+                               SELECT count(*) FROM [Enrolled] AS en 
+                               INNER JOIN [User] AS u ON u.UserID = en.UserID
+                               INNER JOIN [Course] AS c On c.CourseID = en.CourseID
+                               WHERE u.Username = @Username AND c.CourseID = @CourseID
+                               ";
+          SqlCommand checkCourseCmd = new SqlCommand(checkCourse, con);
+          checkCourseCmd.Parameters.AddWithValue("@Username", theUsername);
+          checkCourseCmd.Parameters.AddWithValue("@CourseID", theCourse);
+
+          int check = Convert.ToInt32(checkCourseCmd.ExecuteScalar().ToString());
+
+          if (check > 0)
+          {
+            Response.Write(
+              "<script>alert('You have already enrolled in this course'); document.location.href = './PersonalCourse.aspx'</script>"
+            );
+          }
+          else
+          {
+            string getTheUserID = "SELECT UserID FROM [User] WHERE Username = @Username";
+            SqlCommand getTheUserIDCmd = new SqlCommand(getTheUserID, con);
+            getTheUserIDCmd.Parameters.AddWithValue("@Username", theUsername);
+
+            SqlDataReader sdr5 = getTheUserIDCmd.ExecuteReader();
+            int theUserID = 0;
+
+            if (sdr5.Read())
+            {
+              theUserID = Convert.ToInt32(sdr5["UserID"].ToString());
+            }
+
+            string insertCourse = @"
+                                  INSERT INTO [Enrolled] (DateEnroll, UserID, CourseID)
+                                  VALUES (CURRENT_TIMESTAMP, @UserID, (SELECT CourseID FROM [Course] WHERE CourseID = @CourseID))
+                                  ";
+            SqlCommand insertCourseCmd = new SqlCommand(insertCourse, con);
+            insertCourseCmd.Parameters.AddWithValue("@UserID", theUserID);
+            insertCourseCmd.Parameters.AddWithValue("@CourseID", theCourse);
+
+            sdr5.Close();
+
+            insertCourseCmd.ExecuteNonQuery();
+
+            Response.Write(
+              "<script>alert('You have sucessfully enrolled. You can start anytime now.'); document.location.href = './PersonalCourse.aspx'</script>"
+            );
+          }
+        }
+        else
+        {
+          Response.Write(
+            "<script>alert('Please register a Kohedemy account or login to Kohedemy before enrolling to a course.'); document.location.href='./Login.aspx'</script>"
+          );
+        }
+
+        con.Close();
       }
       catch (Exception ex)
       {
