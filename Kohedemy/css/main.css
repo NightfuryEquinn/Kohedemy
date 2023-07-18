@@ -587,9 +587,8 @@ nav a:hover {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  row-gap: 3.5rem;
+  gap: 3.5rem;
   align-content: flex-start;
-  justify-content: space-between;
   align-items: center;
 }
 

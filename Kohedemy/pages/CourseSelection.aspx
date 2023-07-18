@@ -72,7 +72,7 @@
       <div class="flex-card-container">
         <asp:Repeater ID="BeginnerRepeater" runat="server">
           <ItemTemplate>
-            <div class="cards" data-id="<%# Eval("CourseId") %>" data-description="<%# Eval("CourseDescription") %>" data-difficulty="<%# Eval("CourseDifficulty") %>">
+            <div class="cards">
               <div class="card-image-container">
                 <img class="card-image" src="data:image/jpeg;base64,<%# Convert.ToBase64String((byte[])Eval("CourseImage")) %>" />
               </div>
@@ -96,7 +96,7 @@
       <div class="flex-card-container">
         <asp:Repeater ID="IntermediateRepeater" runat="server">
           <ItemTemplate>
-            <div class="cards" data-id="<%#Eval("CourseId") %>" data-description="<%# Eval("CourseDescription") %>" data-difficulty="<%# Eval("CourseDifficulty") %>">
+            <div class="cards">
               <div class="card-image-container">
                 <img class="card-image" src="data:image/jpeg;base64,<%# Convert.ToBase64String((byte[])Eval("CourseImage")) %>" />
               </div>
@@ -120,7 +120,7 @@
       <div class="flex-card-container">
         <asp:Repeater ID="AdvancedRepeater" runat="server">
           <ItemTemplate>
-            <div class="cards" data-id="<%#Eval("CourseId") %>" data-description="<%# Eval("CourseDescription") %>" data-difficulty="<%# Eval("CourseDifficulty") %>">
+            <div class="cards">
               <div class="card-image-container">
                 <img class="card-image" src="data:image/jpeg;base64,<%# Convert.ToBase64String((byte[])Eval("CourseImage")) %>" />
               </div>
@@ -144,7 +144,7 @@
       <div class="flex-card-container">
         <asp:Repeater ID="MasterclassRepeater" runat="server">
           <ItemTemplate>
-            <div class="cards" data-id="<%#Eval("CourseId") %>" data-description="<%# Eval("CourseDescription") %>" data-difficulty="<%# Eval("CourseDifficulty") %>">
+            <div class="cards">
               <div class="card-image-container">
                 <img class="card-image" src="data:image/jpeg;base64,<%# Convert.ToBase64String((byte[])Eval("CourseImage")) %>" />
               </div>

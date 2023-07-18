@@ -11,7 +11,16 @@ namespace Kohedemy.Pages
   {
     protected void Page_Load(object sender, EventArgs e)
     {
+      if (Session["Username"] as string != null)
+      {
 
+      }
+      else
+      {
+        Response.Write(
+          "<script>alert('Please register a Kohedemy account or login to Kohedemy before taking your assessment'); document.location.href='./Login.aspx'</script>"
+        );
+      }
     }
   }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PersonalCourse.aspx.cs" Inherits="Kohedemy.Pages.PersonalCourse" %>
+﻿<%@ Page EnableEventValidation="false" Language="C#" AutoEventWireup="true" CodeBehind="PersonalCourse.aspx.cs" Inherits="Kohedemy.Pages.PersonalCourse" %>
 
 <!DOCTYPE html>
 
@@ -50,7 +50,7 @@
       <div class="hero-banner-container">
         <img class="hero-banner" src="../Assets/images/five.jpg" />
 
-        <h2 class="banner-quote">ENROLLED COURSES</h2>
+        <h2 class="banner-quote">YOUR LIFETIME COURSES</h2>
       </div>
 
       <!--Divider-->
@@ -62,53 +62,19 @@
 
       <!--Flex Cards-->
       <div class="flex-card-container">
-        <div class="cards">
-          <div class="card-image-container">
-            <img class="card-image" src="../Assets/images/vertical.jpg" />
-          </div>
+        <asp:Repeater ID="EnrolledRepeater" runat="server">
+          <ItemTemplate>
+            <div class="cards">
+              <div class="card-image-container">
+                <img class="card-image" src="data:image/jpeg;base64,<%# Convert.ToBase64String((byte[])Eval("CourseImage")) %>" />
+              </div>
 
-          <h4>Beginner’s Guide to First Coffee</h4>
+              <h4><%# Eval("CourseTitle") %></h4>
           
-          <button class="card-button">
-            <p>Get Started</p>
-          </button>
-        </div>
-
-        <div class="cards">
-          <div class="card-image-container">
-            <img class="card-image" src="../Assets/images/dark.jpg" />
-          </div>
-
-          <h4>The Best Way to Brew Espresso</h4>
-          
-          <button class="card-button">
-            <p>Get Started</p>
-          </button>
-        </div>
-
-        <div class="cards">
-          <div class="card-image-container">
-            <img class="card-image" src="../Assets/images/tasty.jpg" />
-          </div>
-
-          <h4>Essence of A Cup of Latte</h4>
-          
-          <button class="card-button">
-            <p>Get Started</p>
-          </button>
-        </div>
-
-        <div class="cards">
-          <div class="card-image-container">
-            <img class="card-image" src="../Assets/images/pouring.jpg" />
-          </div>
-
-          <h4>Single Shot? Double Shot!</h4>
-          
-          <button class="card-button">
-            <p>Get Started</p>
-          </button>
-        </div>
+              <asp:Button CommandArgument='<%# Eval("CourseId") %>' CssClass="card-button" ID="GetStartedButton" runat="server" Text="Get Started" OnClick="GetStartedButton_Click" />
+            </div>
+          </ItemTemplate>
+        </asp:Repeater>
       </div>
 
       <!--Divider-->
@@ -120,37 +86,43 @@
 
       <!--Flex Cards-->
       <div class="flex-card-container">
-        <div class="cards">
-          <div class="card-image-container">
-            <img class="card-image" src="../Assets/images/closeup.jpg" />
-          </div>
+        <asp:Repeater ID="AssessmentRepeater" runat="server">
+          <ItemTemplate>
+            <div class="cards">
+              <div class="card-image-container">
+                <img class="card-image" src="../Assets/images/vertical.jpg" />
+              </div>
 
-          <h4>First Coffee Assessment</h4>
+              <h4>Beginner’s Guide to First Coffee</h4>
           
-          <p class="complete-error-message">Complete “Beginner’s Guide to First Coffee” First</p>
-        </div>
+              <asp:Button CssClass="card-button" ID="TakeAssessmentButton" runat="server" Text="Assessment" OnClick="TakeAssessmentButton_Click" />
+            </div>
+          </ItemTemplate>
+        </asp:Repeater>
+      </div>
 
-        <div class="cards">
-          <div class="card-image-container">
-            <img class="card-image" src="../Assets/images/prepare.jpg" />
-          </div>
+      <!--Divider-->
+      <div class="divider">
+        <h3>COMPLETED</h3>
 
-          <h4>Milk Assessment for Beginner</h4>
+        <p>Revision is required to be always experienced</p>
+      </div>
+
+      <!--Flex Cards-->
+      <div class="flex-card-container">
+        <asp:Repeater ID="CompletedRepeater" runat="server">
+          <ItemTemplate>
+            <div class="cards">
+              <div class="card-image-container">
+                <img class="card-image" src="../Assets/images/vertical.jpg" />
+              </div>
+
+              <h4>Beginner’s Guide to First Coffee</h4>
           
-          <img class="complete-icon" src="../Assets/icons/check.png" />
-        </div>
-
-        <div class="cards">
-          <div class="card-image-container">
-            <img class="card-image" src="../Assets/images/female.jpg" />
-          </div>
-
-          <h4>Knowledge for Coffee Bean</h4>
-          
-          <button class="card-button">
-            <p>Take Exam</p>
-          </button>
-        </div>
+              <asp:Button CssClass="card-button" ID="ReviseButton" runat="server" Text="Revise" OnClick="ReviseButton_Click" />
+            </div>
+          </ItemTemplate>
+        </asp:Repeater>
       </div>
 
       <!--Footer-->

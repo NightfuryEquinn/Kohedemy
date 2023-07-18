@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CourseAssessment.aspx.cs" Inherits="Kohedemy.Pages.CourseAssessment" %>
+﻿<%@ Page EnableEventValidation="false" Language="C#" AutoEventWireup="true" CodeBehind="CourseAssessment.aspx.cs" Inherits="Kohedemy.Pages.CourseAssessment" %>
 
 <!DOCTYPE html>
 
