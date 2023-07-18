@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CourseSelection.aspx.cs" Inherits="Kohedemy.Pages.CourseSelection" %>
+﻿<%@ Page EnableEventValidation="false" Language="C#" AutoEventWireup="true" CodeBehind="CourseSelection.aspx.cs" Inherits="Kohedemy.Pages.CourseSelection" %>
 
 <!DOCTYPE html>
 
@@ -61,30 +61,6 @@
         <h2 class="banner-quote">COURSE SELECTION</h2>
       </div>
 
-      <!--Search Bar-->
-      <div class="search-bar-container">
-        <asp:TextBox CssClass="search-bar" ID="SearchBar" placeholder="Search..." runat="server"></asp:TextBox>
-      </div>
-
-      <!--Modal Popup-->
-      <div class="modal">
-        <div class="modal-wrap" data-id="">
-          <img class="modal-image" src="../Assets/images/tasty.jpg" />
-
-          <div class="modal-container">
-            <img class="modal-icon" src="../Assets/icons/close.png" />
-
-            <h3 class="modal-title"></h3>
-
-            <p class="modal-difficulty"></p>
-
-            <p class="modal-description"></p>
-      
-            <asp:Button CssClass="enroll-button" ID="EnrollButton" runat="server" Text="Enroll" OnClick="EnrollButton_Click" />
-          </div>
-        </div>
-      </div>
-
       <!--Divider-->
       <div class="divider">
         <h3>BEGINNER</h3>
@@ -103,9 +79,7 @@
 
               <h4><%# Eval("CourseTitle") %></h4>
           
-              <button onclick="return false" class="card-button">
-                <p>More</p>
-              </button>
+              <asp:Button CommandArgument='<%# Eval("CourseId") %>' CssClass="card-button" ID="EnrollButton" runat="server" Text="Enroll" OnClick="EnrollButton_Click" />
             </div>
           </ItemTemplate>
         </asp:Repeater>
@@ -129,9 +103,7 @@
 
               <h4><%# Eval("CourseTitle") %></h4>
           
-              <button onclick="return false" class="card-button">
-                <p>More</p>
-              </button>
+              <asp:Button CommandArgument='<%# Eval("CourseId") %>' CssClass="card-button" ID="EnrollButton" runat="server" Text="Enroll" OnClick="EnrollButton_Click" />
             </div>
           </ItemTemplate>
         </asp:Repeater>
@@ -155,9 +127,7 @@
 
               <h4><%# Eval("CourseTitle") %></h4>
           
-              <button onclick="return false" class="card-button">
-                <p>More</p>
-              </button>
+              <asp:Button CommandArgument='<%# Eval("CourseId") %>' CssClass="card-button" ID="EnrollButton" runat="server" Text="Enroll" OnClick="EnrollButton_Click" />
             </div>
           </ItemTemplate>
         </asp:Repeater>
@@ -181,9 +151,7 @@
 
               <h4><%# Eval("CourseTitle") %></h4>
           
-              <button onclick="return false" class="card-button">
-                <p>More</p>
-              </button>
+              <asp:Button CommandArgument='<%# Eval("CourseId") %>' CssClass="card-button" ID="EnrollButton" runat="server" Text="Enroll" OnClick="EnrollButton_Click" />
             </div>
           </ItemTemplate>
         </asp:Repeater>

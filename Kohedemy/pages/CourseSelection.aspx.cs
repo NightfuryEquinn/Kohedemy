@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Web;
+using System.Web.UI.WebControls;
 
 namespace Kohedemy.Pages
 {
@@ -146,7 +148,10 @@ namespace Kohedemy.Pages
         if (Session["Username"] != null)
         {
           string theUsername = Session["Username"].ToString();
-          // Get CourseID
+          Button enrollButton = (Button)sender;
+          int theCourse = Convert.ToInt32(enrollButton.CommandArgument);
+
+          Debug.WriteLine(theCourse);
 
           string checkCourse = @"
                                SELECT count(*) FROM [Enrolled] AS en 

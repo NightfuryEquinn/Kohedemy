@@ -23,6 +23,77 @@ namespace Kohedemy.Pages
 
     protected void Page_Load(object sender, EventArgs e)
     {
+      if (Session["Username"] as string != null)
+      {
+        int courseId = Convert.ToInt32(Request.QueryString["CourseId"]);
+
+        try
+        {
+          SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RegisterString"].ConnectionString);
+          con.Open();
+
+          string courseQuery = "SELECT Title FROM [Course] WHERE CourseID = @CourseID";
+          SqlCommand courseCmd = new SqlCommand(courseQuery, con);
+          courseCmd.Parameters.AddWithValue("@CourseID", courseId);
+
+          SqlDataReader sdr = courseCmd.ExecuteReader();
+
+          while (sdr.Read())
+          {
+            BannerQuote.Text = sdr["Title"].ToString();
+          }
+
+          sdr.Close();
+
+          string excerptQuery = @"
+                                SELECT * FROM [Excerpt] AS e 
+                                INNER JOIN [Content] AS ct ON e.ContentID = ct.ContentID 
+                                INNER JOIN [Course] AS c ON ct.CourseID = c.CourseID 
+                                WHERE c.CourseID = @CourseID
+                                ";
+          SqlCommand excerptCmd = new SqlCommand(excerptQuery, con);
+          excerptCmd.Parameters.AddWithValue("@CourseID", courseId);
+
+          SqlDataReader sdr2 = excerptCmd.ExecuteReader();
+
+          List<ExcerptData> excerptDatas = new List<ExcerptData>();
+
+          while(sdr2.Read())
+          {
+            ExcerptData excerptData = new ExcerptData
+            {
+              ExcerptId = Convert.ToInt32(sdr2["ExcerptID"]),
+              ExcerptTitle = sdr2["Title"].ToString(),
+              ExcerptSubheading = sdr2["Subheading"].ToString(),
+              ExcerptContent = sdr2["Content"].ToString(),
+              ExcerptImage = (byte[])sdr2["Image"]
+            };
+
+            excerptDatas.Add(excerptData);
+          }
+
+          sdr2.Close();
+
+          con.Close();
+
+          CourseRepeater.DataSource = excerptDatas;
+          CourseRepeater.DataBind();
+        }
+        catch(Exception ex)
+        {
+          Debug.WriteLine(ex.Message);
+        }
+      }
+      else
+      {
+        Response.Write(
+          "<script>alert('Please register a Kohedemy account or login to Kohedemy before accessing your course'); document.location.href='./Login.aspx'</script>"
+        );
+      }
+    }
+
+    protected void FinishCourseButton_Click(object sender, EventArgs e)
+    {
       int courseId = Convert.ToInt32(Request.QueryString["CourseId"]);
 
       try
@@ -30,52 +101,65 @@ namespace Kohedemy.Pages
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RegisterString"].ConnectionString);
         con.Open();
 
-        string courseQuery = "SELECT Title FROM [Course] WHERE CourseID = @CourseID";
-        SqlCommand courseCmd = new SqlCommand(courseQuery, con);
-        courseCmd.Parameters.AddWithValue("@CourseID", courseId);
+        string getUserID = "SELECT * FROM [User] WHERE Username = @Username";
+        SqlCommand getUserIDCmd = new SqlCommand(getUserID, con);
+        getUserIDCmd.Parameters.AddWithValue("@Username", Session["Username"].ToString());
 
-        SqlDataReader sdr = courseCmd.ExecuteReader();
+        SqlDataReader reader = getUserIDCmd.ExecuteReader();
+        int theUserID = 0;
 
-        while (sdr.Read())
+        if (reader.Read())
         {
-          BannerQuote.Text = sdr["Title"].ToString();
+          theUserID = Convert.ToInt32(reader["UserID"]);
         }
 
-        sdr.Close();
+        reader.Close();
 
-        string excerptQuery = @"
-                              SELECT * FROM [Excerpt] AS e 
-                              INNER JOIN [Content] AS ct ON e.ContentID = ct.ContentID 
-                              INNER JOIN [Course] AS c ON ct.CourseID = c.CourseID 
-                              WHERE c.CourseID = @CourseID
-                              ";
-        SqlCommand excerptCmd = new SqlCommand(excerptQuery, con);
-        excerptCmd.Parameters.AddWithValue("@CourseID", courseId);
+        string checkFinish = "SELECT count(*) FROM [Enrolled] WHERE DateComplete IS NULL AND DateAssessmentComplete IS NULL AND UserID = @UserID1 AND CourseID = @CourseID1";
+        SqlCommand checkFinishCmd = new SqlCommand(checkFinish, con);
+        checkFinishCmd.Parameters.AddWithValue("@UserID1", theUserID);
+        checkFinishCmd.Parameters.AddWithValue("@CourseID1", courseId);
 
-        SqlDataReader sdr2 = excerptCmd.ExecuteReader();
+        string checkFinishBoth = "SELECT count(*) FROM [Enrolled] WHERE DateComplete IS NOT NULL AND DateAssessmentComplete IS NULL AND UserID = @UserID2 AND CourseID = @CourseID2";
+        SqlCommand checkFinishBothCmd = new SqlCommand(checkFinishBoth, con);
+        checkFinishBothCmd.Parameters.AddWithValue("@UserID2", theUserID);
+        checkFinishBothCmd.Parameters.AddWithValue("@CourseID2", courseId);
 
-        List<ExcerptData> excerptDatas = new List<ExcerptData>();
+        int checkFinishCount = Convert.ToInt32(checkFinishCmd.ExecuteScalar());
+        int checkFinishBothCount = Convert.ToInt32(checkFinishBothCmd.ExecuteScalar());
 
-        while(sdr2.Read())
+        if (checkFinishCount == 1)
         {
-          ExcerptData excerptData = new ExcerptData
-          {
-            ExcerptId = Convert.ToInt32(sdr2["ExcerptID"]),
-            ExcerptTitle = sdr2["Title"].ToString(),
-            ExcerptSubheading = sdr2["Subheading"].ToString(),
-            ExcerptContent = sdr2["Content"].ToString(),
-            ExcerptImage = (byte[])sdr2["Image"]
-          };
+          string saveFinish = @"
+                            UPDATE [Enrolled] 
+                            SET
+                            Complete = 1, DateComplete = CURRENT_TIMESTAMP
+                            WHERE UserID = @UserID3 AND CourseID = @CourseID3
+                            ";
+          SqlCommand saveFinishCmd = new SqlCommand(saveFinish, con);
+          saveFinishCmd.Parameters.AddWithValue("@UserID3", theUserID);
+          saveFinishCmd.Parameters.AddWithValue("@CourseID3", courseId);
 
-          excerptDatas.Add(excerptData);
+          saveFinishCmd.ExecuteNonQuery();
+
+          Response.Write(
+            "<script>alert('Congrats. Now, you take your assessment'); document.location.href='./PersonalCourse.aspx'</script>"
+          );
         }
-
-        sdr2.Close();
+        else if(checkFinishBothCount == 1)
+        {
+          Response.Write(
+            "<script>alert('You have completed the course but not the assessment. Please take your assessment.'); document.location.href='./PersonalCourse.aspx'</script>"
+          );
+        }
+        else
+        {
+          Response.Write(
+            "<script>alert('You have completed the course and assessment in the past.'); document.location.href='./PersonalCourse.aspx'</script>"
+          );
+        }
 
         con.Close();
-
-        CourseRepeater.DataSource = excerptDatas;
-        CourseRepeater.DataBind();
       }
       catch(Exception ex)
       {

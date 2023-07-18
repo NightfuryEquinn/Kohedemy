@@ -83,6 +83,12 @@
         </ItemTemplate>
       </asp:Repeater>
 
+      <div class="assessment-container">
+        <div class="cancel-save-container">
+          <asp:Button CssClass="cancel-save-button" ID="FinishCourseButton" runat="server" Text="Finish Course" OnClick="FinishCourseButton_Click" />
+        </div>
+      </div>
+
       <!--Footer-->
       <footer>
         <div class="footer-container">

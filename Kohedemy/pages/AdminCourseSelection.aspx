@@ -56,34 +56,6 @@
         <h2 class="banner-quote">COURSE MANAGEMENT</h2>
       </div>
 
-      <!--Search Bar-->
-      <div class="search-bar-container">
-        <asp:TextBox CssClass="search-bar" ID="SearchBar" placeholder="Search..." runat="server"></asp:TextBox>
-      </div>
-
-      <!--Modal Popup-->
-      <div class="modal">
-        <div class="modal-wrap">
-          <img class="modal-image" src="../Assets/images/tasty.jpg" />
-
-          <div class="modal-container">
-            <img class="modal-icon" src="../Assets/icons/close.png" />
-
-            <h3 class="modal-title">Lorem ipsum dolor sit amet</h3>
-
-            <p class="modal-difficulty">Lorem ipsum dolor sit amet</p>
-
-            <p class="modal-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      
-            <div class="modal-button-container">
-              <button onclick="return false" class="modal-button">
-                <p>View Only Button</p>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!--Divider-->
       <div class="divider">
         <h3>BEGINNER</h3>

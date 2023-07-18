@@ -34,6 +34,10 @@ const changeModalContent = (i) => {
   modalWrap.setAttribute("data-id", triggerCourseId)
 
   handleButtonClick(triggerCourseId)
+
+  var btn = document.getElementById('<%= EnrollButton.ClientID %>');
+  btn.setAttribute('commandArgument', triggerCourseId);
+
 }
 
 if (trigger && closeBtn) {

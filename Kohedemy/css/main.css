@@ -54,7 +54,7 @@ button:hover {
 
 input[type="submit"] {
   transition: 0.25s ease;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 input[type="submit"]:hover {
