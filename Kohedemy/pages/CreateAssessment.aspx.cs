@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -15,11 +11,7 @@ namespace Kohedemy.Pages
   {
     protected void Page_Load(object sender, EventArgs e)
     {
-      if (Session["Username"] as string == "Kohemin")
-      {
-        Debug.WriteLine("Admin");
-      }
-      else
+      if (Session["Username"] as string != "Kohemin")
       {
         Response.Write(
           "<script>alert('You are forbidden to access this page.'); document.location.href='./Home.aspx'</script>"

@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Diagnostics;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Kohedemy.Pages
 {
@@ -105,15 +101,15 @@ namespace Kohedemy.Pages
         SqlCommand getUserIDCmd = new SqlCommand(getUserID, con);
         getUserIDCmd.Parameters.AddWithValue("@Username", Session["Username"].ToString());
 
-        SqlDataReader reader = getUserIDCmd.ExecuteReader();
+        SqlDataReader sdr = getUserIDCmd.ExecuteReader();
         int theUserID = 0;
 
-        if (reader.Read())
+        if (sdr.Read())
         {
-          theUserID = Convert.ToInt32(reader["UserID"]);
+          theUserID = Convert.ToInt32(sdr["UserID"]);
         }
 
-        reader.Close();
+        sdr.Close();
 
         string checkFinish = "SELECT count(*) FROM [Enrolled] WHERE DateComplete IS NULL AND DateAssessmentComplete IS NULL AND UserID = @UserID1 AND CourseID = @CourseID1";
         SqlCommand checkFinishCmd = new SqlCommand(checkFinish, con);

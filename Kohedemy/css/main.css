@@ -775,8 +775,8 @@ p.complete-error-message {
   font-size: 2.25rem;
 }
 
-.data-graph-container p {
-  font-size: 1.125rem;
+.data-graph-container p span {
+  font-size: 1.25rem;
 }
 
 .mcq-container {

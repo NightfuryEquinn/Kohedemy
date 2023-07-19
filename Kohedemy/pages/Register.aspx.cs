@@ -9,7 +9,7 @@ namespace Kohedemy.Pages
   {
     protected void Page_Load(object sender, EventArgs e)
     {
-      Debug.WriteLine("Register");
+      
     }
 
     protected void RegisterButton_Click(object sender, EventArgs e)

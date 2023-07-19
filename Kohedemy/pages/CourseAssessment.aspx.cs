@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Diagnostics;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace Kohedemy.Pages
@@ -196,6 +193,8 @@ namespace Kohedemy.Pages
         getCorrectQueryCmd.Parameters.AddWithValue("@QuestionID", theQuestionId);
 
         correctAnswer = (string) getCorrectQueryCmd.ExecuteScalar();
+
+        con.Close();
 
         return correctAnswer;
       }

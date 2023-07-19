@@ -31,15 +31,15 @@ namespace Kohedemy.Pages
           SqlCommand getUserIDCmd = new SqlCommand(getUserID, con);
           getUserIDCmd.Parameters.AddWithValue("@Username", Session["Username"].ToString());
 
-          SqlDataReader reader = getUserIDCmd.ExecuteReader();
+          SqlDataReader sdr = getUserIDCmd.ExecuteReader();
           int theUserID = 0;
 
-          if (reader.Read())
+          if (sdr.Read())
           {
-            theUserID = Convert.ToInt32(reader["UserID"]);
+            theUserID = Convert.ToInt32(sdr["UserID"]);
           }
 
-          reader.Close();
+          sdr.Close();
 
           string courseQuery = @"
                                SELECT * FROM [Enrolled] AS en
@@ -49,24 +49,24 @@ namespace Kohedemy.Pages
           SqlCommand courseQueryCmd = new SqlCommand(courseQuery, con);
           courseQueryCmd.Parameters.AddWithValue("@UserID1", theUserID);
 
-          SqlDataReader reader1 = courseQueryCmd.ExecuteReader();
+          SqlDataReader sdr2 = courseQueryCmd.ExecuteReader();
 
           List<PersonalCourseData> newCourses = new List<PersonalCourseData>();
 
-          while (reader1.Read())
+          while (sdr2.Read())
           {
             PersonalCourseData newCourse = new PersonalCourseData
             {
-              CourseId = Convert.ToInt32(reader1["CourseID"]),
-              CourseTitle = reader1["Title"].ToString(),
-              CourseDifficulty = reader1["Difficulty"].ToString(),
-              CourseImage = (byte[])reader1["FeaturedImage"]
+              CourseId = Convert.ToInt32(sdr2["CourseID"]),
+              CourseTitle = sdr2["Title"].ToString(),
+              CourseDifficulty = sdr2["Difficulty"].ToString(),
+              CourseImage = (byte[])sdr2["FeaturedImage"]
             };
 
             newCourses.Add(newCourse);
           }
 
-          reader1.Close();
+          sdr2.Close();
 
           string assessmentQuery = @"
                                SELECT * FROM [Enrolled] AS en
@@ -76,24 +76,24 @@ namespace Kohedemy.Pages
           SqlCommand assessmentQueryCmd = new SqlCommand(assessmentQuery, con);
           assessmentQueryCmd.Parameters.AddWithValue("@UserID2", theUserID);
 
-          SqlDataReader reader2 = assessmentQueryCmd.ExecuteReader();
+          SqlDataReader sdr3 = assessmentQueryCmd.ExecuteReader();
 
           List<PersonalCourseData> assessmentCourses = new List<PersonalCourseData>();
 
-          while (reader2.Read())
+          while (sdr3.Read())
           {
             PersonalCourseData assessmentCourse = new PersonalCourseData
             {
-              CourseId = Convert.ToInt32(reader2["CourseID"]),
-              CourseTitle = reader2["Title"].ToString(),
-              CourseDifficulty = reader2["Difficulty"].ToString(),
-              CourseImage = (byte[])reader2["FeaturedImage"]
+              CourseId = Convert.ToInt32(sdr3["CourseID"]),
+              CourseTitle = sdr3["Title"].ToString(),
+              CourseDifficulty = sdr3["Difficulty"].ToString(),
+              CourseImage = (byte[])sdr3["FeaturedImage"]
             };
 
             assessmentCourses.Add(assessmentCourse);
           }
 
-          reader2.Close();
+          sdr3.Close();
 
           string reviseQuery = @"
                                SELECT * FROM [Enrolled] AS en
@@ -103,24 +103,24 @@ namespace Kohedemy.Pages
           SqlCommand reviseQueryCmd = new SqlCommand(reviseQuery, con);
           reviseQueryCmd.Parameters.AddWithValue("@UserID3", theUserID);
 
-          SqlDataReader reader3 = reviseQueryCmd.ExecuteReader();
+          SqlDataReader sdr4 = reviseQueryCmd.ExecuteReader();
 
           List<PersonalCourseData> reviseCourses = new List<PersonalCourseData>();
 
-          while (reader3.Read())
+          while (sdr4.Read())
           {
             PersonalCourseData reviseCourse = new PersonalCourseData
             {
-              CourseId = Convert.ToInt32(reader3["CourseID"]),
-              CourseTitle = reader3["Title"].ToString(),
-              CourseDifficulty = reader3["Difficulty"].ToString(),
-              CourseImage = (byte[])reader3["FeaturedImage"]
+              CourseId = Convert.ToInt32(sdr4["CourseID"]),
+              CourseTitle = sdr4["Title"].ToString(),
+              CourseDifficulty = sdr4["Difficulty"].ToString(),
+              CourseImage = (byte[])sdr4["FeaturedImage"]
             };
 
             reviseCourses.Add(reviseCourse);
           }
 
-          reader3.Close();
+          sdr4.Close();
 
           con.Close();
 

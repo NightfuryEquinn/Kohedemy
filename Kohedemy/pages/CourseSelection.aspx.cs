@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Diagnostics;
-using System.Web;
 using System.Web.UI.WebControls;
 
 namespace Kohedemy.Pages
@@ -177,12 +176,12 @@ namespace Kohedemy.Pages
             SqlCommand getTheUserIDCmd = new SqlCommand(getTheUserID, con);
             getTheUserIDCmd.Parameters.AddWithValue("@Username", theUsername);
 
-            SqlDataReader sdr5 = getTheUserIDCmd.ExecuteReader();
+            SqlDataReader sdr = getTheUserIDCmd.ExecuteReader();
             int theUserID = 0;
 
-            if (sdr5.Read())
+            if (sdr.Read())
             {
-              theUserID = Convert.ToInt32(sdr5["UserID"].ToString());
+              theUserID = Convert.ToInt32(sdr["UserID"].ToString());
             }
 
             string insertCourse = @"
@@ -193,7 +192,7 @@ namespace Kohedemy.Pages
             insertCourseCmd.Parameters.AddWithValue("@UserID", theUserID);
             insertCourseCmd.Parameters.AddWithValue("@CourseID", theCourse);
 
-            sdr5.Close();
+            sdr.Close();
 
             insertCourseCmd.ExecuteNonQuery();
 

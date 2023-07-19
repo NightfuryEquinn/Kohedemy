@@ -86,40 +86,45 @@
       <div class="data-container">
         <div class="data-graph-container">
           <h3>TOTAL BARISTA TRAINEE TO DATE</h3>
-          <p></p>
+          <p><asp:Label ID="TotalTrainee" runat="server" Text=""></asp:Label></p>
         </div>
 
         <div class="data-graph-container">
           <h3>TOTAL COURSE AVAILABLE</h3>
-          <p>Beginner: </p>
-          <p>Intermediate: </p>
-          <p>Advanced: </p>
-          <p>Masterclass: </p>
+          <p>Beginner: <asp:Label ID="TotalBegin" runat="server" Text=""></asp:Label></p>
+          <p>Intermediate: <asp:Label ID="TotalInter" runat="server" Text=""></asp:Label></p>
+          <p>Advanced: <asp:Label ID="TotalAdv" runat="server" Text=""></asp:Label></p>
+          <p>Masterclass: <asp:Label ID="TotalMaster" runat="server" Text=""></asp:Label></p>
         </div>
 
         <div class="data-graph-container">
           <h3>MOST POPULAR COURSE</h3>
-          <p></p>          
+          <p><asp:Label ID="MostPopular" runat="server" Text=""></asp:Label></p>          
         </div>
 
         <div class="data-graph-container">
           <h3>NUMBER OF TRAINEE ENROLLED COURSES</h3>
-          <p></p>
+          <p><asp:Label ID="TotalEnrolled" runat="server" Text=""></asp:Label></p>
         </div>
 
         <div class="data-graph-container">
           <h3>NUMBER OF TRAINEE COMPLETED COURSES</h3>
-          <p></p>
+          <p><asp:Label ID="TotalCompleted" runat="server" Text=""></asp:Label></p>
         </div>
 
         <div class="data-graph-container">
           <h3>NUMBER OF TRAINEE COMPLETED ASSESSMENT</h3>
-          <p></p>
+          <p><asp:Label ID="TotalAssessed" runat="server" Text=""></asp:Label></p>
         </div>
 
         <div class="data-graph-container">
           <h3>COURSE PENDING ASSESSMENT</h3>
-          <p></p>
+          <asp:Repeater ID="PendingAssessments" runat="server" OnItemDataBound="PendingAssessments_ItemDataBound">
+            <ItemTemplate>
+              <p><asp:Label ID="PendingAssessment" runat="server" Text=""></asp:Label></p>
+            </ItemTemplate>
+          </asp:Repeater>
+          <p><asp:Label ID="NoPendingAssessment" runat="server" Text="All courses have assessment included."></asp:Label></p>
         </div>
       </div>
 

@@ -4,7 +4,6 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Text;
-using System.Threading;
 using System.Web.UI.WebControls;
 
 namespace Kohedemy.Pages
@@ -24,14 +23,13 @@ namespace Kohedemy.Pages
     {
       if (Session["Username"] as string == "Kohemin")
       {
-        Debug.WriteLine("AdminCourse");
-
         try
         {
           SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RegisterString"].ConnectionString);
           con.Open();
 
-          String beginnerQuery = "SELECT * from [Course] WHERE Difficulty = 'Beginner'";
+          // For Beginner Course
+          string beginnerQuery = "SELECT * from [Course] WHERE Difficulty = 'Beginner'";
           SqlCommand beginnerCmd = new SqlCommand(beginnerQuery, con);
 
           SqlDataReader sdr = beginnerCmd.ExecuteReader();
@@ -54,6 +52,7 @@ namespace Kohedemy.Pages
 
           sdr.Close();
 
+          // For Intermediate Course
           string intermediateQuery = "SELECT * from [Course] WHERE Difficulty = 'Intermediate'";
           SqlCommand intermediateCmd = new SqlCommand(intermediateQuery, con);
 
@@ -77,6 +76,7 @@ namespace Kohedemy.Pages
 
           sdr2.Close();
 
+          // For Advanced Course
           string advancedQuery = "SELECT * from [Course] WHERE Difficulty = 'Advanced'";
           SqlCommand advancedCmd = new SqlCommand(advancedQuery, con);
 
@@ -100,6 +100,7 @@ namespace Kohedemy.Pages
 
           sdr3.Close();
 
+          // For Masterclass Course
           string masterclassQuery = "SELECT * from [Course] WHERE Difficulty = 'Masterclass'";
           SqlCommand masterclassCmd = new SqlCommand(masterclassQuery, con);
 
@@ -169,19 +170,21 @@ namespace Kohedemy.Pages
         SqlCommand excerptCmd = new SqlCommand(excerptQuery, con);
         excerptCmd.Parameters.AddWithValue("@CourseID", courseId);
 
-        SqlDataReader reader = excerptCmd.ExecuteReader();
+        SqlDataReader sdr = excerptCmd.ExecuteReader();
 
         StringBuilder sb = new StringBuilder("CreateCourse.aspx?CourseId=" + courseId);
         int count = 1;
 
-        while (reader.Read())
+        while (sdr.Read())
         {
-          int excerptId = (int)reader["ExcerptID"];
+          int excerptId = (int)sdr["ExcerptID"];
           sb.Append("&ExcerptId" + count + "=" + excerptId);
           count++;
         }
 
         Response.Redirect(sb.ToString());
+
+        sdr.Close();
 
         con.Close();
       }
@@ -224,19 +227,21 @@ namespace Kohedemy.Pages
           SqlCommand getQuestionCmd = new SqlCommand(getQuestion, con);
           getQuestionCmd.Parameters.AddWithValue("@CourseID", courseId);
 
-          SqlDataReader reader = getQuestionCmd.ExecuteReader();
+          SqlDataReader sdr = getQuestionCmd.ExecuteReader();
 
           StringBuilder sb = new StringBuilder("CreateAssessment.aspx?CourseId=" + courseId);
           int count = 1;
 
-          while (reader.Read())
+          while (sdr.Read())
           {
-            int questionId = (int)reader["QuestionID"];
+            int questionId = (int)sdr["QuestionID"];
             sb.Append("&QId" + count + "=" + questionId);
             count++;
           }
 
           Response.Redirect(sb.ToString());
+
+          sdr.Close();
         }
 
         con.Close();

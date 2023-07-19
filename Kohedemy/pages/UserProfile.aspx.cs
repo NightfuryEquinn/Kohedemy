@@ -27,6 +27,10 @@ namespace Kohedemy.Pages
               ProfileName.Text = sdr["Username"].ToString().Trim();
               ProfileEmail.Text = sdr["EmailAddress"].ToString().Trim();
             }
+
+            sdr.Close();
+
+            con.Close();
           }
           else
           {

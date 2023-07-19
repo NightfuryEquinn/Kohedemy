@@ -40,6 +40,8 @@ namespace Kohedemy.Pages
             username = sdr["Username"].ToString().Trim();
           }
 
+          sdr.Close();
+
           Session["Username"] = username;
 
           if (Session["Username"] as string != "Kohemin")
