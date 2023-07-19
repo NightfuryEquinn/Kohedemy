@@ -754,14 +754,29 @@ p.complete-error-message {
   flex-wrap: wrap;
   gap: 3.75rem;
   align-content: center;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
 }
 
 .data-graph-container {
-  height: 500px;
-  width: 600px;
+  padding: 1.25rem;
+  width: 450px;
+  color: var(--linen);
   background-color: #B0B0B099;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.data-graph-container h3 {
+  font-size: 2.25rem;
+}
+
+.data-graph-container p {
+  font-size: 1.125rem;
 }
 
 .mcq-container {

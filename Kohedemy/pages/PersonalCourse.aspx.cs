@@ -3,11 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Diagnostics;
-using System.Linq;
 using System.Text;
-using System.Web;
-using System.Web.Profile;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace Kohedemy.Pages
@@ -183,6 +179,16 @@ namespace Kohedemy.Pages
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RegisterString"].ConnectionString);
         con.Open();
 
+        string courseId = "";
+        Button takeButton = (Button)sender;
+        if (takeButton.ID == "TakeAssessmentButton")
+        {
+          courseId = takeButton.CommandArgument;
+        }
+
+        StringBuilder sb = new StringBuilder("CourseAssessment.aspx?CourseId=" + courseId);
+
+        Response.Redirect(sb.ToString());
 
         con.Close();
       }

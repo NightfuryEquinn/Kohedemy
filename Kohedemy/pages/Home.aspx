@@ -89,7 +89,7 @@
             <% } %>
           <% } else { %>
             <button onclick="document.location.href = './Login.aspx'; return false" class="card-button">
-              <p>Enroll/p>
+              <p>Enroll</p>
             </button>
           <% } %>
         </div>
@@ -113,7 +113,7 @@
             <% } %>
           <% } else { %>
             <button onclick="document.location.href = './Login.aspx'; return false" class="card-button">
-              <p>Enroll/p>
+              <p>Enroll</p>
             </button>
           <% } %>
         </div>
@@ -137,7 +137,7 @@
             <% } %>
           <% } else { %>
             <button onclick="document.location.href = './Login.aspx'; return false" class="card-button">
-              <p>Enroll/p>
+              <p>Enroll</p>
             </button>
           <% } %>
         </div>
@@ -162,7 +162,7 @@
       <div class="divider">
         <h3>READY TO BREW SOME COFFEE?</h3>
 
-        <p>Complete our test for coffee brewing knowledge and secure an official certification.</p>
+        <p>Deemed yourself as a veteran in barista? Try our Masterclass courses.</p>
       </div>
 
       <!--Cards-->
@@ -186,7 +186,7 @@
             <% } %>
           <% } else { %>
             <button onclick="document.location.href = './Login.aspx'; return false" class="card-button">
-              <p>Take Exam/p>
+              <p>Take Exam</p>
             </button>
           <% } %>
         </div>
@@ -210,7 +210,7 @@
             <% } %>
           <% } else { %>
             <button onclick="document.location.href = './Login.aspx'; return false" class="card-button">
-              <p>Take Exam/p>
+              <p>Take Exam</p>
             </button>
           <% } %>
         </div>
@@ -234,7 +234,7 @@
             <% } %>
           <% } else { %>
             <button onclick="document.location.href = './Login.aspx'; return false" class="card-button">
-              <p>Take Exam/p>
+              <p>Take Exam</p>
             </button>
           <% } %>
         </div>

@@ -97,7 +97,12 @@
               <h3>ANSWER</h3>
             </div>
 
-            <asp:TextBox CssClass="management-textbox" ID="Question1Answer" runat="server"></asp:TextBox>
+            <asp:DropDownList CssClass="management-textbox" ID="Question1Answer" runat="server">
+              <asp:ListItem Value="A">A</asp:ListItem>
+              <asp:ListItem Value="B">B</asp:ListItem>
+              <asp:ListItem Value="C">C</asp:ListItem>
+              <asp:ListItem Value="D">D</asp:ListItem>
+            </asp:DropDownList>
           </div>
 
           <hr class='single-management-hr' />
@@ -147,7 +152,12 @@
               <h3>ANSWER</h3>
             </div>
 
-            <asp:TextBox CssClass="management-textbox" ID="Question2Answer" runat="server"></asp:TextBox>
+            <asp:DropDownList CssClass="management-textbox" ID="Question2Answer" runat="server">
+              <asp:ListItem Value="A">A</asp:ListItem>
+              <asp:ListItem Value="B">B</asp:ListItem>
+              <asp:ListItem Value="C">C</asp:ListItem>
+              <asp:ListItem Value="D">D</asp:ListItem>
+            </asp:DropDownList>
           </div>
 
           <hr class='single-management-hr' />
@@ -197,7 +207,12 @@
               <h3>ANSWER</h3>
             </div>
 
-            <asp:TextBox CssClass="management-textbox" ID="Question3Answer" runat="server"></asp:TextBox>
+            <asp:DropDownList CssClass="management-textbox" ID="Question3Answer" runat="server">
+              <asp:ListItem Value="A">A</asp:ListItem>
+              <asp:ListItem Value="B">B</asp:ListItem>
+              <asp:ListItem Value="C">C</asp:ListItem>
+              <asp:ListItem Value="D">D</asp:ListItem>
+            </asp:DropDownList>
           </div>
 
           <hr class='single-management-hr' />
@@ -247,7 +262,12 @@
               <h3>ANSWER</h3>
             </div>
 
-            <asp:TextBox CssClass="management-textbox" ID="Question4Answer" runat="server"></asp:TextBox>
+            <asp:DropDownList CssClass="management-textbox" ID="Question4Answer" runat="server">
+              <asp:ListItem Value="A">A</asp:ListItem>
+              <asp:ListItem Value="B">B</asp:ListItem>
+              <asp:ListItem Value="C">C</asp:ListItem>
+              <asp:ListItem Value="D">D</asp:ListItem>
+            </asp:DropDownList>
           </div>
 
           <hr class='single-management-hr' />
@@ -297,7 +317,12 @@
               <h3>ANSWER</h3>
             </div>
 
-            <asp:TextBox CssClass="management-textbox" ID="Question5Answer" runat="server"></asp:TextBox>
+            <asp:DropDownList CssClass="management-textbox" ID="Question5Answer" runat="server">
+              <asp:ListItem Value="A">A</asp:ListItem>
+              <asp:ListItem Value="B">B</asp:ListItem>
+              <asp:ListItem Value="C">C</asp:ListItem>
+              <asp:ListItem Value="D">D</asp:ListItem>
+            </asp:DropDownList>
           </div>
 
           <hr class='single-management-hr' />
@@ -347,7 +372,12 @@
               <h3>ANSWER</h3>
             </div>
 
-            <asp:TextBox CssClass="management-textbox" ID="Question6Answer" runat="server"></asp:TextBox>
+            <asp:DropDownList CssClass="management-textbox" ID="Question6Answer" runat="server">
+              <asp:ListItem Value="A">A</asp:ListItem>
+              <asp:ListItem Value="B">B</asp:ListItem>
+              <asp:ListItem Value="C">C</asp:ListItem>
+              <asp:ListItem Value="D">D</asp:ListItem>
+            </asp:DropDownList>
           </div>
 
           <hr class='single-management-hr' />
@@ -397,7 +427,12 @@
               <h3>ANSWER</h3>
             </div>
 
-            <asp:TextBox CssClass="management-textbox" ID="Question7Answer" runat="server"></asp:TextBox>
+            <asp:DropDownList CssClass="management-textbox" ID="Question7Answer" runat="server">
+              <asp:ListItem Value="A">A</asp:ListItem>
+              <asp:ListItem Value="B">B</asp:ListItem>
+              <asp:ListItem Value="C">C</asp:ListItem>
+              <asp:ListItem Value="D">D</asp:ListItem>
+            </asp:DropDownList>
           </div>
 
           <hr class='single-management-hr' />
@@ -447,7 +482,12 @@
               <h3>ANSWER</h3>
             </div>
 
-            <asp:TextBox CssClass="management-textbox" ID="Question8Answer" runat="server"></asp:TextBox>
+            <asp:DropDownList CssClass="management-textbox" ID="Question8Answer" runat="server">
+              <asp:ListItem Value="A">A</asp:ListItem>
+              <asp:ListItem Value="B">B</asp:ListItem>
+              <asp:ListItem Value="C">C</asp:ListItem>
+              <asp:ListItem Value="D">D</asp:ListItem>
+            </asp:DropDownList>
           </div>
 
           <hr class='single-management-hr' />
@@ -497,7 +537,12 @@
               <h3>ANSWER</h3>
             </div>
 
-            <asp:TextBox CssClass="management-textbox" ID="Question9Answer" runat="server"></asp:TextBox>
+            <asp:DropDownList CssClass="management-textbox" ID="Question9Answer" runat="server">
+              <asp:ListItem Value="A">A</asp:ListItem>
+              <asp:ListItem Value="B">B</asp:ListItem>
+              <asp:ListItem Value="C">C</asp:ListItem>
+              <asp:ListItem Value="D">D</asp:ListItem>
+            </asp:DropDownList>
           </div>
 
           <hr class='single-management-hr' />
@@ -547,7 +592,12 @@
               <h3>ANSWER</h3>
             </div>
 
-            <asp:TextBox CssClass="management-textbox" ID="Question10Answer" runat="server"></asp:TextBox>
+            <asp:DropDownList CssClass="management-textbox" ID="Question10Answer" runat="server">
+              <asp:ListItem Value="A">A</asp:ListItem>
+              <asp:ListItem Value="B">B</asp:ListItem>
+              <asp:ListItem Value="C">C</asp:ListItem>
+              <asp:ListItem Value="D">D</asp:ListItem>
+            </asp:DropDownList>
           </div>
         </div>
 

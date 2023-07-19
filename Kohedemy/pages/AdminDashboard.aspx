@@ -85,15 +85,41 @@
       <!--Data Analytics-->
       <div class="data-container">
         <div class="data-graph-container">
-
+          <h3>TOTAL BARISTA TRAINEE TO DATE</h3>
+          <p></p>
         </div>
 
         <div class="data-graph-container">
-
+          <h3>TOTAL COURSE AVAILABLE</h3>
+          <p>Beginner: </p>
+          <p>Intermediate: </p>
+          <p>Advanced: </p>
+          <p>Masterclass: </p>
         </div>
 
         <div class="data-graph-container">
+          <h3>MOST POPULAR COURSE</h3>
+          <p></p>          
+        </div>
 
+        <div class="data-graph-container">
+          <h3>NUMBER OF TRAINEE ENROLLED COURSES</h3>
+          <p></p>
+        </div>
+
+        <div class="data-graph-container">
+          <h3>NUMBER OF TRAINEE COMPLETED COURSES</h3>
+          <p></p>
+        </div>
+
+        <div class="data-graph-container">
+          <h3>NUMBER OF TRAINEE COMPLETED ASSESSMENT</h3>
+          <p></p>
+        </div>
+
+        <div class="data-graph-container">
+          <h3>COURSE PENDING ASSESSMENT</h3>
+          <p></p>
         </div>
       </div>
 

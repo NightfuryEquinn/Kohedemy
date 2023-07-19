@@ -70,6 +70,7 @@
               </div>
 
               <h4><%# Eval("CourseTitle") %></h4>
+              <p>Difficulty: <%# Eval("CourseDifficulty") %></p>
           
               <asp:Button CommandArgument='<%# Eval("CourseId") %>' CssClass="card-button" ID="GetStartedButton" runat="server" Text="Get Started" OnClick="GetStartedButton_Click" />
             </div>
@@ -90,12 +91,13 @@
           <ItemTemplate>
             <div class="cards">
               <div class="card-image-container">
-                <img class="card-image" src="../Assets/images/vertical.jpg" />
+                <img class="card-image" src="data:image/jpeg;base64,<%# Convert.ToBase64String((byte[])Eval("CourseImage")) %>" />
               </div>
 
-              <h4>Beginner’s Guide to First Coffee</h4>
+              <h4><%# Eval("CourseTitle") %></h4>
+              <p>Difficulty: <%# Eval("CourseDifficulty") %></p>
           
-              <asp:Button CssClass="card-button" ID="TakeAssessmentButton" runat="server" Text="Assessment" OnClick="TakeAssessmentButton_Click" />
+              <asp:Button CommandArgument='<%# Eval("CourseId") %>' CssClass="card-button" ID="TakeAssessmentButton" runat="server" Text="Assessment" OnClick="TakeAssessmentButton_Click" />
             </div>
           </ItemTemplate>
         </asp:Repeater>
@@ -114,12 +116,13 @@
           <ItemTemplate>
             <div class="cards">
               <div class="card-image-container">
-                <img class="card-image" src="../Assets/images/vertical.jpg" />
+                <img class="card-image" src="data:image/jpeg;base64,<%# Convert.ToBase64String((byte[])Eval("CourseImage")) %>" />
               </div>
 
-              <h4>Beginner’s Guide to First Coffee</h4>
+              <h4><%# Eval("CourseTitle") %></h4>
+              <p>Difficulty: <%# Eval("CourseDifficulty") %></p>
           
-              <asp:Button CssClass="card-button" ID="ReviseButton" runat="server" Text="Revise" OnClick="ReviseButton_Click" />
+              <asp:Button CommandArgument='<%# Eval("CourseId") %>' CssClass="card-button" ID="ReviseButton" runat="server" Text="Revise" OnClick="ReviseButton_Click" />
             </div>
           </ItemTemplate>
         </asp:Repeater>

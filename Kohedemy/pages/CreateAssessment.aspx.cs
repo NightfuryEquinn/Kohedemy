@@ -67,7 +67,7 @@ namespace Kohedemy.Pages
             cmdCreate.Parameters.AddWithValue($"@ChoiceB{i + 1}", ((TextBox)Page.FindControl($"Question{i + 1}B")).Text);
             cmdCreate.Parameters.AddWithValue($"@ChoiceC{i + 1}", ((TextBox)Page.FindControl($"Question{i + 1}C")).Text);
             cmdCreate.Parameters.AddWithValue($"@ChoiceD{i + 1}", ((TextBox)Page.FindControl($"Question{i + 1}D")).Text);
-            cmdCreate.Parameters.AddWithValue($"@Answer{i + 1}", ((TextBox)Page.FindControl($"Question{i + 1}Answer")).Text);
+            cmdCreate.Parameters.AddWithValue($"@Answer{i + 1}", ((DropDownList)Page.FindControl($"Question{i + 1}Answer")).SelectedValue.ToString());
           }
 
           cmdCreate.ExecuteNonQuery();
@@ -189,7 +189,7 @@ namespace Kohedemy.Pages
             cmdUpdate.Parameters.AddWithValue($"@ChoiceB{i + 1}", ((TextBox)Page.FindControl($"Question{i + 1}B")).Text);
             cmdUpdate.Parameters.AddWithValue($"@ChoiceC{i + 1}", ((TextBox)Page.FindControl($"Question{i + 1}C")).Text);
             cmdUpdate.Parameters.AddWithValue($"@ChoiceD{i + 1}", ((TextBox)Page.FindControl($"Question{i + 1}D")).Text);
-            cmdUpdate.Parameters.AddWithValue($"@Answer{i + 1}", ((TextBox)Page.FindControl($"Question{i + 1}Answer")).Text);
+            cmdUpdate.Parameters.AddWithValue($"@Answer{i + 1}", ((DropDownList)Page.FindControl($"Question{i + 1}Answer")).SelectedValue.ToString());
           }
 
           cmdUpdate.ExecuteNonQuery();

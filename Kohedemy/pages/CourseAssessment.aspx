@@ -62,20 +62,31 @@
       </div>
 
       <!--MCQ Template-->
-      <div class="mcq-container">
-        <div class="single-mcq">
-          <h6 class="question-divider">QUESTION  1</h6>
+      <asp:Repeater ID="MCQRepeater" runat="server" EnableViewState="true">
+        <ItemTemplate>
+          <div class="mcq-container">
+            <div class="single-mcq">
+              <h6 class="question-divider">QUESTION <%# Eval("QuestionNumber") %></h6>
 
-          <div class="question-container">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-          
-            <div class="question-selection">
-              <asp:RadioButton GroupName="question-1" CssClass="radio-button" ID="RadioButton1" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate" runat="server" />
-              <asp:RadioButton GroupName="question-1" CssClass="radio-button" ID="RadioButton2" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate" runat="server" />
-              <asp:RadioButton GroupName="question-1" CssClass="radio-button" ID="RadioButton3" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate" runat="server" />
-              <asp:RadioButton GroupName="question-1" CssClass="radio-button" ID="RadioButton4" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate" runat="server" />
+              <div class="question-container">
+                <p><%# Eval("Question") %></p>
+
+                <div class="question-selection">
+                  <asp:RadioButton AutoPostBack="true" EnableViewState="true" GroupName='<%# Eval("QuestionID") %>' CssClass="radio-button" ID="ChoiceA" Text='<%# Eval("ChoiceA") %>' runat="server" />
+                  <asp:RadioButton AutoPostBack="true" EnableViewState="true" GroupName='<%# Eval("QuestionID") %>' CssClass="radio-button" ID="ChoiceB" Text='<%# Eval("ChoiceB") %>' runat="server" />
+                  <asp:RadioButton AutoPostBack="true" EnableViewState="true" GroupName='<%# Eval("QuestionID") %>' CssClass="radio-button" ID="ChoiceC" Text='<%# Eval("ChoiceC") %>' runat="server" />
+                  <asp:RadioButton AutoPostBack="true" EnableViewState="true" GroupName='<%# Eval("QuestionID") %>' CssClass="radio-button" ID="ChoiceD" Text='<%# Eval("ChoiceD") %>' runat="server" />
+                </div>
+              </div>
             </div>
           </div>
+        </ItemTemplate>
+      </asp:Repeater>
+      
+
+      <div class="assessment-container">
+        <div class="cancel-save-container">
+          <asp:Button CssClass="cancel-save-button" ID="FinishAssessmentButton" runat="server" Text="Submit Assessment" OnClick="FinishAssessmentButton_Click" />
         </div>
       </div>
 
