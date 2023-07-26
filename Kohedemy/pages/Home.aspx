@@ -172,7 +172,7 @@
              <img class="card-image" src="../Assets/images/closeup.jpg" />
           </div>
 
-          <h4>First Coffee Assessment</h4>
+          <h4>The Ultimate Coffee Course</h4>
           
           <% if (Session["Username"] as string != null) { %>
             <% if (Session["Username"] as string != "Kohemin") { %>
@@ -196,7 +196,7 @@
              <img class="card-image" src="../Assets/images/prepare.jpg" />
           </div>
 
-          <h4>Milk Assessment for Beginner</h4>
+          <h4>Golden Thumb Rule Of Milk</h4>
           
           <% if (Session["Username"] as string != null) { %>
             <% if (Session["Username"] as string != "Kohemin") { %>
@@ -220,7 +220,7 @@
              <img class="card-image" src="../Assets/images/female.jpg" />
           </div>
 
-          <h4>Knowledge for Coffee Bean</h4>
+          <h4>Fine-Grounded Coffee. Fresh</h4>
           
           <% if (Session["Username"] as string != null) { %>
             <% if (Session["Username"] as string != "Kohemin") { %>
