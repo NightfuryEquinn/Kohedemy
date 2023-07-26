@@ -39,7 +39,7 @@ namespace Kohedemy.Pages
 
           cmd1.ExecuteNonQuery();
 
-          Response.Write("<script>alert('Your account is created. Please login.')</script>");
+          Response.Write("<script>alert('Your account is created. Please login.'); document.location.href = './Login.aspx'</script>");
         }
 
         con.Close();

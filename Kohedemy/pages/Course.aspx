@@ -83,11 +83,13 @@
         </ItemTemplate>
       </asp:Repeater>
 
-      <div class="assessment-container">
-        <div class="cancel-save-container">
-          <asp:Button CssClass="cancel-save-button" ID="FinishCourseButton" runat="server" Text="Finish Course" OnClick="FinishCourseButton_Click" />
+      <% if (Session["Username"] as string != "Kohemin") { %>
+        <div class="assessment-container">
+          <div class="cancel-save-container">
+            <asp:Button CssClass="cancel-save-button" ID="FinishCourseButton" runat="server" Text="Finish Course" OnClick="FinishCourseButton_Click" />
+          </div>
         </div>
-      </div>
+      <% } %>
 
       <!--Footer-->
       <footer>

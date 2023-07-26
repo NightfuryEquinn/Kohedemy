@@ -602,7 +602,7 @@
         </div>
 
         <div class="cancel-save-container">
-          <button class="cancel-save-button">
+          <button onclick="document.location.href = './AdminCourseSelection.aspx'; return false" class="cancel-save-button">
             <p>Cancel</p>
           </button>
 

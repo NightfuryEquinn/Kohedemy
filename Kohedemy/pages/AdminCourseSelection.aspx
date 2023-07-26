@@ -116,7 +116,7 @@
                 <div class="inner-edit-delete">
                   <asp:ImageButton CommandArgument='<%# Eval("CourseId") %>' ImageUrl="../Assets/icons/edit.png" CssClass="inner-button" ID="EditButton" runat="server" OnClick="EditButton_Click" />
                   <asp:ImageButton CommandArgument='<%# Eval("CourseId") %>' ImageUrl="../Assets/icons/check-list.png" CssClass="inner-button" ID="AssessmentButton" runat="server" OnClick="AssessmentButton_Click" />                  
-                  <asp:ImageButton ImageUrl="../Assets/icons/delete.png" CssClass="inner-button" ID="DeleteButton" runat="server" />
+                  <asp:ImageButton CommandArgument='<%# Eval("CourseId") %>' ImageUrl="../Assets/icons/delete.png" CssClass="inner-button" ID="DeleteButton" runat="server" OnClick="DeleteButton_Click" />
                 </div>
               </div>
             </div>
@@ -150,7 +150,7 @@
                 <div class="inner-edit-delete">
                   <asp:ImageButton CommandArgument='<%# Eval("CourseId") %>' ImageUrl="../Assets/icons/edit.png" CssClass="inner-button" ID="EditButton" runat="server" OnClick="EditButton_Click" />
                   <asp:ImageButton CommandArgument='<%# Eval("CourseId") %>' ImageUrl="../Assets/icons/check-list.png" CssClass="inner-button" ID="AssessmentButton" runat="server" OnClick="AssessmentButton_Click" />
-                  <asp:ImageButton ImageUrl="../Assets/icons/delete.png" CssClass="inner-button" ID="DeleteButton" runat="server" />
+                  <asp:ImageButton CommandArgument='<%# Eval("CourseId") %>' ImageUrl="../Assets/icons/delete.png" CssClass="inner-button" ID="DeleteButton" runat="server" OnClick="DeleteButton_Click" />
                 </div>
               </div>
             </div>
@@ -184,7 +184,7 @@
                 <div class="inner-edit-delete">
                   <asp:ImageButton CommandArgument='<%# Eval("CourseId") %>' ImageUrl="../Assets/icons/edit.png" CssClass="inner-button" ID="EditButton" runat="server" OnClick="EditButton_Click" />
                   <asp:ImageButton CommandArgument='<%# Eval("CourseId") %>' ImageUrl="../Assets/icons/check-list.png" CssClass="inner-button" ID="AssessmentButton" runat="server" OnClick="AssessmentButton_Click" />
-                  <asp:ImageButton ImageUrl="../Assets/icons/delete.png" CssClass="inner-button" ID="DeleteButton" runat="server" />
+                  <asp:ImageButton CommandArgument='<%# Eval("CourseId") %>' ImageUrl="../Assets/icons/delete.png" CssClass="inner-button" ID="DeleteButton" runat="server" OnClick="DeleteButton_Click" />
                 </div>
               </div>
             </div>

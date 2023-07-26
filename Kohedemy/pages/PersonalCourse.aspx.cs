@@ -205,6 +205,16 @@ namespace Kohedemy.Pages
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RegisterString"].ConnectionString);
         con.Open();
 
+        string courseId = "";
+        Button reviseButton = (Button)sender;
+        if (reviseButton.ID == "ReviseButton")
+        {
+          courseId = reviseButton.CommandArgument;
+        }
+
+        StringBuilder sb = new StringBuilder("Course.aspx?CourseId=" + courseId);
+
+        Response.Redirect(sb.ToString());
 
         con.Close();
       }

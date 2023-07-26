@@ -154,5 +154,13 @@ namespace Kohedemy.Pages
         Debug.WriteLine(ex.Message);
       }
     }
+
+    protected void LogOutButton_Click(object sender, EventArgs e)
+    {
+      Session.Abandon();
+      Request.Cookies.Clear();
+
+      Response.Redirect("Login.aspx");
+    }
   }
 }
