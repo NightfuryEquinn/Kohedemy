@@ -30,6 +30,25 @@ namespace Kohedemy.Pages
 
         if(Request.QueryString["QId1"] == null)
         {
+          for (int i = 0; i < 10; i++)
+          {
+            string question = ((TextBox)Page.FindControl($"Question{i + 1}")).Text;
+            string choiceA = ((TextBox)Page.FindControl($"Question{i + 1}A")).Text;
+            string choiceB = ((TextBox)Page.FindControl($"Question{i + 1}B")).Text;
+            string choiceC = ((TextBox)Page.FindControl($"Question{i + 1}C")).Text;
+            string choiceD = ((TextBox)Page.FindControl($"Question{i + 1}D")).Text;
+            string answer = ((DropDownList)Page.FindControl($"Question{i + 1}Answer")).SelectedValue;
+
+            if (string.IsNullOrEmpty(question) || string.IsNullOrEmpty(choiceA) ||
+                string.IsNullOrEmpty(choiceB) || string.IsNullOrEmpty(choiceC) ||
+                string.IsNullOrEmpty(choiceD) || string.IsNullOrEmpty(answer))
+            {
+              // Handle the case where a required field is empty or null
+              Response.Write("<script>alert('Please fill in all input fields.'); document.location.href='./AdminCourseSelection.aspx'</script>");
+              return; // Stop further processing
+            }
+          }
+
           string createQuery = @"
                              INSERT INTO [Assessment] (CourseID) VALUES (@CourseID)
 
@@ -81,6 +100,25 @@ namespace Kohedemy.Pages
           int q8 = Convert.ToInt32(Request.QueryString["QId8"]);
           int q9 = Convert.ToInt32(Request.QueryString["QId9"]);
           int q10 = Convert.ToInt32(Request.QueryString["QId10"]);
+
+          for (int i = 0; i < 10; i++)
+          {
+            string question = ((TextBox)Page.FindControl($"Question{i + 1}")).Text;
+            string choiceA = ((TextBox)Page.FindControl($"Question{i + 1}A")).Text;
+            string choiceB = ((TextBox)Page.FindControl($"Question{i + 1}B")).Text;
+            string choiceC = ((TextBox)Page.FindControl($"Question{i + 1}C")).Text;
+            string choiceD = ((TextBox)Page.FindControl($"Question{i + 1}D")).Text;
+            string answer = ((DropDownList)Page.FindControl($"Question{i + 1}Answer")).SelectedValue;
+
+            if (string.IsNullOrEmpty(question) || string.IsNullOrEmpty(choiceA) ||
+                string.IsNullOrEmpty(choiceB) || string.IsNullOrEmpty(choiceC) ||
+                string.IsNullOrEmpty(choiceD) || string.IsNullOrEmpty(answer))
+            {
+              // Handle the case where a required field is empty or null
+              Response.Write("<script>alert('Please fill in all input fields.'); document.location.href='./AdminCourseSelection.aspx'</script>");
+              return; // Stop further processing
+            }
+          }
 
           string updateQuery = @"
                                UPDATE [Question]

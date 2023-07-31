@@ -62,19 +62,66 @@ namespace Kohedemy.Pages
     {
       try
       {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RegisterString"].ConnectionString);
-        con.Open();
+        if ((editUsername.Text != "") && (editPassword.Text != "") && (editEmail.Text != ""))
+        {
+          if (editPassword.Text == editConfirm.Text)
+          {
+            if (editPassword.Text.Length > 9)
+            {
+              SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RegisterString"].ConnectionString);
+              con.Open();
 
-        SqlCommand cmdSave = new SqlCommand("UPDATE [User] SET Username ='" + editUsername.Text + "', EmailAddress = '" + editEmail.Text + "', Password = '" + editPassword.Text + "' WHERE Username = '" + Session["Username"] + "'" , con);
-        cmdSave.ExecuteNonQuery();
+              SqlCommand cmdCheck = new SqlCommand("SELECT * FROM [User] WHERE Username = '" + Session["Username"] + "'", con);
 
-        con.Close();
+              SqlDataReader sdr = cmdCheck.ExecuteReader();
 
-        Session["Username"] = editUsername.Text;
+              string compareEmail = "";
 
-        Response.Write(
-          "<script>alert('Your personal detail has been updated successfully.'); document.location.href='./UserProfile.aspx'</script>"
-        );
+              while (sdr.Read())
+              {
+                compareEmail = sdr["EmailAddress"].ToString().Trim();
+              }
+
+              sdr.Close();
+
+              string query = "SELECT count(*) from [User] where EmailAddress = @Email";
+              SqlCommand cmd = new SqlCommand(query, con);
+              cmd.Parameters.AddWithValue("@Email", editEmail.Text);
+
+              int check = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+
+              if (check > 0 && (ProfileEmail.Text != compareEmail))
+              {
+                Response.Write("<script>alert('Email address already in use.');</script>");
+              }
+              else
+              {
+                SqlCommand cmdSave = new SqlCommand("UPDATE [User] SET Username ='" + editUsername.Text + "', EmailAddress = '" + editEmail.Text + "', Password = '" + editPassword.Text + "' WHERE Username = '" + Session["Username"] + "'", con);
+                cmdSave.ExecuteNonQuery();
+
+                con.Close();
+
+                Session["Username"] = editUsername.Text;
+
+                Response.Write(
+                  "<script>alert('Your personal detail has been updated successfully.'); document.location.href='./UserProfile.aspx'</script>"
+                );
+              }
+            }
+            else
+            {
+              Response.Write("<script>alert('Password must be more than 10 characters'); document.location.href = './UserProfile.aspx'</script>");
+            }
+          }
+          else
+          {
+            Response.Write("<script>alert('Password and confirm password are not the same.'); document.location.href = './UserProfile.aspx'</script>");
+          }
+        }
+        else
+        {
+          Response.Write("<script>alert('Please fill in all input fields.'); document.location.href = './UserProfile.aspx'</script>");
+        }
       }
       catch (Exception ex)
       {

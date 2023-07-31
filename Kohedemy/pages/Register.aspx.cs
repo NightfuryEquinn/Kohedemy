@@ -16,33 +16,54 @@ namespace Kohedemy.Pages
     {
       try
       {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RegisterString"].ConnectionString);
-        con.Open();
-
-        string query = "SELECT count(*) from [User] where EmailAddress = @Email";
-        SqlCommand cmd = new SqlCommand(query, con);
-        cmd.Parameters.AddWithValue("@Email", EmailBox.Text);
-
-        int check = Convert.ToInt32(cmd.ExecuteScalar().ToString());
-
-        if(check > 0)
+        if((UsernameBox.Text != "") && (PasswordBox.Text != "") && (EmailBox.Text != ""))
         {
-          Response.Write("<script>alert('Email address already in use.');</script>");
+          if(PasswordBox.Text == ConfirmBox.Text)
+          {
+            if (PasswordBox.Text.Length > 9)
+            {
+              SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RegisterString"].ConnectionString);
+              con.Open();
+
+              string query = "SELECT count(*) from [User] where EmailAddress = @Email";
+              SqlCommand cmd = new SqlCommand(query, con);
+              cmd.Parameters.AddWithValue("@Email", EmailBox.Text);
+
+              int check = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+
+              if (check > 0)
+              {
+                Response.Write("<script>alert('Email address already in use.');</script>");
+              }
+              else
+              {
+                string insertQuery = "INSERT INTO [User] (Username, EmailAddress, Password) VALUES (@Username, @Email, @Password)";
+                SqlCommand cmd1 = new SqlCommand(insertQuery, con);
+                cmd1.Parameters.AddWithValue("@Username", UsernameBox.Text);
+                cmd1.Parameters.AddWithValue("@Email", EmailBox.Text);
+                cmd1.Parameters.AddWithValue("@Password", PasswordBox.Text);
+
+                cmd1.ExecuteNonQuery();
+
+                Response.Write("<script>alert('Your account is created. Please login.'); document.location.href = './Login.aspx'</script>");
+
+                con.Close();
+              }
+            }
+            else
+            {
+              Response.Write("<script>alert('Password must be more than 10 characters'); document.location.href = './Register.aspx'</script>");
+            }
+          }
+          else
+          {
+            Response.Write("<script>alert('Password and confirm password are not the same.'); document.location.href = './Register.aspx'</script>");
+          }
         }
         else
         {
-          string insertQuery = "INSERT INTO [User] (Username, EmailAddress, Password) VALUES (@Username, @Email, @Password)";
-          SqlCommand cmd1 = new SqlCommand(insertQuery, con);
-          cmd1.Parameters.AddWithValue("@Username", UsernameBox.Text);
-          cmd1.Parameters.AddWithValue("@Email", EmailBox.Text);
-          cmd1.Parameters.AddWithValue("@Password", PasswordBox.Text);
-
-          cmd1.ExecuteNonQuery();
-
-          Response.Write("<script>alert('Your account is created. Please login.'); document.location.href = './Login.aspx'</script>");
+          Response.Write("<script>alert('Please fill in all input fields.'); document.location.href = './Register.aspx'</script>");
         }
-
-        con.Close();
       }
       catch (Exception ex)
       {

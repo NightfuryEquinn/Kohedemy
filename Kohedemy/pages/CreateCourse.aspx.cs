@@ -39,7 +39,19 @@ namespace Kohedemy.Pages
           byte[] image3Byte = ExcerptImage3.FileBytes;
           byte[] image4Byte = ExcerptImage4.FileBytes;
 
-          string updateQuery = @"
+          if (!string.IsNullOrWhiteSpace(CourseTitle.Text) && !string.IsNullOrWhiteSpace(CourseDescription.Text)
+              && !string.IsNullOrWhiteSpace(CourseDifficulty.SelectedValue)
+              && featuredImageByte != null
+              && !string.IsNullOrWhiteSpace(Excerpt1.Text) && !string.IsNullOrWhiteSpace(ExcerptSubheading1.Text)
+              && !string.IsNullOrWhiteSpace(ExcerptContent1.Text) && image1Byte != null
+              && !string.IsNullOrWhiteSpace(Excerpt2.Text) && !string.IsNullOrWhiteSpace(ExcerptSubheading2.Text)
+              && !string.IsNullOrWhiteSpace(ExcerptContent2.Text) && image2Byte != null
+              && !string.IsNullOrWhiteSpace(Excerpt3.Text) && !string.IsNullOrWhiteSpace(ExcerptSubheading3.Text)
+              && !string.IsNullOrWhiteSpace(ExcerptContent3.Text) && image3Byte != null
+              && !string.IsNullOrWhiteSpace(Excerpt4.Text) && !string.IsNullOrWhiteSpace(ExcerptSubheading4.Text)
+              && !string.IsNullOrWhiteSpace(ExcerptContent4.Text) && image4Byte != null)
+          {
+            string updateQuery = @"
                                UPDATE [Course] SET 
                                Title = @Title, Description = @Description, Difficulty = @Difficulty, FeaturedImage = @FeaturedImage 
                                WHERE CourseID = @CourseID
@@ -61,65 +73,72 @@ namespace Kohedemy.Pages
                                WHERE ExcerptID = @ExcerptID4
                                ";
 
-          SqlCommand cmdUpdate = new SqlCommand(updateQuery, con);
+            SqlCommand cmdUpdate = new SqlCommand(updateQuery, con);
 
-          cmdUpdate.Parameters.AddWithValue("@CourseID", courseID);
-          cmdUpdate.Parameters.AddWithValue("@Title", CourseTitle.Text);
-          cmdUpdate.Parameters.AddWithValue("@Description", CourseDescription.Text);
-          cmdUpdate.Parameters.AddWithValue("@Difficulty", CourseDifficulty.SelectedValue.ToString());
-          SqlParameter featuredParam = new SqlParameter("@FeaturedImage", SqlDbType.VarBinary)
+            cmdUpdate.Parameters.AddWithValue("@CourseID", courseID);
+            cmdUpdate.Parameters.AddWithValue("@Title", CourseTitle.Text);
+            cmdUpdate.Parameters.AddWithValue("@Description", CourseDescription.Text);
+            cmdUpdate.Parameters.AddWithValue("@Difficulty", CourseDifficulty.SelectedValue.ToString());
+            SqlParameter featuredParam = new SqlParameter("@FeaturedImage", SqlDbType.VarBinary)
+            {
+              Value = featuredImageByte
+            };
+            cmdUpdate.Parameters.Add(featuredParam);
+
+            cmdUpdate.Parameters.AddWithValue("ExcerptID1", excerpt1);
+            cmdUpdate.Parameters.AddWithValue("@Title1", Excerpt1.Text);
+            cmdUpdate.Parameters.AddWithValue("@Subheading1", ExcerptSubheading1.Text);
+            cmdUpdate.Parameters.AddWithValue("@Content1", ExcerptContent1.Text);
+            SqlParameter image1Param = new SqlParameter("@Image1", SqlDbType.VarBinary)
+            {
+              Value = image1Byte
+            };
+            cmdUpdate.Parameters.Add(image1Param);
+
+            cmdUpdate.Parameters.AddWithValue("ExcerptID2", excerpt2);
+            cmdUpdate.Parameters.AddWithValue("@Title2", Excerpt2.Text);
+            cmdUpdate.Parameters.AddWithValue("@Subheading2", ExcerptSubheading2.Text);
+            cmdUpdate.Parameters.AddWithValue("@Content2", ExcerptContent2.Text);
+            SqlParameter image2Param = new SqlParameter("@Image2", SqlDbType.VarBinary)
+            {
+              Value = image2Byte
+            };
+            cmdUpdate.Parameters.Add(image2Param);
+
+            cmdUpdate.Parameters.AddWithValue("ExcerptID3", excerpt3);
+            cmdUpdate.Parameters.AddWithValue("@Title3", Excerpt3.Text);
+            cmdUpdate.Parameters.AddWithValue("@Subheading3", ExcerptSubheading3.Text);
+            cmdUpdate.Parameters.AddWithValue("@Content3", ExcerptContent3.Text);
+            SqlParameter image3Param = new SqlParameter("@Image3", SqlDbType.VarBinary)
+            {
+              Value = image3Byte
+            };
+            cmdUpdate.Parameters.Add(image3Param);
+
+            cmdUpdate.Parameters.AddWithValue("ExcerptID4", excerpt4);
+            cmdUpdate.Parameters.AddWithValue("@Title4", Excerpt4.Text);
+            cmdUpdate.Parameters.AddWithValue("@Subheading4", ExcerptSubheading4.Text);
+            cmdUpdate.Parameters.AddWithValue("@Content4", ExcerptContent4.Text);
+            SqlParameter image4Param = new SqlParameter("@Image4", SqlDbType.VarBinary)
+            {
+              Value = image4Byte
+            };
+            cmdUpdate.Parameters.Add(image4Param);
+
+            cmdUpdate.ExecuteNonQuery();
+
+            Response.Write(
+              "<script>alert('Course edited. Please review.'); document.location.href='./AdminCourseSelection.aspx'</script>"
+            );
+
+            con.Close();
+          }
+          else
           {
-            Value = featuredImageByte
-          };
-          cmdUpdate.Parameters.Add(featuredParam);
-
-          cmdUpdate.Parameters.AddWithValue("ExcerptID1", excerpt1);
-          cmdUpdate.Parameters.AddWithValue("@Title1", Excerpt1.Text);
-          cmdUpdate.Parameters.AddWithValue("@Subheading1", ExcerptSubheading1.Text);
-          cmdUpdate.Parameters.AddWithValue("@Content1", ExcerptContent1.Text);
-          SqlParameter image1Param = new SqlParameter("@Image1", SqlDbType.VarBinary)
-          {
-            Value = image1Byte
-          };
-          cmdUpdate.Parameters.Add(image1Param);
-
-          cmdUpdate.Parameters.AddWithValue("ExcerptID2", excerpt2);
-          cmdUpdate.Parameters.AddWithValue("@Title2", Excerpt2.Text);
-          cmdUpdate.Parameters.AddWithValue("@Subheading2", ExcerptSubheading2.Text);
-          cmdUpdate.Parameters.AddWithValue("@Content2", ExcerptContent2.Text);
-          SqlParameter image2Param = new SqlParameter("@Image2", SqlDbType.VarBinary)
-          {
-            Value = image2Byte
-          };
-          cmdUpdate.Parameters.Add(image2Param);
-
-          cmdUpdate.Parameters.AddWithValue("ExcerptID3", excerpt3);
-          cmdUpdate.Parameters.AddWithValue("@Title3", Excerpt3.Text);
-          cmdUpdate.Parameters.AddWithValue("@Subheading3", ExcerptSubheading3.Text);
-          cmdUpdate.Parameters.AddWithValue("@Content3", ExcerptContent3.Text);
-          SqlParameter image3Param = new SqlParameter("@Image3", SqlDbType.VarBinary)
-          {
-            Value = image3Byte
-          };
-          cmdUpdate.Parameters.Add(image3Param);
-
-          cmdUpdate.Parameters.AddWithValue("ExcerptID4", excerpt4);
-          cmdUpdate.Parameters.AddWithValue("@Title4", Excerpt4.Text);
-          cmdUpdate.Parameters.AddWithValue("@Subheading4", ExcerptSubheading4.Text);
-          cmdUpdate.Parameters.AddWithValue("@Content4", ExcerptContent4.Text);
-          SqlParameter image4Param = new SqlParameter("@Image4", SqlDbType.VarBinary)
-          {
-            Value = image4Byte
-          };
-          cmdUpdate.Parameters.Add(image4Param);
-
-          cmdUpdate.ExecuteNonQuery();
-
-          Response.Write(
-            "<script>alert('Course edited. Please review.'); document.location.href='./AdminCourseSelection.aspx'</script>"
-          );
-
-          con.Close();
+            Response.Write(
+              "<script>alert('Please fill in all input fields, including image.')</script>"
+            );
+          }
         }
         catch (Exception ex)
         {
@@ -139,7 +158,19 @@ namespace Kohedemy.Pages
           byte[] image3Byte = ExcerptImage3.FileBytes;
           byte[] image4Byte = ExcerptImage4.FileBytes;
 
-          string createQuery = @"
+          if (!string.IsNullOrWhiteSpace(CourseTitle.Text) && !string.IsNullOrWhiteSpace(CourseDescription.Text)
+              && !string.IsNullOrWhiteSpace(CourseDifficulty.SelectedValue)
+              && featuredImageByte != null
+              && !string.IsNullOrWhiteSpace(Excerpt1.Text) && !string.IsNullOrWhiteSpace(ExcerptSubheading1.Text)
+              && !string.IsNullOrWhiteSpace(ExcerptContent1.Text) && image1Byte != null
+              && !string.IsNullOrWhiteSpace(Excerpt2.Text) && !string.IsNullOrWhiteSpace(ExcerptSubheading2.Text)
+              && !string.IsNullOrWhiteSpace(ExcerptContent2.Text) && image2Byte != null
+              && !string.IsNullOrWhiteSpace(Excerpt3.Text) && !string.IsNullOrWhiteSpace(ExcerptSubheading3.Text)
+              && !string.IsNullOrWhiteSpace(ExcerptContent3.Text) && image3Byte != null
+              && !string.IsNullOrWhiteSpace(Excerpt4.Text) && !string.IsNullOrWhiteSpace(ExcerptSubheading4.Text)
+              && !string.IsNullOrWhiteSpace(ExcerptContent4.Text) && image4Byte != null)
+          {
+            string createQuery = @"
                              INSERT INTO [Course] (Title, Description, Difficulty, FeaturedImage) VALUES (@Title, @Description, @Difficulty, @FeaturedImage); 
                              
                              DECLARE @CourseID INT = SCOPE_IDENTITY();
@@ -157,60 +188,67 @@ namespace Kohedemy.Pages
                              INSERT INTO [Excerpt] (Title, Subheading, Content, Image, ContentID) VALUES (@Title4, @Subheading4, @Content4, @Image4, @ContentID);
                              ";
 
-          SqlCommand cmdCreate = new SqlCommand(createQuery, con);
+            SqlCommand cmdCreate = new SqlCommand(createQuery, con);
 
-          cmdCreate.Parameters.AddWithValue("@Title", CourseTitle.Text);
-          cmdCreate.Parameters.AddWithValue("@Description", CourseDescription.Text);
-          cmdCreate.Parameters.AddWithValue("@Difficulty", CourseDifficulty.SelectedValue.ToString());
-          SqlParameter featuredParam = new SqlParameter("@FeaturedImage", SqlDbType.VarBinary)
+            cmdCreate.Parameters.AddWithValue("@Title", CourseTitle.Text);
+            cmdCreate.Parameters.AddWithValue("@Description", CourseDescription.Text);
+            cmdCreate.Parameters.AddWithValue("@Difficulty", CourseDifficulty.SelectedValue.ToString());
+            SqlParameter featuredParam = new SqlParameter("@FeaturedImage", SqlDbType.VarBinary)
+            {
+              Value = featuredImageByte
+            };
+            cmdCreate.Parameters.Add(featuredParam);
+
+            cmdCreate.Parameters.AddWithValue("@Title1", Excerpt1.Text);
+            cmdCreate.Parameters.AddWithValue("@Subheading1", ExcerptSubheading1.Text);
+            cmdCreate.Parameters.AddWithValue("@Content1", ExcerptContent1.Text);
+            SqlParameter image1Param = new SqlParameter("@Image1", SqlDbType.VarBinary)
+            {
+              Value = image1Byte
+            };
+            cmdCreate.Parameters.Add(image1Param);
+
+            cmdCreate.Parameters.AddWithValue("@Title2", Excerpt2.Text);
+            cmdCreate.Parameters.AddWithValue("@Subheading2", ExcerptSubheading2.Text);
+            cmdCreate.Parameters.AddWithValue("@Content2", ExcerptContent2.Text);
+            SqlParameter image2Param = new SqlParameter("@Image2", SqlDbType.VarBinary)
+            {
+              Value = image2Byte
+            };
+            cmdCreate.Parameters.Add(image2Param);
+
+            cmdCreate.Parameters.AddWithValue("@Title3", Excerpt3.Text);
+            cmdCreate.Parameters.AddWithValue("@Subheading3", ExcerptSubheading3.Text);
+            cmdCreate.Parameters.AddWithValue("@Content3", ExcerptContent3.Text);
+            SqlParameter image3Param = new SqlParameter("@Image3", SqlDbType.VarBinary)
+            {
+              Value = image3Byte
+            };
+            cmdCreate.Parameters.Add(image3Param);
+
+            cmdCreate.Parameters.AddWithValue("@Title4", Excerpt4.Text);
+            cmdCreate.Parameters.AddWithValue("@Subheading4", ExcerptSubheading4.Text);
+            cmdCreate.Parameters.AddWithValue("@Content4", ExcerptContent4.Text);
+            SqlParameter image4Param = new SqlParameter("@Image4", SqlDbType.VarBinary)
+            {
+              Value = image4Byte
+            };
+            cmdCreate.Parameters.Add(image4Param);
+
+            cmdCreate.ExecuteNonQuery();
+
+            Response.Write(
+              "<script>alert('Course added. Please review.'); document.location.href='./AdminCourseSelection.aspx'</script>"
+            );
+
+            con.Close();
+          }
+          else
           {
-            Value = featuredImageByte
-          };
-          cmdCreate.Parameters.Add(featuredParam);
-
-          cmdCreate.Parameters.AddWithValue("@Title1", Excerpt1.Text);
-          cmdCreate.Parameters.AddWithValue("@Subheading1", ExcerptSubheading1.Text);
-          cmdCreate.Parameters.AddWithValue("@Content1", ExcerptContent1.Text);
-          SqlParameter image1Param = new SqlParameter("@Image1", SqlDbType.VarBinary)
-          {
-            Value = image1Byte
-          };
-          cmdCreate.Parameters.Add(image1Param);
-
-          cmdCreate.Parameters.AddWithValue("@Title2", Excerpt2.Text);
-          cmdCreate.Parameters.AddWithValue("@Subheading2", ExcerptSubheading2.Text);
-          cmdCreate.Parameters.AddWithValue("@Content2", ExcerptContent2.Text);
-          SqlParameter image2Param = new SqlParameter("@Image2", SqlDbType.VarBinary)
-          {
-            Value = image2Byte
-          };
-          cmdCreate.Parameters.Add(image2Param);
-
-          cmdCreate.Parameters.AddWithValue("@Title3", Excerpt3.Text);
-          cmdCreate.Parameters.AddWithValue("@Subheading3", ExcerptSubheading3.Text);
-          cmdCreate.Parameters.AddWithValue("@Content3", ExcerptContent3.Text);
-          SqlParameter image3Param = new SqlParameter("@Image3", SqlDbType.VarBinary)
-          {
-            Value = image3Byte
-          };
-          cmdCreate.Parameters.Add(image3Param);
-
-          cmdCreate.Parameters.AddWithValue("@Title4", Excerpt4.Text);
-          cmdCreate.Parameters.AddWithValue("@Subheading4", ExcerptSubheading4.Text);
-          cmdCreate.Parameters.AddWithValue("@Content4", ExcerptContent4.Text);
-          SqlParameter image4Param = new SqlParameter("@Image4", SqlDbType.VarBinary)
-          {
-            Value = image4Byte
-          };
-          cmdCreate.Parameters.Add(image4Param);
-
-          cmdCreate.ExecuteNonQuery();
-
-          Response.Write(
-            "<script>alert('Course added. Please review.'); document.location.href='./AdminCourseSelection.aspx'</script>"
-          );
-
-          con.Close();
+            Response.Write(
+              "<script>alert('Please fill in all input fields, including image.')</script>"
+            );
+          }
         }
         catch (Exception ex)
         {
