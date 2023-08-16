@@ -75,10 +75,6 @@
               <h4><%# Eval("CourseTitle") %></h4>
           
               <div class="edit-delete-container">
-                <button onclick="return false" class="card-button">
-                  <p>Preview</p>
-                </button>
-
                 <div class="inner-edit-delete">
                   <asp:ImageButton CommandArgument='<%# Eval("CourseId") %>' ImageUrl="../Assets/icons/edit.png" CssClass="inner-button" ID="EditButton" runat="server" OnClick="EditButton_Click" />
                   <asp:ImageButton CommandArgument='<%# Eval("CourseId") %>' ImageUrl="../Assets/icons/check-list.png" CssClass="inner-button" ID="AssessmentButton" runat="server" OnClick="AssessmentButton_Click" />
@@ -109,10 +105,6 @@
               <h4><%# Eval("CourseTitle") %></h4>
           
               <div class="edit-delete-container">
-                <button onclick="return false" class="card-button">
-                  <p>Preview</p>
-                </button>
-
                 <div class="inner-edit-delete">
                   <asp:ImageButton CommandArgument='<%# Eval("CourseId") %>' ImageUrl="../Assets/icons/edit.png" CssClass="inner-button" ID="EditButton" runat="server" OnClick="EditButton_Click" />
                   <asp:ImageButton CommandArgument='<%# Eval("CourseId") %>' ImageUrl="../Assets/icons/check-list.png" CssClass="inner-button" ID="AssessmentButton" runat="server" OnClick="AssessmentButton_Click" />                  
@@ -143,10 +135,6 @@
               <h4><%# Eval("CourseTitle") %></h4>
           
               <div class="edit-delete-container">
-                <button onclick="return false" class="card-button">
-                  <p>Preview</p>
-                </button>
-
                 <div class="inner-edit-delete">
                   <asp:ImageButton CommandArgument='<%# Eval("CourseId") %>' ImageUrl="../Assets/icons/edit.png" CssClass="inner-button" ID="EditButton" runat="server" OnClick="EditButton_Click" />
                   <asp:ImageButton CommandArgument='<%# Eval("CourseId") %>' ImageUrl="../Assets/icons/check-list.png" CssClass="inner-button" ID="AssessmentButton" runat="server" OnClick="AssessmentButton_Click" />
@@ -177,10 +165,6 @@
               <h4><%# Eval("CourseTitle") %></h4>
           
               <div class="edit-delete-container">
-                <button onclick="return false" class="card-button">
-                  <p>Preview</p>
-                </button>
-
                 <div class="inner-edit-delete">
                   <asp:ImageButton CommandArgument='<%# Eval("CourseId") %>' ImageUrl="../Assets/icons/edit.png" CssClass="inner-button" ID="EditButton" runat="server" OnClick="EditButton_Click" />
                   <asp:ImageButton CommandArgument='<%# Eval("CourseId") %>' ImageUrl="../Assets/icons/check-list.png" CssClass="inner-button" ID="AssessmentButton" runat="server" OnClick="AssessmentButton_Click" />
