@@ -280,6 +280,10 @@ namespace Kohedemy.Pages
                              DELETE a FROM [Assessment] AS a
                              JOIN [Course] AS c ON c.CourseID = a.CourseID
                              WHERE c.CourseID = @CourseID
+
+                             DELETE en FROM [Enrolled] AS en
+                             JOIN [Course] AS c ON c.CourseID = en.CourseID
+                             WHERE c.CourseID = @CourseID
  
                              DELETE FROM [Course] WHERE CourseID = @CourseID
                              ";
