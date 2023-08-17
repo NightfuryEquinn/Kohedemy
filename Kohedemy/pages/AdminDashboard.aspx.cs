@@ -23,6 +23,7 @@ namespace Kohedemy.Pages
           SqlCommand totalTraineeCmd = new SqlCommand(totalTrainee, con);
           int totalTraineeCount = Convert.ToInt32(totalTraineeCmd.ExecuteScalar().ToString());
 
+          totalTraineeCount -= 1;
           TotalTrainee.Text = totalTraineeCount.ToString();
 
           // Total Course based on Difficulty
@@ -140,11 +141,13 @@ namespace Kohedemy.Pages
         if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
         {
           Label pendingAssessmentLabel = (Label)e.Item.FindControl("PendingAssessment");
+          Label noPendingAssessmentLabel = (Label)FindControl("NoPendingAssessment");
 
           DataRowView dataItem = (DataRowView)e.Item.DataItem;
           string courseTitle = dataItem["Title"].ToString();
 
           pendingAssessmentLabel.Text = courseTitle;
+          noPendingAssessmentLabel.Text = "";
         }
 
         con.Close();

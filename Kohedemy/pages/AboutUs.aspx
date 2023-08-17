@@ -77,7 +77,7 @@
         <div class="content-container">
           <h2>Since 2021</h2>
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>At Kohedemy, we believe that crafting the perfect cup of coffee is an art form that deserves the utmost dedication and skill. Since our inception in 2021, we have been on a relentless journey to transform passionate coffee enthusiasts into true maestros of the bean, imparting the knowledge, techniques, and nuances that make every sip a symphony of flavor. At Kohedemy, we understand that true coffee craftsmanship encompasses more than just brewing methods.</p> 
         </div>
       </div>
 
@@ -93,7 +93,7 @@
         <div class="content-container">
           <h2>Rich. Flavorful . Just like coffee.</h2>
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Every cup of coffee tells a story – a tale of carefully nurtured beans, expertly roasted, ground, and brewed to perfection. Just like coffee, Kohedemy embodies richness and flavor in every aspect of our academy. Kohedemy takes pride in its roster of seasoned coffee experts, each with a wealth of experience in the coffee industry. Our instructors not only possess deep knowledge but also an unquenchable passion for sharing the craft.</p>
         </div>
 
         <div class="image-container">

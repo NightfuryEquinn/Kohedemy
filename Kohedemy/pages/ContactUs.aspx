@@ -83,7 +83,7 @@
             <img class="icon" src="../Assets/icons/mail.png" />
           </div>
 
-          <p>enquiry@kohedemy.com</p>
+          <a href="mailto:enquiry@kohedemy.com">enquiry@kohedemy.com</a>
         </div>
 
         <div class="single-contact">

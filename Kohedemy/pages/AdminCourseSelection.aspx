@@ -38,7 +38,7 @@
           <a href="AboutUs.aspx">About Us</a>
           <a href="AdminCourseSelection.aspx">Course</a>
           <a href="ContactUs.aspx">Contact Us</a>
-          <asp:LinkButton ID="LogOutButton" runat="server" OnClick="LogOutButton_Click">Log Out</asp:LinkButton>
+          <a href="AdminDashboard.aspx">Dashboard</a>          
         </div>
       </nav>
 
