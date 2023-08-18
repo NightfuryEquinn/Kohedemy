@@ -177,7 +177,7 @@
           <% if (Session["Username"] as string != null) { %>
             <% if (Session["Username"] as string != "Kohemin") { %>
               <button onclick="document.location.href = './PersonalCourse.aspx'; return false" class="card-button">
-                <p>Take Exam</p>
+                <p>Enroll</p>
               </button>
             <% } else { %>
               <button onclick="document.location.href = './AdminCourseSelection.aspx'; return false" class="card-button">
@@ -186,7 +186,7 @@
             <% } %>
           <% } else { %>
             <button onclick="document.location.href = './Login.aspx'; return false" class="card-button">
-              <p>Take Exam</p>
+              <p>Enroll</p>
             </button>
           <% } %>
         </div>
@@ -201,7 +201,7 @@
           <% if (Session["Username"] as string != null) { %>
             <% if (Session["Username"] as string != "Kohemin") { %>
               <button onclick="document.location.href = './PersonalCourse.aspx'; return false" class="card-button">
-                <p>Take Exam</p>
+                <p>Enroll</p>
               </button>
             <% } else { %>
               <button onclick="document.location.href = './AdminCourseSelection.aspx'; return false" class="card-button">
@@ -210,7 +210,7 @@
             <% } %>
           <% } else { %>
             <button onclick="document.location.href = './Login.aspx'; return false" class="card-button">
-              <p>Take Exam</p>
+              <p>Enroll</p>
             </button>
           <% } %>
         </div>
@@ -225,7 +225,7 @@
           <% if (Session["Username"] as string != null) { %>
             <% if (Session["Username"] as string != "Kohemin") { %>
               <button onclick="document.location.href = './PersonalCourse.aspx'; return false" class="card-button">
-                <p>Take Exam</p>
+                <p>Enroll</p>
               </button>
             <% } else { %>
               <button onclick="document.location.href = './AdminCourseSelection.aspx'; return false" class="card-button">
@@ -234,7 +234,7 @@
             <% } %>
           <% } else { %>
             <button onclick="document.location.href = './Login.aspx'; return false" class="card-button">
-              <p>Take Exam</p>
+              <p>Enroll</p>
             </button>
           <% } %>
         </div>
